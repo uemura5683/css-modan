@@ -33,7 +33,10 @@
     }
     html {
       block-size: 100%;
-      color-scheme: light dark;
+      color-scheme: light;
+    }
+    html.dark {
+      color-scheme: dark;
     }
     body {
       min-block-size: 100%;
@@ -89,10 +92,11 @@
   </div>
   <script type="text/javascript">
       const modechange = function (target) {
+        html = document.documentElement;
         if( target.getAttribute('data-mode') === 'dark' ) {
-          console.log('dark');
+          html.classList.add('dark');
         } else {
-          console.log('light');
+          html.classList.remove('dark');
         }
       }
   </script>
