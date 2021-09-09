@@ -3,3 +3,19 @@ https://coliss.com/articles/blogroll/css-accent-color.html
 
 prefers-color-scheme
 https://developer.mozilla.org/ja/docs/Web/CSS/@media/prefers-color-scheme
+
+flex-direction
+https://developer.mozilla.org/ja/docs/Web/CSS/flex-direction
+
+フロントエンドフレームワーク
+https://2020.stateofjs.com/ja-JP/technologies/front-end-frameworks/
+
+[full-bleed-layout]
+https://coliss.com/articles/build-websites/operation/css/full-bleed-layout-using-css-grid.html
+
+https://coliss.com/articles/build-websites/operation/css/css-code-generators.html
+
+https://kodocode.net/design-css-loading/
+
+mixin
+https://blanche-toile.com/web/sass-mixin
