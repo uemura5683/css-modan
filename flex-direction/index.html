@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>dark-mode</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    html {
+      block-size: 100%;
+    }
+    body {
+      min-block-size: 100%;
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-content: center;
+      gap: 2rem;
+    }
+    main {
+      padding: 1rem;
+      border: 1px solid;
+      display: grid;
+      gap: 1rem;
+    }
+    #content {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #c3c3c3;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    #content1 {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #c3c3c3;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .box,.box1 {
+      width: 100%;
+      height: 100%;
+    }
+    .red {
+      background: red;
+    }
+    .blue {
+      background: blue;
+    }
+    .yellow {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1><b class="txt">flex-direction</b></h1>
+    <h4>This is a Column-Reverse</h4>
+    <div id="content">
+      <div class="box red">A</div>
+      <div class="box blue">B</div>
+      <div class="box yellow">C</div>
+    </div>
+    <h4>This is a Row-Reverse</h4>
+    <div id="content1">
+      <div class="box1 red">A</div>
+      <div class="box1 blue">B</div>
+      <div class="box1 yellow">C</div>
+    </div>
+  </main>
+</body>
+</html>
