@@ -19,3 +19,8 @@ https://kodocode.net/design-css-loading/
 
 mixin
 https://blanche-toile.com/web/sass-mixin
+
+/**
+* noise
+**/
+https://coliss.com/articles/build-websites/operation/work/grainy-gradients.html
