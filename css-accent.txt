@@ -24,3 +24,8 @@ https://blanche-toile.com/web/sass-mixin
 * noise
 **/
 https://coliss.com/articles/build-websites/operation/work/grainy-gradients.html
+
+/**
+* autocapitalize
+**/
+https://www.tohoho-web.com/html/attr/autocapitalize.htm
