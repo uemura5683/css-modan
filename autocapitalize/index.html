@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>dark-mode</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    html {
+      block-size: 100%;
+    }
+    h1 {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    body {
+      min-block-size: 100%;
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-content: center;
+      gap: 2rem;
+    }
+    main {
+      padding: 1rem;
+      border: 1px solid;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      margin: 10px 0;
+    }
+    label[for="Agree"] {
+      justify-content: center;
+      gap: 1rem;
+    }
+    button {
+      display: block;
+      padding: .5rem 0;
+      width: 100%;
+      margin: 0 0 1rem;
+    }
+    input {
+      padding: .5rem 0;
+    }
+    .txt {
+      display: block;
+      margin: 0 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>autocapitalize=mode<br />自動大文字入力制御</h1>
+    <label for="off">
+      <span>off</span><input type="text" name="off" id="off" value="">
+    </label>
+    <span class="txt">自動大文字化機能をオフにします。</span>
+    <label for="none">
+      <span>none</span><input type="text" name="none" id="none" value="">
+    </label>
+    <span class="txt">自動大文字化機能をオフにします。</span>
+    <label for="on">
+      <span>on</span><input type="text" name="on" id="on" value="">
+    </label>
+    <span class="txt">自動大文字化機能をオンにします。</span>
+    <label for="sentences">
+      <span>sentences</span><input type="text" name="sentences" id="sentences" value="">
+    </label>
+    <span class="txt">文章毎に自動大文字化機能をオンにします。</span>
+    <label for="words">
+      <span>words</span><input type="text" name="words" id="words" value="">
+    </label>
+    <span class="txt">単語毎に自動大文字化機能をオンにします。</span>
+    <label for="characters">
+      <span>characters</span><input type="text" name="characters" id="characters" value="">
+    </label>
+    <span class="txt">文字毎に自動大文字化機能をオンにします。</span>
+    <button type="submit" value="" name="submit">
+      Submit
+    </button>
+  </main>
+</body>
+</html>
