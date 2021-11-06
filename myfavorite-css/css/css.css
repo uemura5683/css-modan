@@ -262,12 +262,56 @@ footer.l-footer [href*="top"]:before {
     overflow: hidden;
     aspect-ratio: 3 / 1.5;
     width: 100%;
+    position: relative;
 }
-.t-main iframe {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.t-main ol {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+.t-main ol li {
+    background-size: 100%;
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    top: -50%;
+    transform: translatey(50%);
+}
+.t-main ol li .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+@media (hover: hover) {
+  .t-main ol li .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  .t-main ol li:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-main ol li  {
+    animation-name: none;
+  }
+}
+.t-main ol li:hover .carousel__snapper,
+.t-main ol li:focus-within .carousel__snapper {
+  animation-name: none;
 }
 /**
 * ranking
