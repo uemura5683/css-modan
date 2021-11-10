@@ -1,0 +1,64 @@
+@charset 'UTF-8';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 62.5%;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr
+    min(calc(100% - 4rem), 100%)
+    1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main > * {
+  grid-column: 2;
+}
+h1 {
+  font-size: 1.5rem;
+}
+.box {
+  aspect-ratio: 16 / 10;
+  font-size: 7vw;
+  display: grid;
+  place-items: center;
+  color: white;
+  box-sizing: border-box;
+  background: #051c50;
+  border: 2px solid #070129;
+  border-radius: 5px;
+  letter-spacing: 1rem;
+}
+
+/* Legacy browser */
+@supports not (aspect-ratio: 16 / 10) {
+  .box {
+    position: relative;
+    color: rgba(0, 0, 0, 0);
+  }
+  .box:before {
+    content: "unsupports";
+    line-height: 1.6;
+    color: white;
+    position: absolute;
+    background: #051c50;
+    font-size: 7vw;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

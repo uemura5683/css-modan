@@ -5,36 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>flex-direction</title>
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-    html {
-      block-size: 100%;
-    }
-    body {
-      min-block-size: 100%;
-      font-family: system-ui, sans-serif;
-    }
-    main {
-      display: grid;
-      grid-template-columns:
-        1fr
-        min(65ch, 100%)
-        1fr;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    main > * {
-      grid-column: 2;
-    }
-    .full-bleed {
-      width: 100%;
-      grid-column: 1 / 4;
-      background: white;
-    }
-  </style>
+  <link type="text/css" rel="stylesheet" href="css.css"></link>
 </head>
 <body>
   <main class="wrapper">

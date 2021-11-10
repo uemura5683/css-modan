@@ -5,78 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>scrollbar-gutter</title>
-  <style type="text/css">
-    body {
-      max-width: 74em;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    section {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1em 2em;
-      padding: 2em;
-      background: hsl(0deg 100% 90%);
-      margin: 3em 0;
-    }
-
-    .description {
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .box {
-      height: 12em;
-      background: hsl(0deg 0% 100%);
-      text-align: justify;
-    }
-
-    .box > * {
-      margin: 0;
-    }
-
-    .overflow-auto {
-      overflow: auto;
-    }
-
-    .overflow-hidden {
-      overflow: hidden;
-    }
-
-    .scrollbar-gutter-auto {
-      scrollbar-gutter: auto;
-    }
-
-    .scrollbar-gutter-stable {
-      scrollbar-gutter: stable;
-    }
-
-    .scrollbar-gutter-stable-both {
-      scrollbar-gutter: stable both-edges;
-    }
-
-    .warning {
-      position: relative;
-      padding: 1em;
-      border: 1px solid black;
-      z-index: 9999;
-      text-align: center;
-      color: black;
-      background: rgb(255 163 163);
-    }
-
-    .warning a {
-      color: blue;
-    }
-
-    @supports(scrollbar-gutter: auto) {
-      .warning {
-        display: none;
-      }
-    }
-  </style>
+  <link type="text/css" rel="stylesheet" href="css.css"></link>
 </head>
 <body>
   <main>
