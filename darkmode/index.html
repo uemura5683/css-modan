@@ -46,18 +46,6 @@
       </label>
     </div>
   </main>
-  <script type="text/javascript">
-      const modechange = function (target) {
-        let html = document.documentElement
-          , txt = document.querySelector('.txt');
-        if( target.getAttribute('data-mode') === 'dark' ) {
-          html.classList.add('dark');
-          txt.textContent = 'Dark';
-        } else {
-          html.classList.remove('dark');
-          txt.textContent = 'Light';
-        }
-      }
-  </script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
