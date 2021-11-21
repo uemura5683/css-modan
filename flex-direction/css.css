@@ -54,9 +54,6 @@ div[class*='box'] {
 .blue {
   background: blue;
 }
-.yellow {
-  background: yellow;
-}
 @media (min-width: 980px) {
   main {
     width: 50%;
