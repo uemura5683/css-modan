@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+
+:root {
+  --white: #fff;
+  --black: #333;
+  --gray: #e8e8e8;
+  --clear: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  background-color: var(--white);
+  text-align: left;
+  height: 100%;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 25% 1fr;
+}
+
+.link {
+  font-family: sans-serif;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.link-list .link:is(:hover, .current) {
+  color: white;
+  background-color: var(--black);
+}
+
+.main {
+  background-color: var(--gray);
+  display: grid;
+  place-content: center;
+  font-size: min(calc(50vw - 240px), 40vh);
+}
