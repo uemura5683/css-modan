@@ -40,7 +40,14 @@ body {
 .container {
   display: grid;
   height: 100vh;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 100% 1fr;
+  align-items: center;
+}
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .link {
