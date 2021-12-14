@@ -44,6 +44,10 @@ body {
   align-items: center;
 }
 
+.container nav {
+  margin: 0 auto;
+}
+
 .link-list {
   display: flex;
   flex-wrap: wrap;
