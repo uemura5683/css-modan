@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 62.5%;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr min(calc(100% - 4rem), 100%) 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main > * {
+  grid-column: 2;
+}
+h1 {
+  font-size: 1.5rem;
+}
+
+/**
+* thumb banner
+**/
+.t-thumb {
+  overflow: hidden;
+  position: relative;
+  margin: 0 0 20px;
+  display: flex;
+}
+.t-thumb ul {
+  display: flex;
+  width: 100%;
+}
+.t-thumb .t-thumb_slider {
+  animation: ticker-kf 10s linear infinite;
+  min-width: calc(100% / 6);
+  list-style-type: none;
+}
+.t-thumb .t-thumb_slider a {
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  padding-top: 70%;
+  width: 100%;
+}
+@keyframes ticker-kf {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600%);
+  }
+}
+@media (max-width: 768px) {
+  .t-thumb .t-thumb_slider {
+    min-width: calc(100% / 3);
+  }
+  @keyframes ticker-kf {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+}
