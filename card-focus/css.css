@@ -21,9 +21,7 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: 1fr
-    min(calc(100% - 4rem), 100%)
-    1fr;
+  grid-template-columns: 1fr min(calc(100% - 4rem), 100%) 1fr;
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -54,7 +52,8 @@ figcaption {
   height: 338px;
   position: relative;
 }
-[class*="pettern"] :is(.front, .back) {
+[class*="pettern"] .front,
+[class*="pettern"] .back {
   position: absolute;
   transition: all 0.5s;
   -webkit-backface-visibility: hidden;
@@ -65,45 +64,55 @@ figcaption {
 }
 
 .pettern1 .back {
-  transform: rotateY( 180deg );
+  -webkit-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
 }
 .pettern1:hover .front {
   z-index: 0;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 .pettern1:hover .back {
-  transform: rotateY(0);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
-
 .pettern2 .back {
-  transform: rotateX( 180deg );
+  -webkit-transform: rotateX( 180deg );
+          transform: rotateX( 180deg );
 }
 .pettern2:hover .front {
   z-index: 0;
-  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 .pettern2:hover .back {
-  transform: rotateX(0);
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
 }
 .pettern3 {
-  transition: all 0.3s cubic-bezier(0.5, 1.3, 0.5, 1.3);
-  transform: scale(1) rotate(0deg);
+  -webkit-transition: all 0.3s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.3s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0deg);
 }
 .pettern3:hover {
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
-  transform: scale(1.1) rotate(3deg);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transform: scale(1.1) rotate(3deg);
+          transform: scale(1.1) rotate(3deg);
 }
 
-
 .pettern4 figure {
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
 }
 .pettern4 .grass {
   width: 100%;
   height: 100%;
   position: absolute;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   bottom: 0;
   left: 0;
 }
@@ -113,19 +122,23 @@ figcaption {
 .pettern4 .grass__blade--1 {
   border-right: 3px solid #a2c491;
   border-top-right-radius: 70%;
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
   height: 50%;
   width: 8%;
   bottom: -50%;
   left: -5%;
-  filter: drop-shadow(11px 21px 0px #a2c491) drop-shadow(23px 0px 0px #a2c491) drop-shadow(49px 0px 0px #a2c491) drop-shadow(85px 0px 0px #a2c491) drop-shadow(170px 0px 0px #a2c491) drop-shadow(350px 0px 0px #a2c491);
+  will-change: filter;
+  -webkit-filter: drop-shadow(11px 21px 0px #a2c491) drop-shadow(23px 0px 0px #a2c491) drop-shadow(49px 0px 0px #a2c491) drop-shadow(85px 0px 0px #a2c491) drop-shadow(170px 0px 0px #a2c491) drop-shadow(350px 0px 0px #a2c491);
+          filter: drop-shadow(11px 21px 0px #a2c491) drop-shadow(23px 0px 0px #a2c491) drop-shadow(49px 0px 0px #a2c491) drop-shadow(85px 0px 0px #a2c491) drop-shadow(170px 0px 0px #a2c491) drop-shadow(350px 0px 0px #a2c491);
   animation: move-blade-1 10s infinite;  
 }
 .pettern4 .grass__blade--1:before{
   content: '';
   border-left: 3px solid #a2c491;
   border-top-left-radius: 70%;
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
   height: 60%;
   width: 48%;
   bottom: 25%;
@@ -134,11 +147,13 @@ figcaption {
 }
 .pettern4:hover figure {
   opacity: .7;
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
 }
 .pettern4:hover .grass__blade--1 {
   bottom: -30%;
-  transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+          transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
 }
 @keyframes move-blade-1 {
   0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
