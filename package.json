@@ -1,0 +1,24 @@
+{
+  "name": "css-modan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+   "start": "browser-sync start --server --files='*/*.html, */*.js, */*.css'"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uemura5683/css-modan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uemura5683/css-modan/issues"
+  },
+  "homepage": "https://github.com/uemura5683/css-modan#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7"
+  }
+}
