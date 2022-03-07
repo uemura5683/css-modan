@@ -6,3 +6,6 @@ https://coliss.com/articles/build-websites/operation/css/cascade-layers.html
 ◎POST CSS・・・「CSSツールを作る為のフレームワーク ベンダープレフィックスを自動で付与する「Autoprefixer」」、未来のCSSの構文の一部を今のブラウザで解釈できるようにする「cssnext」、カスタマイズ性に営んでいるCSSりんたーである「styleling」が有名
 
 https://qiita.com/morishitter/items/4a04eb144abf49f41d7d
+
+◎background-imageの表示ラグ問題を（ほぼ）CSSのみで実装するCSS遅延読み込みで解決
+https://zenn.dev/crayfisher_zari/articles/24273afb875d1d
