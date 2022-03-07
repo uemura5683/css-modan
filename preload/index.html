@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Background Preload</title>
+    <link
+      rel="stylesheet"
+      href="preload.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body>
+    <section>
+      <h1>CSSプリロードなし</h1>
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_noload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_noload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_noload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <button class="js-show-image_noload">画像表示</button>
+      <div class="image-wrapper">
+        <div class="image noload-image"></div>
+      </div>
+    </section>
+    <section>
+      <h1>CSSプリロードあり</h1>
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_preload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_preload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="radio_noload"
+          class="radio-button radio-button_preload"
+          id=""
+          value="ラジオボタン"
+        />ラジオボタン</label
+      >
+      <button class="js-show-image_preload">画像表示</button>
+      <div class="image-wrapper">
+        <div class="image preload-image"></div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .querySelector(".js-show-image_noload")
+        .addEventListener("click", () => {
+          document.querySelector(".noload-image").classList.add("active");
+        });
+      document
+        .querySelector(".js-show-image_preload")
+        .addEventListener("click", () => {
+          document.querySelector(".preload-image").classList.add("active");
+        });
+    </script>
+  </body>
+</html>
