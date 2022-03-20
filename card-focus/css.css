@@ -32,12 +32,15 @@ h1 {
 figure {
   padding: 10px;
   display: inline-block;
-  box-shadow: 2px 2px 3px 0px #979797;
   line-height: 0;
   background-color: var(--white);
   overflow: hidden;
+  box-shadow: 2px 2px 3px 0px #979797;
 }
-figure img {padding: 0 0 10px;}
+figure img {
+  padding: 0 0 10px;
+  width: 100%;
+}
 figcaption {
   font-size: 14px;
   display: block;
@@ -128,7 +131,8 @@ figcaption {
   will-change: filter;
   -webkit-filter: drop-shadow(11px 21px 0px #a2c491) drop-shadow(23px 0px 0px #a2c491) drop-shadow(49px 0px 0px #a2c491) drop-shadow(85px 0px 0px #a2c491) drop-shadow(170px 0px 0px #a2c491) drop-shadow(350px 0px 0px #a2c491);
           filter: drop-shadow(11px 21px 0px #a2c491) drop-shadow(23px 0px 0px #a2c491) drop-shadow(49px 0px 0px #a2c491) drop-shadow(85px 0px 0px #a2c491) drop-shadow(170px 0px 0px #a2c491) drop-shadow(350px 0px 0px #a2c491);
-  animation: move-blade-1 10s infinite;  
+  -webkit-animation: move-blade-1 10s infinite;
+          animation: move-blade-1 10s infinite;
 }
 .pettern4 .grass__blade--1:before{
   content: '';
@@ -142,12 +146,12 @@ figcaption {
   left: 100%;
   position: absolute;
 }
-.pettern4:hover figure {
+.pettern4.active figure{
   opacity: .7;
   -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
           transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
 }
-.pettern4:hover .grass__blade--1 {
+.pettern4.active .grass__blade--1{
   bottom: -30%;
   -webkit-transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
           transition: all 0.5s cubic-bezier(0.5, 1.3, 0.5, 1.3);
@@ -158,4 +162,18 @@ figcaption {
   40%{border-top-right-radius: 20%;}
   70%{border-top-right-radius: 25%;}
   90%{border-top-right-radius: 35%;}
+}
+@-webkit-keyframes move-blade-1 {
+  0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
+  20%{border-top-right-radius: 30%;}
+  40%{border-top-right-radius: 20%;}
+  70%{border-top-right-radius: 25%;}
+  90%{border-top-right-radius: 35%;}
+}
+@media (max-width: 767px) {
+  [class*="pettern"] {
+    width: 100%;
+    height: auto;
+    margin: 0 0 76%;
+  }
 }

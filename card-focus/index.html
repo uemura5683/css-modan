@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Card focus Sample</title>
     <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js?ver=1.12.4' id='jquery-core-js'></script>
   </head>
   <body>
     <main class="wrapper">
@@ -57,5 +58,14 @@
         </div>
       </div>
     </main>
+  <script type="text/javascript">
+    $(document).on('click', '.pettern4', function () {
+      if( $(this).hasClass('active') ) {
+        $(this).removeClass('active');
+      } else {
+        $(this).addClass('active');
+      }
+    } );
+  </script>
   </body>
 </html>
