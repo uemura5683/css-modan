@@ -10,6 +10,7 @@
   <body>
     <main class="wrapper">
       <h1>Card focus Sample</h1>
+      <!--
       <div class="pettern1">
         <div class="front">
           <figure class="c-card-border">
@@ -46,6 +47,7 @@
           </figure>
         </div>
       </div>
+      -->
       <div class="pettern4">
         <div class="front">
           <figure class="c-card-border">
@@ -57,9 +59,35 @@
           </figure>
         </div>
       </div>
+      <div class="pettern5">
+        <div class="front">
+          <figure class="c-card-border">
+            <img src="img2.png" alt="サンプル">
+            <figcaption>スキル部門</figcaption>
+            <div class="wood">
+              <div class="wood__blade wood__blade--1"></div>
+              <div class="wood__blade wood__blade--2"></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div class="pettern6">
+        <div class="front">
+          <figure class="c-card-border">
+            <img src="img3.png" alt="サンプル">
+            <figcaption>キャリア部門</figcaption>
+            <div class="flower">
+              <div class="flower__blade flower__blade--1"></div>
+              <div class="flower__blade flower__blade--2"></div>
+              <div class="flower__blade flower__blade--3"></div>
+              <div class="flower__blade flower__blade--4"></div>
+            </div>
+          </figure>
+        </div>
+      </div>      
     </main>
   <script type="text/javascript">
-    $(document).on('click', '.pettern4', function () {
+    $(document).on('click', '.pettern4, .pettern5, .pettern6', function () {
       if( $(this).hasClass('active') ) {
         $(this).removeClass('active');
       } else {
