@@ -1,0 +1,44 @@
+CSSのループ
+
+カウンターは、CSSのループで最もわかりやすい形式であると同時に、最も使用例が少ないものです。
+カウンターは「content」プロパティにのみ使用でき、テキストとして表示されます。
+カウンターの増分、開始点、任意の時点での値を調整できますが、出力は常にテキストに限られます。
+
+https://coliss.com/articles/build-websites/operation/css/writing-logic-in-css.html
+
+
+```
+main {
+    counter-reset: section;
+}
+ 
+section {
+    counter-increment: section;
+    counter-reset: section;
+}
+ 
+section > h2::before {
+    content: 'Headline ' counter(section) ': ';
+}
+```
+
+
+ループを使用して繰り返されるレイアウトパターンを定義したい場合はどうしたらよいでしょうか。
+この種のループは、少しわかりにくいかもしれません。
+答えは、CSS Gridのauto-fillプロパティです。
+
+```
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+```
+
+auto-fillプロパティは利用可能なスペースを埋めるようにアイテムを拡大縮小しながら、
+必要な場合は複数の行に分割して、グリッドに収まるだけの要素で満たします。
+これはアイテムが見つかる限り繰り返され、上記のCSSでは最小幅300px、
+最大幅は自身のサイズの1/4に制限されます。
+説明するよりも下記のデモを見た方が分かりやすいでしょう。
+
+sample
+https://codepen.io/iamschulz/pen/MWOVgQe
