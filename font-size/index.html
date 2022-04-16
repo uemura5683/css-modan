@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>font-size</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>
+  <body>
+    <main class="wrapper">
+      <h1>font-size</h1>
+      <div class="wrapper-inner">
+        <div class="title">h1</div>
+        <h1>From 32px at 320px viewport width to 48px at 960px without min/max font size</h1>
+
+        <div class="title">text-xl</div>
+        <div class="text-xl">
+          <p>This paragraph inherits the font size of 1.25rem (20px) from `.text-xl`.</p>
+        </div>
+
+        <div class="title">h2</div>
+        <h2>From the minimum font size 32px at 320px viewport width to the max 48px at 960px</h2>
+        
+        <div class="title">p</div>
+        <p>This paragraph inherits the default font size of 1rem (16px) from the body.</p>
+
+        <div class="title">h3</div>
+        <h3>From 32px at 320px viewport width to 32px at 960px with the min font size 36px and max 40px.</h3>
+
+        <div class="title">h4</div>
+        <h4>From 32px at 320px viewport width to 48px at 960px then 64px at 1920px without min/max font size</h4>
+
+        <div class="title">h5</div>
+        <h5>From 48px at 320px viewport width to 32px at 960px</h5>
+      </div>
+    </main>
+  </body>
+</html>
