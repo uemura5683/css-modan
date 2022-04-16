@@ -18,3 +18,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# https://oshin.tokyo/entry/2020-stylelint
+.stylelintrc.js

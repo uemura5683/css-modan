@@ -5,7 +5,6 @@
   src: url("Phenomena-Regular.otf") format("opentype"),
        url("Phenomena-Regular.otf") format("opentype");
 }
-
 body {
   padding:0;
   margin:0;
@@ -15,7 +14,6 @@ h1 {
   color: #BF6B90;
   text-align: center;
 }
-
 /**
 * loading
 **/ 
