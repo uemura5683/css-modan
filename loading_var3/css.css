@@ -1,0 +1,132 @@
+@charset 'UTF-8';
+
+@font-face {
+  font-family: "Phenomena";
+  src: url("Phenomena-Regular.otf") format("opentype"),
+       url("Phenomena-Regular.otf") format("opentype");
+}
+
+body {
+  padding:0;
+  margin:0;
+  background:#fff7f8;
+}
+h1 {
+  color: #BF6B90;
+  text-align: center;
+}
+
+/**
+* loading
+**/ 
+.loading{
+  position:absolute;
+  top:0%;
+  left:0%;
+  font-family: "Phenomena";
+  font-size: 100px;
+  width: 100%;
+  height: 100%;
+}
+.loading_1, .loading_2, .loading_3, .loading_4 {
+  background: -webkit-linear-gradient(-90deg, #F3CDDC, #C06D92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  display: inline-block;
+  position: absolute;
+  transform: translate(-50%);
+}
+
+.loading_1 {
+  -webkit-animation:move 2s ease-in-out infinite;
+          animation:move 2s ease-in-out infinite;  
+  left:0%;
+  top:50%;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  opacity: 0;
+}
+.loading_2 {
+  -webkit-animation:move2 2s ease-in-out infinite;
+          animation:move2 2s ease-in-out infinite;
+  left:100%;
+  top:50%;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  opacity: 0;
+}
+.loading_3 {
+  -webkit-animation:move3 1s ease-in-out infinite 1.5s;
+          animation:move3 1s ease-in-out infinite 1.5s;
+  left:50%;
+  top:50%;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+.loading_4 {
+  -webkit-animation:move4 1s ease-in-out infinite 2.5s;
+          animation:move4 1s ease-in-out infinite 2.5s;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+@keyframes move {
+  0% {
+    left:-10%;
+    opacity:1;
+  }
+  70% {
+    left:50%; 
+    opacity:0;
+  }
+  100% {
+    left:50%; 
+    opacity:0;
+  }
+}
+@keyframes move2 {
+  0% {
+    left:110%;
+    opacity:1;
+  }
+  70% {
+    left:50%; 
+    opacity:0;
+  }
+  100% {
+    left:50%; 
+    opacity:0;
+  }
+}
+@keyframes move3 {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@keyframes move4 {
+  0% {
+    opacity:0;
+    top: 0;
+  }
+  100% {
+    opacity:1;
+    top: calc(50% - 55px);
+  }  
+}
+@keyframes move5 {
+}
