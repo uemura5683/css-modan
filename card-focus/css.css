@@ -63,11 +63,21 @@ figcaption {
 [class*="pettern"] .front {
   z-index: 1;
 }
+[class*="pettern"] a {
+  text-decoration: none;
+  color: black;
+}
 @media (max-width: 767px) {
   [class*="pettern"] {
     width: 100%;
     height: auto;
     margin: 0 0 76%;
+  }
+  [class*="pettern"] a {
+    pointer-events: none;
+  }
+  [class*="pettern"].active a {
+    pointer-events: auto;
   }
 }
 
