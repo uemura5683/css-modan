@@ -1,5 +1,7 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/ 
 @font-face {
   font-family: "Phenomena";
   src: url("Phenomena-Regular.otf") format("opentype"),
@@ -57,8 +59,8 @@ line-height: 100px;}
   opacity: 0;
 }
 .loading_3 {
-  -webkit-animation:move3 1s ease-in-out infinite 2.75s;
-          animation:move3 1s ease-in-out infinite 2.75s;
+  -webkit-animation:move3 1s ease-in-out infinite 2.5s;
+          animation:move3 1s ease-in-out infinite 2.5s;
   left:50%;
   top:50%;
   opacity: 0;
@@ -73,18 +75,20 @@ line-height: 100px;}
   position: absolute;left: 0;top: 0;height: 100%;z-index: -1;
 }
 .loading_4 {
-  -webkit-animation:move4 1s ease-in-out infinite 4s;
-          animation:move4 1s ease-in-out infinite 4s;
+  -webkit-animation:move4 1s ease-in-out infinite 3.5s;
+          animation:move4 1s ease-in-out infinite 3.5s;
   position: absolute;
   top: 50%;
   left: 50%;
   opacity: 0;
-  /* z-index: -1; */
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
+/**
+* animation
+**/ 
 @keyframes move {
   0% {
     left:0%;
@@ -132,14 +136,27 @@ line-height: 100px;}
   }  
 }
 @media (max-width: 960px) {
-  .loading{
-    font-size: 50px;
+  /**
+  * common
+  **/   
+  h1 {
+    font-size: 1rem;
   }
   img {
     width: 40px;
     height: 35px;
+  }  
+  /**
+  * loading
+  **/   
+  .loading{
+    font-size: 50px;
+    line-height: 50px;
   }
-  @keyframes move4 {
+  /**
+  * animation
+  **/   
+  @keyframes move3 {
     0% {
       opacity:0;
       top: 50%;
