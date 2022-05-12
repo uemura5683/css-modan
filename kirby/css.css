@@ -258,6 +258,37 @@ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .hand.two
   transform: rotate(180deg);
 }
 
+/**
+* three checked
+**/
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .eye:after{
+  content: none;
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .eye {
+  top: 23%;
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .cheek {
+  top: 56%;
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .mouth {
+  border-radius: 40% 40% 50% 50%/30% 30% 70% 70%; 
+  height: 13%;
+  width: 15%;
+  left: 49%;
+  top: 61%;
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .mouth:after {
+  border-radius: 40% 40% 50% 50%/30% 30% 70% 70%;
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .hand {
+  top: 27%;
+  transform: rotate(16deg);
+}
+input:checked ~ input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .hand.two {
+  top: 25%;
+  transform: rotate(164deg);
+}
+
 @keyframes tears {
   0% {
     width: 0;
