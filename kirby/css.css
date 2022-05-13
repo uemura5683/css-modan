@@ -13,6 +13,41 @@ h1 {
   padding: 10px 0;
   font-size: 16px;
 }
+input[type=checkbox] {
+  border: 1px solid #d77584;
+  -webkit-appearance: none;
+          appearance: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  transition: all .15s ease-out 0s;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  background-color: #fff;
+  position: relative;
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  transition: all ease-out 250ms;
+  position: absolute;
+  box-sizing: border-box;
+  top: 4px;
+  left: 8px;
+  width: 10px;
+  height: 14px;
+  transform: rotate(40deg) scale(0);
+  border-bottom: 2px solid #d77584;
+  border-right: 2px solid #d77584;
+}
+input[type=checkbox]:checked:before {
+  transform: rotate(40deg) scale(1);
+}
 #container .kirby_content {
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
