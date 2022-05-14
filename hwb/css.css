@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  display: grid;
+}
+
+:root {
+  --hwb-swatch-1: hwb(50 75% 0%);
+  --hwb-swatch-2: hwb(50 50% 25%);
+  --hwb-swatch-3: hwb(50 25% 50%);
+  --hwb-swatch-4: hwb(50 0% 75%);
+  --hwb-swatch-5: hwb(50 0% 90%);
+}
+
+.swatch:nth-of-type(1) {
+  background: var(--hwb-swatch-1);
+}
+
+.swatch:nth-of-type(2) {
+  background: var(--hwb-swatch-2);
+}
+
+.swatch:nth-of-type(3) {
+  background: var(--hwb-swatch-3);
+}
+
+.swatch:nth-of-type(4) {
+  background: var(--hwb-swatch-4);
+}
+
+.swatch:nth-of-type(5) {
+  background: var(--hwb-swatch-5);
+}
