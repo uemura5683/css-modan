@@ -1,0 +1,109 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  --font-size: 1rem;
+}
+main {
+  gap: 1rem;
+  margin: 1rem;
+}
+main > * {
+  grid-column: 2;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 1.2rem;
+}
+.title {
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #efefef;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.sub-title {
+  padding: .5rem 1rem;
+  margin: 2rem 0;
+  background: #fefefe;
+  border-bottom: 1px solid #999;
+}
+
+/**
+* block
+**/
+.block {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainvisual {
+  height: 20rem;
+  position: relative;
+  width: calc(100% / 3 - 1rem);
+  margin: 0 0.5rem;
+}
+.mainvisual .mainvisual-image {
+  filter: grayscale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainvisual .radius {
+  border-radius: 0.25rem;
+}
+.mainvisual img {
+  max-width: 100%;
+  display: block;
+}
+.mainvisual .mainvisual-details {
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0.25rem;
+  width: calc(100% - 0.5rem);
+  padding: 0.8rem;
+  background: #efefef;
+}
+.mainvisual .mainvisual-name {
+  display: block;
+  font-size: 1.77rem;
+}
+.mainvisual .weight-bold {
+  font-weight: 900;
+}
+.mainvisual .font-sans {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/**
+* button
+**/
+.button {
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: white;
+  background-color: red;
+}
+.button[data-variant="ghost"] {
+  color: red;
+  border: 2px solid red;
+  background-color: white;
+}
+.button[data-variant="disabled"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
