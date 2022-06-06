@@ -13,6 +13,115 @@ body {
   width: 100%;
   height: 100vh;
 }
+.main {
+  width: 404px;
+  height: 417px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.c-title {
+  position:
+  absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 38%;
+}
+.c-title-top {
+  font-size: 24px;
+  color: black;
+  letter-spacing: -3px;
+  line-height: 1;
+  top: 12px;
+  position: absolute;
+  left: 15px;
+}
+.c-title-hexagon {
+  width: 52px;
+  height: 28px;
+  background: #F4AA07;
+  position: absolute;
+  opacity: 1;
+}
+.c-title-hexagon [class*=c-title-] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  line-height: 36px;
+}
+.c-title-hexagon::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-left: 26px solid transparent;
+  border-bottom: 16px solid #F4AA07;
+  border-right: 26px solid transparent;
+  position: absolute;
+  top: -16px;
+  left: 0;
+}
+.c-title-hexagon::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 16px solid #F4AA07;
+  border-left: 26px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-right: 26px solid transparent;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  z-index: -1;
+}
+.c-title-middle {
+  position: absolute;
+  top: 34px;
+  left: 10px;
+}
+.c-title-middle .c-title-hexagon:nth-child(1) {
+  top: 22px;
+  left: 55px;
+}
+.c-title-middle .c-title-hexagon:nth-child(2) {
+  top: 22px;
+  left: 106px;
+}
+.c-title-middle .c-title-hexagon:nth-child(3) {
+  top: 22px;
+  left: 158px;
+}
+.c-title-middle .c-title-hexagon:nth-child(4) {
+  top: 22px;
+  left: 210px;
+}
+.c-title-bottom {
+  position: absolute;
+  top: 67px;
+  left: 62px;
+}
+.c-title-bottom .c-title-hexagon:nth-child(1) {
+  top: 50px;
+  left: 55px;
+}
+.c-title-bottom .c-title-hexagon:nth-child(2) {
+  top: 50px;
+  left: 106px;
+}
+.c-title-bottom .c-title-hexagon:nth-child(3) {
+  top: 50px;
+  left: 158px;
+}
+.c-title-bottom .c-title-hexagon:nth-child(4) {
+  left: 210px;
+  top: 50px;
+}
+
 .bg {
   background: url(img.png) no-repeat;
   width: 404px;
