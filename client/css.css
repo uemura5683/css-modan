@@ -116,6 +116,54 @@ body {
   top: 50px;
 }
 
+
+.c-box-rhombus {
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  transform: rotate(90deg);
+}
+.c-box-rhombus::before { /* 上の三角形 */
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 30px solid transparent;
+  border-bottom: 45px solid #4682b4;
+  border-left: 30px solid transparent;
+  position: absolute;
+}
+.c-box-rhombus::after { /* 下の三角形 */
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 45px solid #4682b4;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  position: absolute;
+  top: 50%;
+}
+
+.c-box-left {
+  position: absolute;
+  top: 92px;
+  left: 24px;
+}
+[class*=c-box-left-] {
+  position:absolute;
+}
+.c-box-inner-left-two,
+.c-box-inner-left-three,
+.c-box-inner-left-four {
+  display: none;
+}
+.c-box-right {
+  display: none;
+  position:absolute;
+  top: 185px;
+  left: 153px;
+}
+
+
 .bg {
   background: url(img.png) no-repeat;
   width: 404px;
