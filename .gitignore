@@ -23,3 +23,7 @@ yarn-error.log*
 .stylelintrc.js
 
 /client/img.png
+
+yarn.lock
+package-lock.json
+package.json
