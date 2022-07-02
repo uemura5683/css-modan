@@ -22,8 +22,8 @@ yarn-error.log*
 # https://oshin.tokyo/entry/2020-stylelint
 .stylelintrc.js
 
-/client/img.png
-
 yarn.lock
 package-lock.json
 package.json
+
+postcss.config.js

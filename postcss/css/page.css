@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+
+/**
+* main
+**/
+.t-main {
+    overflow: hidden;
+    aspect-ratio: 3 / 1.5;
+    width: 100%;
+    position: relative;
+}
+.t-main ol {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+.t-main ol li {
+    background-size: 100%;
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    top: -50%;
+    transform: translatey(50%);
+}
+.t-main ol li .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+@media (hover: hover) {
+  .t-main ol li .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  .t-main ol li:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-main ol li  {
+    animation-name: none;
+  }
+}
+@supports not (aspect-ratio: 3 / 1.5) {
+  .t-main {
+    padding: 50% 0 0;
+  }
+}
+.t-main ol li:hover .carousel__snapper,
+.t-main ol li:focus-within .carousel__snapper {
+  animation-name: none;
+}
+/**
+* ranking
+**/
+.t-ranking ul {
+  display: grid;
+  grid-template-columns: calc(100);
+  display: -ms-grid;
+  -ms-grid-columns: calc(100%);
+  gap: 10px;
+}
+.t-ranking li {
+  position: relative;
+}
+.t-ranking li:nth-of-type(1) {
+  grid-row:1 / 3;
+  grid-column: 1 / 3;
+}
+.t-ranking li:nth-of-type(2) {
+  grid-row:1 / 2;
+  grid-column: 3 / 4;
+}
+.t-ranking li:nth-of-type(3) {
+  grid-row:2 / 3;
+  grid-column: 3 / 4;
+}
+.t-ranking li:nth-of-type(4) {
+  grid-row:3 / 4;
+  grid-column: 1 / 2;
+}
+.t-ranking li:nth-of-type(5) {
+  grid-row:3 / 4;  
+  grid-column: 2 / 3;
+}
+.t-ranking li:nth-of-type(6) {
+  grid-row:3 / 4;
+  grid-column: 3 / 4;
+}
+.t-ranking li a {
+  display: block;
+}
+.t-ranking li a span {
+  position: absolute;
+  color: white;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.t-ranking li a span:not(.rank) {
+  opacity: 0;
+  width: 50%;
+  inset: 50%;
+  height: 100%;
+}
+.t-ranking li a span.rank {
+  inset: 1vw;
+  width: 1vw;
+  height: 1vw;
+  text-align: center;
+  background: var(--blue);
+  padding: 1vw;
+  transform: translate(0%, 0%);
+  font-size: 1vw;
+}
+.t-ranking li:hover a figure:after {
+  content: '';
+  background: var(--black);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  opacity: .7;
+}
+.t-ranking li:hover a span:not(.rank) {
+  opacity: 1;
+}
+
+/**
+* instagram
+**/
+.t-instagram {
+    margin: 0 0 2rem;
+}
+.t-instagram ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.t-instagram ul:before {
+  content: none;
+}
+.t-instagram ul li{
+    margin: 5px;
+    width: calc(100% / 3 - 10px);
+    overflow: hidden;
+    position: relative;
+}
+.t-instagram ul li a {
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+}
+@supports not (aspect-ratio: 3 / 2) {
+  .t-instagram ul li a {
+    padding-top: 66.161%;
+  }
+}
+/**
+* goolemap
+**/
+.l-map {
+  overflow:hidden;
+  aspect-ratio: 3 / 2;
+}
+.l-map iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+@supports not (aspect-ratio: 3 / 2) {
+  .l-map {
+    overflow: hidden;
+    position: relative;
+    padding-top: 66.161%;
+  }
+
+  .l-map iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /**
+  * ranking
+  **/
+  .t-ranking li a span.rank {
+    width: 2vw;
+    height: 2vw;
+    padding: 2vw;
+  }
+  /**
+  * instagram
+  **/
+  .t-instagram ul li{
+      margin: 5px;
+      width: calc(100% / 2 - 10px);
+      overflow: hidden;
+      position: relative;
+  }
+
+}
+
