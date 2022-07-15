@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+/* 新しい書き方🥰 */
+.icon {
+  translate: 120px 60px;
+  rotate: 45deg;
+  scale: 1.4;
+}
+
+/* 従来の書き方👮‍♀️ */
+/* .icon {
+  transform: translate(80px, 40px) rotate(45deg) scale(1.2);
+}
+ */
+
+/* 以下、共通スタイル */
+
+body {
+  font-family: sans-serif;
+}
+
+.box {
+  border: dotted 2px lightpink;
+  width: 200px;
+  height: 200px;
+}
+
+.icon {
+  font-size: 120px;
+}
+
+code {
+  font-size: 24px;
+}
+
+.no-support-browser {
+  display: none;
+}
+
+@supports not (translate: 120px 60px) {
+  .no-support-browser {
+    display: block;
+    font-weight: bold;
+    color: #f429b4;
+    margin-bottom: 16px;
+  }
+}
+
+/* transformを個別に書いてないやついる！？　いねえよなァ！！ */
