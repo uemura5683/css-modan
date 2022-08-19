@@ -1,9 +1,15 @@
 @charset 'UTF-8';
 
+/**
+* reset
+**/
 body {
   margin: 0;
 }
 
+/**
+* common
+**/
 .toggleWapper {
   display: flex;
   align-items: center;
@@ -13,7 +19,6 @@ body {
   background-color: #ffffff;
   toggle-root: darkmode;
 }
-
 .toggleButton {
   width: 46px;
   height: 24px;
@@ -24,7 +29,6 @@ body {
   cursor: pointer;
   toggle-trigger: darkmode;
 }
-
 .toggleButton::after {
   content: "";
   position: absolute;
@@ -37,26 +41,21 @@ body {
   border: 1px solid #BCBDBD;
   transition: all 0.1s ease 0s;
 }
-
 .toggleLabel {
   color: #1E2121;
   margin-left: 12px;
   cursor: pointer;
 }
-
 .toggleWapper:toggle(darkmode) {
   background-color: #1E2121;
 }
-
 .toggleButton:toggle(darkmode) {
   background-color: #6990d8;
 }
-
 .toggleButton:toggle(darkmode)::after {
   border-color: #6990d8;
   transform: translateX(100%);
 }
-
 .toggleLabel:toggle(darkmode) {
   color: #FFFFFF;
 }

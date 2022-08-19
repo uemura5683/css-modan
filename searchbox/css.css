@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/************
+faundation
+************/
+
+/** 
+* reset
+**/
+:root {
+  --red: #e50914;
+  --blue: #1F5EAB;
+  --white: #fff;
+  --black: #333;
+  --gray: #cdcdcd;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  font-size: 62.5%;
+  margin: 0;
+}
+* {
+  color: var(--black);
+}
+div, p, span, input, textarea, ul, li, ol, a, figure {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+ul li, ol li {
+  list-style-type: none;
+}
+a {
+  color: var(--black);
+  opacity: 1;
+  transition: .3s opacity ease;
+  text-decoration: none;
+}
+a:hover {
+  opacity: .7;
+  transition: .3s opacity ease;
+}
+img {
+  width: 100%;
+}
+input, textarea, button {
+  outline: none;
+}
+@media only screen and (max-width: 767px) {
+  div, p, span, input, textarea, ul, li, ol, a {
+    font-size: 1.2rem;
+  }
+}
+
