@@ -1,4 +1,7 @@
 @charset 'UTF-8';
+/**
+* common
+**/
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 :root{
  --white: white;
@@ -47,6 +50,9 @@ figcaption {
   height: 14px;
   line-height: 1;
 }
+/**
+* card
+**/
 [class*="pettern"] {
   margin-bottom: 20px;
   width: 478px;

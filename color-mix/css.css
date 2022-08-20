@@ -1,20 +1,14 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/
 :root {
-  /* change me! */
   --brand: #0af; 
-  
-  /* very dark brand blue */
   --text1: color-mix(var(--brand) 25%, black);
   --text2: color-mix(var(--brand) 40%, black);
-  
-  /* very bright brand white */
   --surface1: color-mix(var(--brand) 5%, white);
-  
-  /*  https://web.dev/prefers-color-scheme/  */
   color-scheme: light dark;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --text1: color-mix(var(--brand) 15%, white);
@@ -22,27 +16,22 @@
     --surface1: color-mix(var(--brand) 5%, black);
   }
 }
-
 h1 {
   font-size: 10vmin;
   font-weight: 300;
 }
-
 b {
   color: var(--text2);
   font-family: ui-monospace, monospace;
 }
-
 u {
   text-decoration-color: var(--brand);
   text-underline-offset: .25ex;
 }
-
 html {
   block-size: 100%;
   inline-size: 100%;
 }
-
 body {
   color: var(--text1);
   background: var(--surface1);
@@ -54,4 +43,3 @@ body {
   place-content: center;
   font-family: system-ui, sans-serif;
 }
-

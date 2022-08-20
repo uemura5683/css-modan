@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 html:after {
   content: "";
   background-image: url("https://picsum.photos/id/120/1200/900"),

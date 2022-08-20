@@ -27,6 +27,9 @@ main > * {
 h1 {
   font-size: 1.5rem;
 }
+/**
+* font
+**/
 .title {
   padding: 1rem;
   margin: 2rem 0;
@@ -34,21 +37,18 @@ h1 {
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
 }
-
 .wrapper-inner h1 {
   --viewport-from: 320;
   --font-size-from: 32;
   --viewport-to: 960;
   --font-size-to: 48;
 }
-
 .wrapper-inner h2 {
   --viewport-from: 320;
   --min-font-size: 32;
   --viewport-to: 960;
   --max-font-size: 48;
 }
-
 .wrapper-inner h3 {
   --viewport-from: 320;
   --font-size-from: 32;
@@ -57,14 +57,12 @@ h1 {
   --min-font-size: 36;
   --max-font-size: 40;
 }
-
 .wrapper-inner h4 {
   --viewport-from: 320;
   --font-size-from: 32;
   --viewport-to: 960;
   --font-size-to: 48;
 }
-
 @media (min-width: 960px) {
   .wrapper-inner h4 {
     --viewport-from: 960;
@@ -73,7 +71,6 @@ h1 {
     --font-size-to: 64;
   }
 }
-
 .wrapper-inner h5 {
   --viewport-from: 320;
   --font-size-from: 48;
@@ -81,11 +78,9 @@ h1 {
   --font-size-to: 32;
   --min-font-size: 16;
 }
-
 .wrapper-inner .text-xl {
   --font-size: 1.25rem;
 }
-
 /**
  * Available vars:
  * @var --viewport-from: <number> - Number in pixels without the unit. Required if `--font-size` is not exist.
@@ -104,7 +99,6 @@ h1 {
   --fz-slope: (var(--fz-to) - var(--fz-from)) / (var(--viewport-to) - var(--viewport-from)) * 100;
   --fz-intercept: (var(--viewport-to) * var(--fz-from) - var(--viewport-from) * var(--fz-to)) / (var(--viewport-to) - var(--viewport-from));
   --font-size: calc(var(--fz-slope) * var(--viewport-unit-converter) + var(--fz-intercept) * 1px);
-
   --min-fz-px: calc(var(--min-font-size) * 1px);
   --max-fz-px: calc(var(--max-font-size) * 1px);
   --clamp: clamp(var(--min-fz-px), var(--font-size), var(--max-fz-px));
@@ -112,6 +106,5 @@ h1 {
   --min: var(--has-min, var(--font-size));
   --has-max: min(var(--max-fz-px), var(--font-size));
   --has-min: max(var(--min-fz-px), var(--font-size));
-
   font-size: var(--clamp, var(--max));
 }

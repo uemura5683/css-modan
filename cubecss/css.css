@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-
 /**
 * common
 **/
@@ -41,7 +40,6 @@ h1 {
   background: #fefefe;
   border-bottom: 1px solid #999;
 }
-
 /**
 * block
 **/

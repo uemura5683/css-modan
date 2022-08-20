@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-
 /**
 * common
 **/
@@ -23,13 +22,14 @@ h1 {
   color: white;
   padding: 1rem 0;
 }
-
 @media (max-width: 768px) {
   body {
     font-size: 59%;
   }
 }
-
+/**
+* rope
+**/
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

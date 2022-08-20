@@ -1,11 +1,12 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/
 body {
   max-width: 74em;
   margin: 0 auto;
   text-align: center;
 }
-
 section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -14,43 +15,37 @@ section {
   background: hsl(0deg 100% 90%);
   margin: 3em 0;
 }
-
+/**
+* scrollbar
+**/
 .description {
   text-align: center;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-
 .box {
   height: 12em;
   background: hsl(0deg 0% 100%);
   text-align: justify;
 }
-
 .box > * {
   margin: 0;
 }
-
 .overflow-auto {
   overflow: auto;
 }
-
 .overflow-hidden {
   overflow: hidden;
 }
-
 .scrollbar-gutter-auto {
   scrollbar-gutter: auto;
 }
-
 .scrollbar-gutter-stable {
   scrollbar-gutter: stable;
 }
-
 .scrollbar-gutter-stable-both {
   scrollbar-gutter: stable both-edges;
 }
-
 .warning {
   position: relative;
   padding: 1em;
@@ -60,11 +55,9 @@ section {
   color: black;
   background: rgb(255 163 163);
 }
-
 .warning a {
   color: blue;
 }
-
 @supports(scrollbar-gutter: auto) {
   .warning {
     display: none;

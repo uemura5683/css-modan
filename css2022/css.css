@@ -1,5 +1,7 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/
 :root{
   --black: #000;
   --gray: #333;
@@ -8,7 +10,6 @@
   --red: #ff0000;
   --red2: #ffadad;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -89,5 +90,4 @@ a {
   font-size: 1.4rem;
   text-align: center;
   line-height: 50px;
-
 }

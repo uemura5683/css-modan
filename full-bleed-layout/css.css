@@ -1,5 +1,7 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +25,9 @@ main {
 main > * {
   grid-column: 2;
 }
+/**
+* full-bleed-layout
+**/
 .full-bleed {
   width: 100%;
   grid-column: 1 / 4;

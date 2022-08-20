@@ -1,5 +1,7 @@
 @charset 'UTF-8';
-
+/**
+* common
+**/
 body {
   padding:0;
   margin:0;
@@ -9,7 +11,9 @@ h1 {
   color: white;
   text-align: center;
 }
-
+/**
+* loading
+**/
 .loading {
   position:relative;
   max-width: 400px;
@@ -24,7 +28,6 @@ h1 {
   -webkit-transform:translate(-50%, 0);
           transform:translate(-50%, 0);
 }
-
 .loading div {
   position:absolute;
   width:20px;
@@ -37,7 +40,6 @@ h1 {
   color:#ffffff;
   font-size: 24px;
 }
-
 .loading div:nth-child(2) {
   -webkit-animation-delay:0.2s;
           animation-delay:0.2s;
@@ -62,7 +64,6 @@ h1 {
   -webkit-animation-delay:1.3s;
           animation-delay:1.3s; 
 }
-
 @keyframes move {
   0% {
     left:0;

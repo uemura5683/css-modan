@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-
 /**
 * common
 **/
@@ -70,7 +69,6 @@ main {
 *:after {
   content: "";
 }
-
 /**
 * kirby
 **/
