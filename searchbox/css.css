@@ -24,7 +24,7 @@ html, body {
 * {
   color: var(--black);
 }
-div, p, span, input, textarea, ul, li, ol, a, figure {
+div, input {
   font-size: 1.4rem;
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ img {
 input, textarea, button {
   outline: none;
   border-radius: 0;
-  height: 40px;
+  height: 6rem;
   border: 1px solid #ccc;
   background: white;
 }
@@ -68,8 +68,8 @@ label[for="c-keyword-sample"] {
 }
 label[for="keyword-checkbox-reset"] {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 2.5rem;
+  right: 2.5rem;
   z-index: -1;
   opacity: 0;
 }
@@ -90,9 +90,7 @@ label[for="keyword-checkbox-reset"] {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 100;
   background: white;
-  padding: 1rem;
   transform: translate(-50%, -50%);
   width: 50%;
   opacity: 0;
@@ -110,14 +108,15 @@ label[for="keyword-checkbox-reset"] {
 }
 .c-search__input {
   width: 100%;
-  padding: 5px;
+  padding: 1rem 2rem;
 }
 .c-search__submit {
   position: absolute;
   right: 0;
+  width: 6rem;
 }
 .c-box-overlay {
-  background-color: #000;
+  background-color: #00000094;
   position: fixed;
   top: 0;
   left: 0;
@@ -128,5 +127,5 @@ label[for="keyword-checkbox-reset"] {
 }
 #c-keyword-sample:checked ~ .c-box-overlay {
   z-index: 10;
-  opacity: 0.7;
+  opacity: 1;
 }
