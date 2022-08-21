@@ -58,46 +58,46 @@ input, textarea, button {
 * header
 **/
 header {
-    display: flex;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    background: var(--white);
-    z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 10;
 }
 header .l-title {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 header .l-title__logo {
-    height: 60px;
+  height: 60px;
 }
 header .l-search {
-    position: absolute;
-    inset: 20px 0 0 calc(100% - 200px);
-    height: 31px;
-    width: 178px;
+  position: absolute;
+  inset: 20px 0 0 calc(100% - 200px);
+  height: 31px;
+  width: 178px;
 }
 header form {
-    margin: 0;
-    display: flex;
-    align-items: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 header .l-search__input {
-    padding: 6px 5px;
-    border-radius: 0;
-    background: var(--white);
-    border: 1px solid var(--blue);
-    border-right-width: 0;
+  padding: 6px 5px;
+  border-radius: 0;
+  background: var(--white);
+  border: 1px solid var(--blue);
+  border-right-width: 0;
 }
 header .l-search__input::placeholder {
   color: var(--blue);
 }
 header .l-search__submit {
-    background: var(--white);
-    padding: 5px;
-    border-radius: 0;
-    height: 30px;
-    border: 1px solid var(--blue);
+  background: var(--white);
+  padding: 5px;
+  border-radius: 0;
+  height: 30px;
+  border: 1px solid var(--blue);
 }
 header .l-search__submit svg path {
   fill: var(--white);
@@ -108,15 +108,15 @@ header .l-search__submit svg line {
   stroke: var(--blue);  
 }
 header .l-glovalnav {
-    width: 100%;
-    border-top: 1px solid var(--blue);
-    border-bottom: 1px solid var(--blue);
+  width: 100%;
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
 }
 header .l-glovalnav__list {
-    width: 100%;
-    display: flex;
-    text-align: center;
-    padding: 0;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  padding: 0;
 }
 header .l-glovalnav__list li{
   width: calc(100% / 6);
@@ -128,8 +128,8 @@ header .l-glovalnav__list li a {
 }
 @supports not (inset: 20px 0 0 calc(100% - 200px)) {
   header .l-search {
-      top: 20px;
-      right: 55px;
+    top: 20px;
+    right: 55px;
   }
 }
 /**
@@ -154,95 +154,93 @@ header .l-glovalnav__list li a {
 * layout
 **/
 .l-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .l-main {
-    width: calc(75% - 40px);
-    margin: 0 20px 0 0;
+  width: calc(75% - 40px);
+  margin: 0 20px 0 0;
 }
 .l-sidebar {
-    width: calc(25% - 20px);
+  width: calc(25% - 20px);
 }
 /**
 * footer
 **/
 footer.l-footer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    background: var(--black);
-    margin: 20px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: var(--black);
+  margin: 20px 0 0;
 }
 footer.l-footer .l-foonter-top {
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 }
 footer.l-footer .l-foonter-top {
-    display: flex;
-    flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap; 
 }
 footer.l-footer .l-foonter__address {width: 50%;}
 footer.l-footer .l-foonter__address a{
-    display: block;
-    margin: 0 0 10px;
+  display: block;
+  margin: 0 0 10px;
 }
 footer.l-footer .l-foonter__address a img{
-    width: auto;
-    height: 60px;
-    background: var(--white);
-    padding: 10px;
+  width: auto;
+  height: 60px;
+  background: var(--white);
+  padding: 10px;
 }
 footer.l-footer .l-foonter__address p {
-    color: var(--white);
-    line-height: 2;
+  color: var(--white);
+  line-height: 2;
 }
-
 footer.l-footer .l-foonter__navi {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
 }
 footer.l-footer .l-foonter__navi:before,
 footer.l-footer .l-foonter__navi:after {
-    content: none;
+  content: none;
 }
 footer.l-footer .l-foonter__list {
-   padding: 0;
-   width: 50%;
+  padding: 0;
+  width: 50%;
 }
 footer.l-footer .l-foonter__list li {
-    display: block;
-    gap: 10px;
+  display: block;
+  gap: 10px;
 }
-footer.l-footer .l-foonter__list li a{color: var(--white);}
-
+footer.l-footer .l-foonter__list li a{
+  color: var(--white);
+}
 footer.l-footer .l-foonter__copyright {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 10px 20px;
-    border-top: 1px solid var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 20px;
+  border-top: 1px solid var(--white);
 }
-footer.l-footer .l-foonter__guide {}
 footer.l-footer .l-foonter__copy {
-    color: var(--white);
+  color: var(--white);
 }
 footer.l-footer .l-foonter__copy a {
-    color: var(--white);
+  color: var(--white);
 }
-
 footer.l-footer [href*="top"] {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    inset: calc(100% - 60px) 0 0 calc(100% - 60px);
-    background: var(--black);
-    border: 1px solid var(--white);
-    border-radius: 50%;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  inset: calc(100% - 60px) 0 0 calc(100% - 60px);
+  background: var(--black);
+  border: 1px solid var(--white);
+  border-radius: 50%;
 }
 footer.l-footer [href*="top"]:before {
   content: '';
@@ -277,39 +275,39 @@ footer.l-footer [href*="top"]:before {
 * main
 **/
 .t-main {
-    overflow: hidden;
-    aspect-ratio: 3 / 1.5;
-    width: 100%;
-    position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 1.5;
+  width: 100%;
+  position: relative;
 }
 .t-main ol {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow-x: scroll;
-    counter-reset: item;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 .t-main ol li {
-    background-size: 100%;
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    top: -50%;
-    transform: translatey(50%);
+  background-size: 100%;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  top: -50%;
+  transform: translatey(50%);
 }
 .t-main ol li .carousel__snapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
 }
 @media (hover: hover) {
   .t-main ol li .carousel__snapper {
@@ -417,29 +415,29 @@ footer.l-footer [href*="top"]:before {
 * instagram
 **/
 .t-instagram {
-    margin: 0 0 2rem;
+  margin: 0 0 2rem;
 }
 .t-instagram ul {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
 }
 .t-instagram ul:before {
-  content: none;
+content: none;
 }
 .t-instagram ul li{
-    margin: 5px;
-    width: calc(100% / 3 - 10px);
-    overflow: hidden;
-    position: relative;
+  margin: 5px;
+  width: calc(100% / 3 - 10px);
+  overflow: hidden;
+  position: relative;
 }
 .t-instagram ul li a {
-    background-position: center center;
-    background-size: cover;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 3 / 2;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 3 / 2;
 }
 @supports not (aspect-ratio: 3 / 2) {
   .t-instagram ul li a {
@@ -466,7 +464,6 @@ footer.l-footer [href*="top"]:before {
     position: relative;
     padding-top: 66.161%;
   }
-
   .l-map iframe {
     top: 0;
     left: 0;
@@ -488,8 +485,8 @@ footer.l-footer [href*="top"]:before {
   * layout
   **/
   .l-main, .l-sidebar {
-      width: 100%;
-      margin: 0 10px;
+    width: 100%;
+    margin: 0 10px;
   }
   /**
   * header
@@ -509,8 +506,8 @@ footer.l-footer [href*="top"]:before {
   }
   @supports not (inset: 0) {
     header .l-search {
-        top: 0;
-        right: 0;
+      top: 0;
+      right: 0;
     }
   }  
   /**
@@ -524,11 +521,11 @@ footer.l-footer [href*="top"]:before {
   /**
   * instagram
   **/
-  .t-instagram ul li{
-      margin: 5px;
-      width: calc(100% / 2 - 10px);
-      overflow: hidden;
-      position: relative;
+  .t-instagram ul li {
+    margin: 5px;
+    width: calc(100% / 2 - 10px);
+    overflow: hidden;
+    position: relative;
   }
   /**
   * sidebanner
@@ -538,8 +535,8 @@ footer.l-footer [href*="top"]:before {
     flex-wrap: wrap;
   }
   .c-sidebanner ul li{
-     width: calc(100% / 2 - 10px);
-     margin: 5px;
+    width: calc(100% / 2 - 10px);
+    margin: 5px;
   }
   /**
   * footer

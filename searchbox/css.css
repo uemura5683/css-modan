@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-/************
-faundation
-************/
-
 /** 
 * reset
 **/
@@ -29,22 +25,6 @@ div, input {
   margin: 0;
   padding: 0;
 }
-ul li, ol li {
-  list-style-type: none;
-}
-a {
-  color: var(--black);
-  opacity: 1;
-  transition: .3s opacity ease;
-  text-decoration: none;
-}
-a:hover {
-  opacity: .7;
-  transition: .3s opacity ease;
-}
-img {
-  width: 100%;
-}
 input, textarea, button {
   outline: none;
   border-radius: 0;
@@ -60,6 +40,9 @@ input[type="checkbox"], input[type="reset"] {
     font-size: 1.2rem;
   }
 }
+/** 
+* components
+**/
 label[for="c-keyword-sample"] {
   top: 50%;
   left: 50%;
@@ -91,14 +74,17 @@ label[for="keyword-checkbox-reset"] {
   top: 50%;
   left: 50%;
   background: white;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -200%);
   width: 50%;
   opacity: 0;
   z-index: -1;
+  transition: ease-in-out 1s transform;
 }
 #c-keyword-sample:checked ~ .c-search-form {
   opacity: 1;
   z-index: 100;
+  transform: translate(-50%, -50%);
+  transition: ease-in-out 1s transform;
 }
 .c-form-block {
   font-size: 0;
@@ -124,8 +110,10 @@ label[for="keyword-checkbox-reset"] {
   height: 100vh;
   z-index: -1;
   opacity: 0;
+  transition: ease-in-out 1s opacity;
 }
 #c-keyword-sample:checked ~ .c-box-overlay {
   z-index: 10;
   opacity: 1;
+  transition: ease-in-out 1s opacity;
 }

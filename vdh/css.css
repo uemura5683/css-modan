@@ -8,8 +8,9 @@ body {
   color: white;
   font-family: sans-serif;
 }
-.wrapper {
-}
+/**
+* components
+**/
 .vdh {
   height: 100dvh;
   background-color: gray;

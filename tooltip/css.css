@@ -1,10 +1,15 @@
 @charset 'UTF-8';
-
+/**
+* reset
+**/
 :root {
   --lightGrey: #f2f2f2;
   --white: #FFFFFF;
   --blue: #5f89df;
 }
+/**
+* common
+**/
 body {
   align-content: center;
   background: var(--lightGrey);
@@ -12,6 +17,9 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+/**
+* components
+**/
 .content {
   align-items: center;
   background-color: var(--white);
