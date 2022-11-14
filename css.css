@@ -44,6 +44,8 @@ h1 {
   transform: translate(-50%, -50%);
   background: white;
   max-width: 100%;
+  overflow: scroll;
+  height: calc(100vh - 50px);
 }
 .container-inner {  
   width: 90vw;
