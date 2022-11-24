@@ -1,0 +1,52 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 62.5%;
+}
+main {
+  gap: .5rem;
+  margin: 0;
+}
+h1 {
+  font-size: 1.8rem;
+  background: #cccccc;
+  text-align: center;
+  font-weight: normal;
+  padding: .5rem 0;
+  margin: 0 0 1rem;
+}
+li {
+  list-style-type: none;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+[class*=column-count] {
+  padding: 0;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+.column-count-one {
+  column-count: 2;
+}
+.column-count-two {
+  column-count: 3;
+
+}
+.column-count-three {
+  column-count: 6;
+}
+.link {
+  font-size: 1rem;
+  text-align: center;
+}
