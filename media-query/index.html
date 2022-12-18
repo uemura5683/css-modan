@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>flex-direction</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>
+  <body>
+    <main class="wrapper">
+        <h1>Media Queries Level 4</h1>
+
+        <p class="no-support-browser">ご利用のブラウザはMedia Queries Level 4に未対応のようです🤔️<br><a href="https://www.google.com/intl/ja/chrome/canary/" target="_blank">Chrome Canary</a>を試してみてください</p>
+        <div class="box1">
+          600px未満です
+        </div>
+        <div class="box2">
+          600px以上800px未満です
+        </div>
+        <div class="box3">
+          800px以上です
+        </div>
+
+        <pre><code>
+
+        .box1,
+        .box2,
+        .box3 {
+          display: none;
+        }
+          
+        @media (width < 600px) {
+          .box1 {
+            display: block;
+          }
+        }
+
+        @media (600px <= width < 800px) {
+          .box2 {
+            display: block;
+          }
+        }
+
+        @media (800px <= width) {
+          .box3 {
+            display: block;
+          }
+        }
+          </code></pre>
+    </main>
+  </body>
+</html>

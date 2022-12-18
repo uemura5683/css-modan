@@ -1,0 +1,100 @@
+@charset 'UTF-8';
+.box1,
+.box2,
+.box3 {
+  display: none;
+}
+
+@media (width < 600px) {
+  .box1 {
+    display: block;
+  }
+}
+
+@media (600px <= width < 800px) {
+  .box2 {
+    display: block;
+  }
+}
+
+@media (800px <= width) {
+  .box3 {
+    display: block;
+  }
+}
+
+/* 従来の書き方 */
+/*
+@media (max-width: 599px) {
+  .box1 {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+  .box2 {
+    display: block;
+  }
+}
+
+@media (min-width: 800px) {
+  .box3 {
+    display: block;
+  }
+}
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding: 16px;
+}
+
+.box1,
+.box2,
+.box3 {
+  text-align: center;
+  height: 300px;
+  line-height: 300px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.box1 {
+  background-color: #c98df6;
+}
+
+.box2 {
+  background-color: #f4481a;
+}
+
+.box3 {
+  background-color: #aee712;
+}
+
+code {
+  font-size: 14px;
+}
+
+.no-support-browser {
+  display: block;
+  font-weight: bold;
+  color: #f429b4;
+  margin-bottom: 16px;
+}
+
+.no-support-browser a {
+  color: currentcolor;
+}
+
+@media (width >= 0) {
+  .no-support-browser {
+    display: none;
+  }
+}
+
+/* クエックエックエッwwwwwwチョコボールwwwwww */
