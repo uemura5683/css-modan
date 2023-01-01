@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>background-image animations</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>
+   <body>
+    <div class="wrapper">
+      <section>
+        <h1>トグルボタン</h1>
+        <label class="toggleLabel"
+          ><input type="checkbox" class="toggleButton" />トグル</label
+        >
+      </section>
+      <section>
+        <h1>ホバーで色が横から変わるテキスト</h1>
+        <p class="slideColor">メロスは激怒した。</p>
+      </section>
+      <section>
+        <h1>スクロールを促す線の動き</h1>
+        <p class="scrollDownWrapper">
+          Scroll Down <span class="scrollDown scrollDownWrapper_line"></span>
+        </p>
+      </section>
+      <section>
+        <h1>ローディングバー</h1>
+        <div class="loadingBar"></div>
+        <p class="loadingText">Loading</p>
+      </section>
+      <section>
+        <h1>スケルトンスクリーン</h1>
+        <div class="dummyArticle">
+          <div class="dummyArticle_image">
+            <span class="skeletonElement"></span>
+          </div>
+          <div>
+            <div class="dummyArticle_title skeleton_title">
+              <span class="skeletonElement"></span>
+            </div>
+            <div class="dummyArticle_text skeleton_text">
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+            </div>
+          </div>
+        </div>
+        <div class="dummyArticle">
+          <div class="dummyArticle_image">
+            <span class="skeletonElement"></span>
+          </div>
+          <div>
+            <div class="dummyArticle_title skeleton_title">
+              <span class="skeletonElement"></span>
+            </div>
+            <div class="dummyArticle_text skeleton_text">
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+            </div>
+          </div>
+        </div>
+        <div class="dummyArticle">
+          <div class="dummyArticle_image">
+            <span class="skeletonElement"></span>
+          </div>
+          <div>
+            <div class="dummyArticle_title skeleton_title">
+              <span class="skeletonElement"></span>
+            </div>
+            <div class="dummyArticle_text skeleton_text">
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+              <span class="skeletonElement"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1>ターゲットに近づくと明滅が激しくなる</h1>
+        <div class="findSomething">
+          <div class="blinker" id="js-blinker"></div>
+          <div class="target" id="target">Target</div>
+        </div>
+      </section>
+      <section>
+        <h1>警告表示</h1>
+        <div class="warningWrapper">
+          <div class="warning"></div>
+          <p class="warningTextWrapper">
+            <span class="warningText">警告</span
+            ><span class="warningTextEn">Warning</span>
+          </p>
+          <div class="warning reverse"></div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const TARGET_RADIUS = 50;
+      const targetElement = document.getElementById("target");
+      const blinkerElement = document.getElementById("js-blinker");
+      let d = 2000;
+      const getDistance = (x1, x2, y1, y2) => {
+        return Math.hypot(x1 - x2, y1 - y2);
+      };
+      document.addEventListener("mousemove", (event) => {
+        const elementXCenter =
+          targetElement.getBoundingClientRect().x + TARGET_RADIUS;
+        const elementYCenter =
+          targetElement.getBoundingClientRect().y + TARGET_RADIUS;
+
+        d = getDistance(
+          elementXCenter,
+          event.clientX,
+          elementYCenter,
+          event.clientY
+        );
+      });
+
+      blinkerElement.addEventListener("animationiteration", () => {
+        if (d < 100) {
+          blinkerElement.classList.add("near3");
+        } else if (d < 200) {
+          blinkerElement.classList.remove("near3");
+          blinkerElement.classList.add("near2");
+        } else if (d < 300) {
+          blinkerElement.classList.remove("near3");
+          blinkerElement.classList.remove("near2");
+          blinkerElement.classList.add("near1");
+        } else {
+          blinkerElement.classList.remove("near3");
+          blinkerElement.classList.remove("near2");
+          blinkerElement.classList.remove("near1");
+        }
+      });
+    </script>
+  </body>
+</html>
