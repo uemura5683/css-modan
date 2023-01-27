@@ -1,89 +1,86 @@
 
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dialog要素のサンプル</title>
-  <script type="module" crossorigin src="demo.js"></script>
-  <link rel="modulepreload" href="base.js">
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="demo.css">
-</head>
-<body>
-<div id="js-menu-header" class="header">
-  <div class="header_wrapper">
-    <a class="header_heading" href="#">LOGO</a>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog要素のサンプル</title>
+    <script type="module" crossorigin src="demo.js"></script>
+    <link rel="modulepreload" href="base.js">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body>
+  <div id="js-menu-header" class="header">
+    <div class="header_wrapper">
+      <a class="header_heading" href="#">LOGO</a>
+    </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <h1>DEMO_03: dialog要素のサンプル</h1>
-  <button id="js-dialog-open" class="button">&lt;dialog&gt;を開く</button>
-
-  <section class="dummySection">
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-  </section>
-</div>
-
-<div class="footer">
-  <ul class="footer_link">
-    <li class="footer_link_item">
-      <a href="#">ページ上部へ移動</a>
-    </li>
-    <li class="footer_link_item">
-      <a href="index.html">一覧へもどる</a>
-    </li>
-  </ul>
-</div>
-
-<!-- 非表示のコンテンツ -->
-<dialog id="js-dialog" class="dialog is-can-scroll">
-  <div>
-    <p class="dummyText dummyText__verticalLarge"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText"></p>
-    <p class="dummyText dummyText__narrow"></p>
-    <button id="js-dialog-close" class="button" value="close">&lt;dialog&gt;を閉じる</button>
+  <div class="wrapper">
+    <h1>DEMO_03: dialog要素のサンプル</h1>
+    <button id="js-dialog-open" class="button">&lt;dialog&gt;を開く</button>
+    <section class="dummySection">
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+    </section>
   </div>
-</dialog>
-<!-- /非表示のコンテンツ -->
 
+  <div class="footer">
+    <ul class="footer_link">
+      <li class="footer_link_item">
+        <a href="#">ページ上部へ移動</a>
+      </li>
+      <li class="footer_link_item">
+        <a href="index.html">一覧へもどる</a>
+      </li>
+    </ul>
+  </div>
 
-</body>
+  <!-- 非表示のコンテンツ -->
+  <dialog id="js-dialog" class="dialog is-can-scroll">
+    <div>
+      <p class="dummyText dummyText__verticalLarge"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText"></p>
+      <p class="dummyText dummyText__narrow"></p>
+      <button id="js-dialog-close" class="button" value="close">&lt;dialog&gt;を閉じる</button>
+    </div>
+  </dialog>
+  <!-- /非表示のコンテンツ -->
+  </body>
 </html>
