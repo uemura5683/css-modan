@@ -1,0 +1,63 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  background-color: #212529;
+  display: grid;
+  height: calc(100vh - 16px);
+  margin: 0;
+  padding: 8px;
+  place-items: center;
+  width: calc(100% - 16px);
+}
+h1 {
+  font-size: 1.5rem;
+}
+a {
+  color: #333333;
+}
+.container {
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, .7);
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 100%;
+  grid-template-rows: 25px 25px 1fr;
+  padding: 6px 12px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.lyrics-container {
+  color: #1C1B1F;
+  mask-image: linear-gradient(to right, transparent 3%, black 30%, black 70%, transparent 97%);
+  -webkit-mask-image: linear-gradient(to right, transparent 3%, black 30%, black 70%, transparent 97%);
+  position: relative;
+  white-space: nowrap;
+}
+
+.lyrics {
+  animation: 12s linear 1s infinite lyrics-anime;
+  margin: 0;
+  position: absolute;
+  width: fit-content;
+  font-weight: 500;
+}
+
+@keyframes lyrics-anime {
+  0% {
+    left: 150%;
+  }
+  100% {
+    left: -400%;
+  }
+}
