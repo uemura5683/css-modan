@@ -1,0 +1,30 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mask-composite</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>  
+  <body>
+    <div class="wrapper">
+        <h3>mask-compositeでつくるCSSの新しい表現方法 基本設定</h3>
+        <p>
+          add<br>
+          subtract<br>
+          intersect<br>
+          exclude<br>
+          デフォルトはaddで、それぞれの領域を足し合わせます。<br>
+          subtractは1つ目のマスク画像から2つ目のマスク画像で減算します。<br>
+          intersectはマスク画像の塗りが重なる部分をマスク領域とします。<br>
+          excludeはマスク画像の塗りが重なる部分以外をマスク領域とします。<br>
+          以下のそれぞれの違いの図がわかりやすいでしょう。<br>
+        </p>
+      <div class="main">
+        <div class="mask add multi"></div>
+        <div class="mask subtract multi"></div>
+        <div class="mask intersect multi"></div>        
+        <div class="mask exclude multi"></div>
+      </div>
+    </div>
+  </body>
+</html>
