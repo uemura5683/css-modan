@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+
+/** 
+* reset
+**/
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --color-primary: #01a69b;
+}
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+h3 {
+  margin: 1rem;
+}
+p {
+  margin: 1rem;
+}
+.main {
+  position: relative;
+  margin: 1rem;
+}
+.centerHoleMask {
+  mask-image: linear-gradient(#000, #000), url(img/mask_circle.svg);
+  mask-repeat: no-repeat;
+  background: var(--color-primary);
+  mask-position: 0 0, center center;
+  mask-size: 100% 100%, 200px 200px;
+  mask-composite: exclude;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 498px;
+}
