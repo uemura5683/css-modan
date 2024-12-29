@@ -83,13 +83,14 @@ main {
   width: 15%;
   height: auto;
   animation: kirbymove .25s ease-in-out infinite;
-}
-#container .kirby_content .kirby_inner {
-  background: linear-gradient(135deg, var(--pinktwo) 70%, var(--pink));
+  background: linear-gradient(135deg, blue 70%, blue);
   border-radius: 50%;
   width: 100%;
   padding: 100% 0 0;
   box-shadow: 0 0 0 0.05vw var(--black);
+}
+#container .kirby_content .kirby_inner {
+
 }
 #container .kirby_content .kirby_inner .tears,
 #container .kirby_content .kirby_inner .eye,
