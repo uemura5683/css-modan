@@ -8,7 +8,6 @@
   --black: #000;
   --pink: #d77584;
   --pinktwo: #ff9db5;
-  --green: #ebffeb;
   --brown: #752b42;
   --pinkthree: #f0608b;
   --red: #af2d13;
@@ -17,7 +16,7 @@
 body {
   padding:0;
   margin:0;
-  background: var(--green);
+  background: var(--white);
 }
 h1 {
   text-align: center;
@@ -27,70 +26,67 @@ h1 {
   padding: 10px 0;
   font-size: 16px;
 }
-input[type=radio] {
-display: none;
+input[type=checkbox] {
+  border: 1px solid var(--pink);
+  -webkit-appearance: none;
+          appearance: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  transition: all .15s ease-out 0s;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  background-color: var(--white);
+  position: relative;
+}
+input[type=checkbox]:before {
+  display: block;
+  transition: all ease-out 250ms;
+  position: absolute;
+  box-sizing: border-box;
+  top: 4px;
+  left: 8px;
+  width: 10px;
+  height: 14px;
+  transform: rotate(40deg) scale(0);
+  border-bottom: 2px solid var(--pink);
+  border-right: 2px solid var(--pink);
+}
+input[type=checkbox]:checked:before {
+  transform: rotate(40deg) scale(1);
 }
 main {
-  margin: 0rem;
-  width: 100%;
-  height: 100vh;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100vh - 2rem);
 }
 *:before,
 *:after {
   content: "";
 }
-.c-button {
-  border: 1px solid var(--pinktwo);
-  padding: 1rem 0;
-  background-color: var(--pinktwo);
-  color: var(--white);
-  transition: .3s linear opacity;
-  opacity: 1;
-  position: fixed;
-  top: 10%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  text-align: center;
-}
-.c-button:hover {
-  opacity: .6;
-  transition: .3s linear opacity;
-}
-.c-button[for="switch-type1"] {
-  left: calc(50% - calc(200px / 2) - 10px);
-}
-.c-button[for="switch-type2"] {
-  left: calc(50% + (200px / 2) + 10px);
-}
-[id^="switch-type1"]:checked ~ .c-button[for^="switch-type1"],
-[id^="switch-type2"]:checked ~ .c-button[for^="switch-type2"] {
-  -webkit-animation: move .5s ease-in-out infinite;
-          animation: move .5s ease-in-out infinite;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-}
-
 /**
 * kirby
 **/
 #container .kirby_content {
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
-  top: 55%;
+  top: 50%;
   left: 50%;
-  width: 15%;
+  width: 25%;
   height: auto;
   animation: kirbymove .25s ease-in-out infinite;
-  background: linear-gradient(135deg, blue 70%, blue);
+}
+#container .kirby_content .kirby_inner {
+  background: linear-gradient(135deg, var(--pinktwo) 70%, var(--pink));
   border-radius: 50%;
   width: 100%;
   padding: 100% 0 0;
-  box-shadow: 0 0 0 0.05vw var(--black);
-}
-#container .kirby_content .kirby_inner {
-
+  box-shadow: 0 0 0 0.1vw var(--black);
 }
 #container .kirby_content .kirby_inner .tears,
 #container .kirby_content .kirby_inner .eye,
@@ -106,7 +102,7 @@ main {
   padding: 30% 0 0;
   background: var(--black);
   border-radius: 44%;
-  top: 23%;
+  top: 27%;
   left: 34%;
   animation: eye 5s ease-out infinite;
 } 
@@ -125,7 +121,7 @@ main {
 #container .kirby_content .kirby_inner .eye:after {
   width: 100%;
   height: auto;
-  display: none;
+  display: block;
   position: absolute;
   top: -10%;
   z-index: 1111;
@@ -145,7 +141,7 @@ main {
 #container .kirby_content .kirby_inner .mouth {
   border-radius: 50%;
   position: absolute;
-  top: 65%;
+  top: 68%;
   left: 53%;
   z-index: 50;
   height: 3%;
@@ -183,7 +179,7 @@ main {
 #container .kirby_content .kirby_inner .tears {
   top: 57%;
   right: 27%;
-  display: none;
+  display: block;
   width: 0%;
   height: 0%;
   background: var(--waterblue);
@@ -193,7 +189,7 @@ main {
 #container .kirby_content .kirby_inner .cheek {
   background-color: var(--pinkthree);
   position: absolute;
-  top: 56%;
+  top: 60%;
   left: 16%;
   filter: blur(0.1vw);
   width: 20%;
@@ -209,13 +205,13 @@ main {
 }
 #container .kirby_content .kirby_inner .hand {
   position: absolute;
-  top: 44%;
+  top: 48%;
   left: -15%;
   background: linear-gradient(-155deg, var(--pinktwo) 70%, var(--pink));
   border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
   width: 30%;
   padding: 30% 0 0;
-  box-shadow: 0 0 0 0.05vw var(--black);
+  box-shadow: 0 0 0 0.1vw var(--black);
   transform: rotate(-19deg);
 }
 #container .kirby_content .kirby_inner .hand:after {
@@ -228,12 +224,12 @@ main {
   transform: rotate(-3deg);
 }
 #container .kirby_content .kirby_inner .hand.two {
-  top: 42%;
+  top: 45%;
   left: auto;
   right: -14%;
   background: linear-gradient(-35deg, var(--pinktwo) 60%, var(--pink));
   transform: rotate(206deg);
-  box-shadow: 0 0 0 0.05vw var(--black);
+  box-shadow: 0 0 0 0.1vw var(--black);
   z-index: -1;
 }
 #container .kirby_content .kirby_inner .hand.two:after {
@@ -247,168 +243,109 @@ main {
   background: var(--red);
   border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
   z-index: -1;
-  box-shadow: inset 0.25vw -1vw 0.1vw 0 var(--brown), 0 0 0 0.05vw var(--black);
+  box-shadow: inset 0.5vw -1vw 0.2vw 0 var(--brown), 0 0 0 0.1vw var(--black);
 }
 #container .kirby_content .foot-right {
   bottom: -6%;
   left: -10%;
   transform: rotate(19deg);
 }
+#container .kirby_content .foot-center {
+  right: 15%;
+  bottom: -18%;
+  transform: rotate(20deg);
+  animation: foot-mov-2 .1s ease-in-out infinite;
+}
 #container .kirby_content .foot-left {
   right: -10%;
   bottom: -7%;
   transform: rotate(15deg);
+  animation: foot-mov-3 .1s ease-in-out infinite;
 }
 
 /**
-* remove hover
+* one checked
 **/
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .eye:after{
-  display: block;
+input:checked ~ #container .kirby_content .kirby_inner .eye {
+  top: 23%;
 }
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .eye {
-  top: 27%;
+input:checked ~ #container .kirby_content .kirby_inner .cheek {
+  top: 56%;
 }
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .cheek {
-  top: 60%;
+input:checked ~ #container .kirby_content .kirby_inner .mouth {
+  top: 65%;
 }
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .tears {
+input:checked ~ #container .kirby_content .kirby_inner .tears {
   display: none;
 }
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .mouth {
-  top: 68%;
-}
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .hand {
-  top: 48%;
+input:checked ~ #container .kirby_content .kirby_inner .hand {
+  top: 44%;
   transform: rotate(-10deg);
 }
-input[id="switch-type1"]:hover ~ #container .kirby_content .kirby_inner .hand.two {
-  top: 45%;
+input:checked ~ #container .kirby_content .kirby_inner .hand.two {
+  top: 42%;
   transform: rotate(195deg);
 }
 
 /**
-* remove
+* two checked
 **/
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .eye {
-  top: 32%;
-  padding: 25% 0 0;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .eye:after{
-  display: block;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .cheek {
-  top: 64%;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .mouth {
-  top: 72%;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .tears {
-  display: block;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .hand {
-  top: 55%;
-  transform: rotate(-25deg);
-  left: -12%;
-}
-input[id="switch-type1"]:checked ~ #container .kirby_content .kirby_inner .hand.two {
-  top: 49%;
-  transform: rotate(226deg);
-  right: -8%;
-  left: auto;
-}
-
-
-/**
-* noremove hover
-**/
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .eye:after{
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .eye:after{
   content: none;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .eye {
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .eye {
   top: 23%;
-  padding: 30% 0 0;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .cheek {
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .cheek {
   top: 56%;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .mouth {
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .mouth {
+  border-radius: 60% 60% 50% 50% / 60% 60% 50% 50%; 
+  height: 7%;
+  width: 10%;
+  left: 51%;
+}
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .mouth:after {
+  border-radius: 60% 60% 50% 50% / 60% 60% 50% 50%;
+}
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .hand {
+  top: 37%;
+  transform: rotate(2deg);
+}
+input:checked ~ input:checked ~ #container .kirby_content .kirby_inner .hand.two {
+  top: 37%;
+  transform: rotate(180deg);
+}
+
+/**
+* three checked
+**/
+input:checked ~ #container .kirby_content .kirby_inner .eye:after{
+  content: none;
+}
+input:checked ~ #container .kirby_content .kirby_inner .eye {
+  top: 23%;
+}
+input:checked ~ #container .kirby_content .kirby_inner .cheek {
+  top: 56%;
+}
+input:checked ~ #container .kirby_content .kirby_inner .mouth {
   border-radius: 40% 40% 50% 50%/30% 30% 70% 70%; 
   height: 13%;
   width: 15%;
   left: 49%;
   top: 61%;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .tears {
-  display: none;
-}
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .mouth:after {
+input:checked ~ #container .kirby_content .kirby_inner .mouth:after {
   border-radius: 40% 40% 50% 50%/30% 30% 70% 70%;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .hand {
+input:checked ~ #container .kirby_content .kirby_inner .hand {
   top: 27%;
   transform: rotate(16deg);
-  left: -15%;
 }
-input[id="switch-type2"]:hover ~ #container .kirby_content .kirby_inner .hand.two {
+input:checked ~ #container .kirby_content .kirby_inner .hand.two {
   top: 25%;
   transform: rotate(164deg);
-  right: -14%;
-  left: auto;
-}
-
-/**
-* noremove checked
-**/
-input[id="switch-type2"]:checked ~ #container .kirby_content {
-  -webkit-animation: move2 1s ease-in-out infinite;
-  animation: move2 1s ease-in-out infinite;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .eye:after{
-  content: none;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .eye {
-  top: 23%;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .cheek {
-  top: 56%;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .mouth {
-  border-radius: 40% 40% 50% 50%/20% 20% 70% 70%;
-  height: 17%;
-  width: 19%;
-  left: 46%;
-  top: 59%;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .tears {
-  display: none;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .mouth:after {
-  border-radius: 40% 40% 50% 50%/30% 30% 70% 70%;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .hand {
-  top: 15%;
-  left: -12%;
-  transform: rotate(18deg);
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .kirby_inner .hand.two {
-  top: 15%;
-  left: auto;
-  transform: rotate(164deg);
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .foot-right {
-  bottom: -6%;
-  left: -10%;
-  transform: rotate(19deg);
-  -webkit-animation: move3 1s ease-in-out infinite;
-          animation: move3 1s ease-in-out infinite;
-}
-input[id="switch-type2"]:checked ~ #container .kirby_content .foot-left {
-  right: -10%;
-  bottom: -7%;
-  transform: rotate(15deg);
-  -webkit-animation: move4 1s ease-in-out infinite;
-          animation: move4 1s ease-in-out infinite;
 }
 
 
@@ -551,38 +488,3 @@ input[id="switch-type2"]:checked ~ #container .kirby_content .foot-left {
     height: 45%;
   }
 } 
-@keyframes move {
-  0% {
-    width: 200px;
-    padding: 1rem 0;
-    background-color: var(--pinktwo);
-    color: var(--white);
-  }  
-  50% {
-    width: 220px;
-    padding: 1.5rem 0;
-    background-color: var(--pink);
-    color: var(--white);
-  }
-  100% {
-    width: 200px;
-    padding: 1rem 0;
-    background-color: var(--white);
-    color: var(--pinktwo);
-  }
-}
-@keyframes move2 {
-  0% { top: 55%; } 
-  50% { top: 45%; }
-  100% { top: 55%; }
-}
-@keyframes move3 {
-  0% { bottom: -6%; transform: rotate(19deg);} 
-  50% { bottom: -4%; transform: rotate(38deg);}
-  100% { bottom: -6%; transform: rotate(19deg);}
-}
-@keyframes move4 {
-  0% { bottom: -7%; transform: rotate(15deg);} 
-  50% { bottom: -2%; transform: rotate(-2deg);}
-  100% { bottom: -7%; transform: rotate(15deg);}
-}

@@ -1,0 +1,61 @@
+@charset 'UTF-8';
+
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes adjust-pos {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+
+:root {
+  animation: adjust-pos linear both;
+  animation-timeline: scroll(root);
+}
+
+#debug {
+  counter-reset: scroll-position calc(var(--scroll-position) * 100);
+  
+  [data-id="--scroll-position"]::after {
+    content: counter(scroll-position);
+  }
+
+}
+
+#debug {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  
+  & li {
+    list-style: none;
+  }
+}
+
+main {
+  overflow-y: visible;
+  color: #ccc;
+}
+
+body {
+  padding: 2rem;
+  color: #333;
+  font-style: italic;
+}
+p {
+  margin: 0 0 2rem 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
