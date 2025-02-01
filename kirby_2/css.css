@@ -82,11 +82,11 @@ main {
   animation: kirbymove .25s ease-in-out infinite;
 }
 #container .kirby_content .kirby_inner {
-  background: linear-gradient(135deg, var(--pinktwo) 70%, var(--pink));
+  background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
   border-radius: 50%;
   width: 100%;
   padding: 100% 0 0;
-  box-shadow: 0 0 0 0.05vw var(--black);
+  /*box-shadow: 0 0 0 0.05vw var(--black);*/
 }
 #container .kirby_content .kirby_inner .tears,
 #container .kirby_content .kirby_inner .eye,
@@ -138,14 +138,14 @@ main {
   transform: rotate(60deg);
   left: -33%;
   padding: 130% 0 0;
-  background-image: linear-gradient(90deg, var(--pinktwo) 0 95%, var(--black) 95% 100%);
+  background-image: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
 }
 #container .kirby_content .kirby_inner .eye.two {
   left: 61%;
 }
 #container .kirby_content .kirby_inner .eye.two:after {
   transform: rotate(-60deg);
-  background-image: linear-gradient(-90deg, var(--pinktwo) 0 95%, var(--black) 95% 100%);
+  background-image: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
   left: 35%;
 }
 #container .kirby_content .kirby_inner .tears {
@@ -217,29 +217,20 @@ main {
   position: absolute;
   top: 48%;
   left: -15%;
-  background: linear-gradient(-155deg, var(--pinktwo) 70%, var(--pink));
+  background: linear-gradient(116deg, #f8b6c7 38%, #ff99b2);
   border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
   width: 30%;
   padding: 30% 0 0;
-  box-shadow: 0 0 0 0.05vw var(--black);
+  /* box-shadow: 0 0 0 0.05vw var(--black);*/
   transform: rotate(-19deg);
-}
-#container .kirby_content .kirby_inner .hand:after {
-  background: var(--pinktwo);
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: -20%;
-  transform: rotate(-3deg);
 }
 #container .kirby_content .kirby_inner .hand.two {
   top: 45%;
   left: auto;
   right: -14%;
-  background: linear-gradient(-35deg, var(--pinktwo) 60%, var(--pink));
+  background: linear-gradient(-35deg, #f8b6c7 38%, #ff99b2);
   transform: rotate(206deg);
-  box-shadow: 0 0 0 0.05vw var(--black);
+  /*box-shadow: 0 0 0 0.05vw var(--black);*/
   z-index: -1;
 }
 #container .kirby_content .kirby_inner .hand.two:after {
@@ -253,7 +244,7 @@ main {
   background: var(--red);
   border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
   z-index: -1;
-  box-shadow: inset 0.5vw -1vw 0.2vw 0 var(--brown), 0 0 0 0.05vw var(--black);
+  /*box-shadow: inset 0.5vw -1vw 0.2vw 0 var(--brown), 0 0 0 0.05vw var(--black);*/
 }
 #container .kirby_content .foot-right {
   bottom: -6%;
