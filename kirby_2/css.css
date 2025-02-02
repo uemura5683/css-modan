@@ -1,7 +1,3 @@
-@charset 'UTF-8';
-/**
-* common
-**/
 :root {
   --gray: #666;
   --white: #fff;
@@ -14,39 +10,31 @@
   --waterblue: #8ed3dd;
 }
 body {
-  padding:0;
-  margin:0;
+  padding: 0px;
+  margin: 0px;
   background: var(--white);
 }
-h1 {
-  text-align: center;
-  font-weight: normal;
-  border-top: 1px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
-  padding: 10px 0;
-  font-size: 16px;
+main {
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(-2rem + 100vh);
 }
-input[type=checkbox] {
-  border: 1px solid var(--pink);
-  -webkit-appearance: none;
-          appearance: none;
-  right: 0;
-  bottom: 0;
-  left: 0;
+::before, ::after {
+  content: "";
+}
+#switch-type {
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   height: 30px;
   width: 30px;
-  margin-right: 10px;
-  transition: all .15s ease-out 0s;
-  color: var(--white);
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  background-color: var(--white);
+  margin: 0 10px 0 0;
   position: relative;
+  display: none;
 }
-input[type=checkbox]:before {
+#switch-type::before {
   display: block;
-  transition: all ease-out 250ms;
+  transition: 250ms ease-out;
   position: absolute;
   box-sizing: border-box;
   top: 4px;
@@ -57,21 +45,42 @@ input[type=checkbox]:before {
   border-bottom: 2px solid var(--pink);
   border-right: 2px solid var(--pink);
 }
-input[type=checkbox]:checked:before {
+#switch-type:checked::before {
   transform: rotate(40deg) scale(1);
 }
-main {
-  margin: 1rem;
-  width: calc(100% - 2rem);
-  height: calc(100vh - 2rem);
+#switch-type ~ label[for="switch-type"] {
+  display: inline-block;
+  height: 30px;
+  vertical-align: top;
+  line-height: 30px;
+  padding: 10px;
+  border: 2px solid var(--pinktwo);
+  border-radius: 1vw;
+  cursor: pointer;
+  background: #ffe0e8;
+  color: var(--pink);
+  box-shadow: .3vw .3vw .1vw 0;
+  position: absolute;
+  bottom: 1vw;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
 }
-*:before,
-*:after {
-  content: "";
+#switch-type ~label[for="switch-type"]:after {
+  content: "ごめん！今日は一緒に遊べない！";  
 }
-/**
-* kirby
-**/
+#switch-type ~label[for="switch-type"]:before {
+  content: '';
+  border: 1px solid var(--pink);
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  transition: 0.15s ease-out;
+  background-color: var(--white);
+  margin: -5px 5px 0 0;
+  vertical-align: middle;
+  line-height: 15px;
+}
 #container .kirby_content {
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
@@ -79,44 +88,39 @@ main {
   left: 50%;
   width: 25%;
   height: auto;
-  animation: kirbymove .25s ease-in-out infinite;
+  animation: 0.25s ease-in-out 0s infinite normal none running kirbymove;
+  opacity: .8;
 }
 #container .kirby_content .kirby_inner {
   background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
   border-radius: 50%;
   width: 100%;
-  padding: 100% 0 0;
-  /*box-shadow: 0 0 0 0.05vw var(--black);*/
+  padding: 100% 0px 0px;
 }
-#container .kirby_content .kirby_inner .tears,
-#container .kirby_content .kirby_inner .eye,
-#container .kirby_content .kirby_inner .mouth,
-#container .kirby_content .kirby_inner .cheek,
-#container .kirby_content .kirby_inner .hand,
-#container .kirby_content .kirby_inner .foot {
+#container .kirby_content .kirby_inner .tears, #container .kirby_content .kirby_inner .eye, #container .kirby_content .kirby_inner .mouth, #container .kirby_content .kirby_inner .cheek, #container .kirby_content .kirby_inner .hand, #container .kirby_content .kirby_inner .foot {
   position: absolute;
-  transition: all ease-in-out .3s;
+  transition: 0.3s ease-in-out;
 }
 #container .kirby_content .kirby_inner .eye {
   width: 14%;
-  padding: 33% 0 0;
+  padding: 33% 0px 0px;
   background: var(--black);
   border-radius: 50%;
   top: 27%;
   left: 37%;
-  animation: eye 5s ease-out infinite;
-} 
+  animation: 5s ease-out 0s infinite normal none running eye;
+}
 #container .kirby_content .kirby_inner .eye_inner {
-  background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+  background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   border-radius: 50%;
   width: 100%;
-  padding: 65% 0 0;
+  padding: 65% 0px 0px;
   transform: rotate(-90deg);
   bottom: 15%;
   position: absolute;
-  animation: eye-inner 5s ease-out infinite;
+  animation: 5s ease-out 0s infinite normal none running eye-inner;
 }
-#container .kirby_content .kirby_inner .eye:before {
+#container .kirby_content .kirby_inner .eye::before {
   background-color: var(--white);
   position: absolute;
   width: 65%;
@@ -126,9 +130,9 @@ main {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  animation: eye-before 5s ease-out infinite;
+  animation: 5s ease-out 0s infinite normal none running eye-before;
 }
-#container .kirby_content .kirby_inner .eye:after {
+#container .kirby_content .kirby_inner .eye::after {
   width: 100%;
   height: auto;
   display: block;
@@ -137,13 +141,13 @@ main {
   z-index: 1111;
   transform: rotate(60deg);
   left: -33%;
-  padding: 130% 0 0;
+  padding: 130% 0px 0px;
   background-image: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
 }
 #container .kirby_content .kirby_inner .eye.two {
   left: 61%;
 }
-#container .kirby_content .kirby_inner .eye.two:after {
+#container .kirby_content .kirby_inner .eye.two::after {
   transform: rotate(-60deg);
   background-image: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
   left: 35%;
@@ -155,43 +159,42 @@ main {
   width: 0%;
   height: 0%;
   background: var(--waterblue);
-  border-radius: 70% 70% 50% 50%/70% 70% 50% 50%;
-  animation: tears 5s ease-out infinite;
+  border-radius: 70% 70% 50% 50%;
+  animation: 5s ease-out 0s infinite normal none running tears;
 }
 #container .kirby_content .kirby_inner .mouth {
-  border-radius: 50%;
   position: absolute;
   top: 68%;
   left: 53%;
   z-index: 50;
   height: 3%;
   width: 5%;
-  border-radius: 60% 60% 50% 50%/60% 60% 50% 50%;
+  border-radius: 60% 60% 50% 50%;
   background: var(--brown);
-  animation: mouthmove 1s ease-in-out infinite alternate;
+  animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
 }
-#container .kirby_content .kirby_inner .mouth:after {
+#container .kirby_content .kirby_inner .mouth::after {
   width: 100%;
   height: 100%;
-  padding: 0% 0 0 0;
+  padding: 0% 0px 0px;
   position: absolute;
   background: var(--white);
   filter: blur(2vw);
   will-change: filter;
   z-index: 500;
-  border-radius: 60% 60% 50% 50%/60% 60% 50% 50%;
-  right: 0;
+  border-radius: 60% 60% 50% 50%;
+  right: 0px;
   bottom: 0%;
   opacity: 0;
-  animation: 1s linear infinite mokumoku 1s;
+  animation: 1s linear 1s infinite normal none running mokumoku;
 }
-#container .kirby_content .kirby_inner .mouth:before {
+#container .kirby_content .kirby_inner .mouth::before {
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
   height: 70%;
-  border-radius: 40% 40% 50% 50%/40% 40% 70% 70%;
+  border-radius: 40% 40% 50% 50% / 40% 40% 70% 70%;
   background: var(--pinkthree);
   display: block;
   position: absolute;
@@ -217,34 +220,32 @@ main {
   position: absolute;
   top: 48%;
   left: -15%;
-  background: linear-gradient(116deg, #f8b6c7 38%, #ff99b2);
-  border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+  background: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
+  border-radius: 60% 40% 40% 60% / 60% 40%;
   width: 30%;
-  padding: 30% 0 0;
-  /* box-shadow: 0 0 0 0.05vw var(--black);*/
+  padding: 30% 0px 0px;
   transform: rotate(-19deg);
 }
 #container .kirby_content .kirby_inner .hand.two {
   top: 45%;
   left: auto;
   right: -14%;
-  background: linear-gradient(-35deg, #f8b6c7 38%, #ff99b2);
+  background: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
   transform: rotate(206deg);
-  /*box-shadow: 0 0 0 0.05vw var(--black);*/
   z-index: -1;
 }
-#container .kirby_content .kirby_inner .hand.two:after {
+#container .kirby_content .kirby_inner .hand.two::after {
   right: -20%;
   transform: rotate(11deg);
 }
-#container .kirby_content [class*='foot'] {
+#container .kirby_content [class*="foot"] {
   width: 50%;
   height: 35%;
   position: absolute;
   background: var(--red);
+  background: linear-gradient(0deg, var(--brown), var(--red) 20%, #cf472c);
   border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
   z-index: -1;
-  /*box-shadow: inset 0.5vw -1vw 0.2vw 0 var(--brown), 0 0 0 0.05vw var(--black);*/
 }
 #container .kirby_content .foot-right {
   bottom: -6%;
@@ -255,223 +256,214 @@ main {
   right: 15%;
   bottom: -18%;
   transform: rotate(20deg);
-  animation: foot-mov-2 .1s ease-in-out infinite;
+  animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-2;
 }
 #container .kirby_content .foot-left {
   right: -10%;
   bottom: -7%;
   transform: rotate(15deg);
-  animation: foot-mov-3 .1s ease-in-out infinite;
+  animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
 }
-
-
-/**
-* checked
-**/
-input:checked ~ #container .kirby_content .kirby_inner .eye:after{
+#switch-type:checked ~ label[for="switch-type"]:after {
+  content: "一緒に遊ぼう！";  
+}
+#switch-type:checked ~label[for="switch-type"]:before {
+  content: '✔';
+}
+#switch-type:checked ~ #container .kirby_content .kirby_inner .eye::after {
   content: none;
 }
-input:checked ~ #container .kirby_content .kirby_inner .eye {
+#switch-type:checked ~ #container .kirby_content .kirby_inner .eye {
   top: 23%;
 }
-input:checked ~ #container .kirby_content .kirby_inner .tears {
+#switch-type:checked ~ #container .kirby_content .kirby_inner .tears {
   display: none;
 }
-input:checked ~ #container .kirby_content .kirby_inner .cheek {
+#switch-type:checked ~ #container .kirby_content .kirby_inner .cheek {
   top: 56%;
 }
-input:checked ~ #container .kirby_content .kirby_inner .mouth {
-  border-radius: 35% 35% 50% 50%/30% 30% 70% 70%;
+#switch-type:checked ~ #container .kirby_content .kirby_inner .mouth {
+  border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
   height: 16%;
   width: 21%;
   left: 46%;
   top: 59%;
 }
-input:checked ~ #container .kirby_content .kirby_inner .mouth:after {
-  border-radius: 40% 40% 50% 50%/30% 30% 70% 70%;
+#switch-type:checked ~ #container .kirby_content .kirby_inner .mouth::after {
+  border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
 }
-input:checked ~ #container .kirby_content .kirby_inner .hand {
+#switch-type:checked ~ #container .kirby_content .kirby_inner .hand {
   top: 27%;
   transform: rotate(16deg);
 }
-input:checked ~ #container .kirby_content .kirby_inner .hand.two {
+#switch-type:checked ~ #container .kirby_content .kirby_inner .hand.two {
   top: 25%;
   transform: rotate(164deg);
 }
-
-
-/**
-* media query
-**/
 @media (max-width: 767px) {
   #container .kirby_content {
-    width: 50%;
+      width: 50%;
   }
 }
-
-/**
-* animation
-**/
 @keyframes tears {
   0% {
-    width: 0;
-    height: 0;
-    right: 30%;
-    top: 57%;
-    opacity: 1;
+      width: 0px;
+      height: 0px;
+      right: 30%;
+      top: 57%;
+      opacity: 1;
   }
   51% {
-    width: 3%;
-    height: 5%;
-    right: 27%;
-    top: 57%;
-    opacity: 1;
+      width: 3%;
+      height: 5%;
+      right: 27%;
+      top: 57%;
+      opacity: 1;
   }
   100% {
-    width: 3%;
-    height: 5%;
-    top: 100%;
-    opacity: 0;
+      width: 3%;
+      height: 5%;
+      top: 100%;
+      opacity: 0;
   }
 }
-
 @keyframes eye {
   0% {
-    background: var(--black);
+      background: var(--black);
   }
   51% {
-    background: var(--black);
+      background: var(--black);
   }
   51.5% {
-    background: transparent;
+      background: transparent;
   }
   52% {
-    background: var(--black);
+      background: var(--black);
   }
   52.5% {
-    background: transparent;
+      background: transparent;
   }
   53% {
-    background: var(--black);
+      background: var(--black);
   }
   98% {
-    background: var(--black);
+      background: var(--black);
   }
   98.5% {
-    background: transparent;
+      background: transparent;
   }
   99% {
-    background: var(--black);
+      background: var(--black);
   }
   99.5% {
-    background: transparent;
+      background: transparent;
   }
   100% {
-    background: var(--black);
+      background: var(--black);
   }
 }
 
 @keyframes eye-inner {
   0% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   51% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   51.5% {
-    background: transparent;
+      background: transparent;
   }
   52% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   52.5% {
-    background: transparent;
+      background: transparent;
   }
   53% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   98% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   98.5% {
-    background: transparent;
+      background: transparent;
   }
   99% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
   99.5% {
-    background: transparent;
+      background: transparent;
   }
   100% {
-    background: radial-gradient(circle at 100%, #000, #000 50%, #1c22d5 75%, #1c22d5 75%);
+      background: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
   }
 }
 
 @keyframes eye-before {
   0% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   51% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   51.5% {
-    top: 62%;
-    background-color: var(--black);
-    width: 200%;
-    height: 2%;
+      top: 62%;
+      background-color: var(--black);
+      width: 200%;
+      height: 2%;
   }
   52% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   52.5% {
-    top: 62%;
-    background-color: var(--black);
-    width: 200%;
-    height: 2%;
+      top: 62%;
+      background-color: var(--black);
+      width: 200%;
+      height: 2%;
   }
   53% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   98% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   98.5% {
-    top: 64%;
-    background-color: var(--black);
-    width: 200%;
-    height: 2%;
+      top: 64%;
+      background-color: var(--black);
+      width: 200%;
+      height: 2%;
   }
   99% {
-    top: 5%;
-    background-color: var(--white);
-    width: 65%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 65%;
+      height: 45%;
   }
   99.5% {
-    top: 62%;
-    background-color: var(--black);
-    width: 200%;
-    height: 2%;
+      top: 62%;
+      background-color: var(--black);
+      width: 200%;
+      height: 2%;
   }
   100% {
-    top: 5%;
-    background-color: var(--white);
-    width: 60%;
-    height: 45%;
+      top: 5%;
+      background-color: var(--white);
+      width: 60%;
+      height: 45%;
   }
-} 
+}
