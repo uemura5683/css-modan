@@ -12,41 +12,21 @@
 body {
   padding: 0px;
   margin: 0px;
-  background: var(--white);
-}
-main {
-  margin: 1rem;
-  width: calc(100% - 2rem);
-  height: calc(-2rem + 100vh);
-}
-::before, ::after {
-  content: "";
 }
 #switch-type {
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  height: 30px;
-  width: 30px;
-  margin: 0 10px 0 0;
-  position: relative;
   display: none;
 }
 #switch-type::before {
+  content: "";
   display: block;
   transition: 250ms ease-out;
   position: absolute;
-  box-sizing: border-box;
   top: 4px;
   left: 8px;
   width: 10px;
   height: 14px;
-  transform: rotate(40deg) scale(0);
-  border-bottom: 2px solid var(--pink);
-  border-right: 2px solid var(--pink);
-}
-#switch-type:checked::before {
-  transform: rotate(40deg) scale(1);
+  border-bottom: .2vw solid var(--pink);
+  border-right: .2vw solid var(--pink);
 }
 #switch-type ~ label[for="switch-type"] {
   display: inline-block;
@@ -65,6 +45,7 @@ main {
   left: 50%;
   z-index: 100;
   transform: translateX(-50%);
+  width: max-content;
 }
 #switch-type ~label[for="switch-type"]:after {
   content: "ごめん！今日は一緒に遊べない！";  
@@ -121,6 +102,7 @@ main {
   animation: 5s ease-out 0s infinite normal none running eye-inner;
 }
 #container .kirby_content .kirby_inner .eye::before {
+  content: "";
   background-color: var(--white);
   position: absolute;
   width: 65%;
@@ -133,13 +115,12 @@ main {
   animation: 5s ease-out 0s infinite normal none running eye-before;
 }
 #container .kirby_content .kirby_inner .eye::after {
+  content: "";
   width: 100%;
-  height: auto;
-  display: block;
   position: absolute;
-  top: -30%;
-  z-index: 1111;
+  z-index: 2;
   transform: rotate(60deg);
+  top: -30%;
   left: -33%;
   padding: 130% 0px 0px;
   background-image: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
@@ -155,7 +136,6 @@ main {
 #container .kirby_content .kirby_inner .tears {
   top: 57%;
   right: 27%;
-  display: block;
   width: 0%;
   height: 0%;
   background: var(--waterblue);
@@ -163,7 +143,6 @@ main {
   animation: 5s ease-out 0s infinite normal none running tears;
 }
 #container .kirby_content .kirby_inner .mouth {
-  position: absolute;
   top: 68%;
   left: 53%;
   z-index: 50;
@@ -173,22 +152,8 @@ main {
   background: var(--brown);
   animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
 }
-#container .kirby_content .kirby_inner .mouth::after {
-  width: 100%;
-  height: 100%;
-  padding: 0% 0px 0px;
-  position: absolute;
-  background: var(--white);
-  filter: blur(2vw);
-  will-change: filter;
-  z-index: 500;
-  border-radius: 60% 60% 50% 50%;
-  right: 0px;
-  bottom: 0%;
-  opacity: 0;
-  animation: 1s linear 1s infinite normal none running mokumoku;
-}
 #container .kirby_content .kirby_inner .mouth::before {
+  content: "";
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
@@ -201,7 +166,6 @@ main {
 }
 #container .kirby_content .kirby_inner .cheek {
   background-color: var(--pinkthree);
-  position: absolute;
   top: 60%;
   left: 20%;
   filter: blur(0.1vw);
@@ -217,7 +181,6 @@ main {
   transform: rotate(10deg);
 }
 #container .kirby_content .kirby_inner .hand {
-  position: absolute;
   top: 48%;
   left: -15%;
   background: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
@@ -234,10 +197,6 @@ main {
   transform: rotate(206deg);
   z-index: -1;
 }
-#container .kirby_content .kirby_inner .hand.two::after {
-  right: -20%;
-  transform: rotate(11deg);
-}
 #container .kirby_content [class*="foot"] {
   width: 50%;
   height: 35%;
@@ -252,29 +211,24 @@ main {
   left: -10%;
   transform: rotate(19deg);
 }
-#container .kirby_content .foot-center {
-  right: 15%;
-  bottom: -18%;
-  transform: rotate(20deg);
-  animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-2;
-}
 #container .kirby_content .foot-left {
   right: -10%;
   bottom: -7%;
   transform: rotate(15deg);
   animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
 }
+
 #switch-type:checked ~ label[for="switch-type"]:after {
   content: "一緒に遊ぼう！";  
 }
 #switch-type:checked ~label[for="switch-type"]:before {
   content: '✔';
 }
-#switch-type:checked ~ #container .kirby_content .kirby_inner .eye::after {
-  content: none;
-}
 #switch-type:checked ~ #container .kirby_content .kirby_inner .eye {
   top: 23%;
+}
+#switch-type:checked ~ #container .kirby_content .kirby_inner .eye::after {
+  content: none;
 }
 #switch-type:checked ~ #container .kirby_content .kirby_inner .tears {
   display: none;
@@ -290,6 +244,7 @@ main {
   top: 59%;
 }
 #switch-type:checked ~ #container .kirby_content .kirby_inner .mouth::after {
+  content: "";
   border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
 }
 #switch-type:checked ~ #container .kirby_content .kirby_inner .hand {
@@ -300,6 +255,7 @@ main {
   top: 25%;
   transform: rotate(164deg);
 }
+
 @media (max-width: 767px) {
   #container .kirby_content {
       width: 50%;
