@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>テキスト下線を作るサンプル</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>テキストに下線を引く方法</h1>
+      <p class="mobileAlert">PCサイズ画面での閲覧推奨です。<br>画面幅小さいと、若干見づらいところがあると思います。ご了承ください。</p>
+      <section id="a">
+        <h2>A. <code>text-decoration</code>でシンプルに下線を引く</h2>
+        <p class="textWrapper">むかし、ある<span class="textDecoration">霧のふかい朝</span>でした。</p>
+        <p class="textWrapper">むかし、ある<span class="textDecorationMarker">霧のふかい朝</span>でした。</p>
+        <h3>欧文書体では、下線と交差する部分が綺麗</h3>
+        <p class="textWrapper">
+          sample: <span class="textDecoration textDecoration__smallOffset">Typography</span>
+        </p>
+        <h3>3点リーダーは含まない</h3>
+        <p class="textWrapper">
+          <span class="textOverflow">
+            <span class="textDecoration">王子はみんながちょっといなくなったひまに、玻璃でたたんだ自分のお室から、ひょいっと芝生へ飛びおりました。</span>
+          </span>
+        </p>
+      </section>
+      <section id="b">
+        <h2>B. 3点リーダーがある時は<code>border-bottom</code>で下線を引く</h2>
+        <p class="textWrapper">むかし、ある<span class="borderBottom">霧のふかい朝</span>でした。</p>
+        <p class="textWrapper">
+          <span class="lineClamp1">
+            <span class="borderBottom">王子はみんながちょっといなくなったひまに、玻璃でたたんだ自分のお室から、ひょいっと芝生へ飛びおりました。</span>
+          </span>
+        </p>
+        <p class="textWrapper">
+          <span class="lineClamp3">
+            <span
+              class="borderBottom">そして蜂雀のついた青い大きな帽子を急いでかぶって、どんどん向こうへかけ出しました。「王子さま。王子さま。どちらにいらっしゃいますか。はて、王子さま」と、年よりのけらいが、室の中であっちを向いたりこっちを向いたりして叫けんでいるようすでした。王子は霧の中で、はあはあ笑って立ちどまり、ちょっとそっちを向きましたが、またすぐ向き直って音をたてないように剣のさやをにぎりながら、どんどんどんどん大臣の家の方へかけました。</span>
+          </span>
+        </p>
+        <h3>3点リーダーの作り方の違いによる下線の表示結果</h3>
+        <div class="textWrapperUnit">
+          <div class="textWrapperUnit_item">
+            <h4>●<code>-webkit-line-clamp: 1;</code>の場合</h4>
+            <p class="textWrapper">
+              <span class="lineClamp1">
+                <span
+                  class="borderBottom">いつか霧がすうっとうすくなって、お日さまの光が黄金色に透きとおってきました。やがて風が霧をふっと払いましたので、露はきらきら光り、きつねのしっぽのような茶色の草穂は一面波を立てました。</span>
+              </span>
+            </p>
+            <p class="textWrapper">
+              <span class="lineClamp1">
+                <span class="borderBottom">One thing was certain, that the white kitten had had nothing to do with it:—it
+                  was the black kitten's fault entirely.</span>
+              </span>
+            </p>
+          </div>
+          <div class="textWrapperUnit_item">
+            <h4>●<code>text-overflow: ellipsis;</code>の場合</h4>
+            <p class="textWrapper">
+              <span class="textOverflow">
+                <span
+                  class="borderBottom">いつか霧がすうっとうすくなって、お日さまの光が黄金色に透きとおってきました。やがて風が霧をふっと払いましたので、露はきらきら光り、きつねのしっぽのような茶色の草穂は一面波を立てました。</span>
+              </span>
+            </p>
+            <p class="textWrapper">
+              <span class="textOverflow">
+                <span class="borderBottom">One thing was certain, that the white kitten had had nothing to do with it:—it
+                  was the black kitten's fault entirely.</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="c">
+        <h2>C. <code>background-image</code>で下線を引く</h2>
+        <h3><code>background-image: linear-gradient();</code>による下線の作り方2パターン</h3>
+        <h4>1: 3点リーダーまで含むマーカー風な下線</h4>
+        <p class="textWrapper">
+          <span class="lineClamp3">
+            <span
+              class="simpleBackgroundImage">りんどうの花は刻まれた天河石と、打ち劈かれた天河石で組み上がり、その葉はなめらかな硅孔雀石でできていました。黄色な草穂はかがやく猫睛石、いちめんのうめばちそうの花びらはかすかな虹を含む乳色の蛋白石、とうやくの葉は碧玉、そのつぼみは紫水晶の美しいさきを持っていました。</span>
+          </span>
+        </p>
+        <h4>2: グラデーションの下線</h4>
+        <p class="textWrapper">
+          <span class="lineClamp3">
+            <span
+              class="gradationBackgroundImage">りんどうの花は刻まれた天河石と、打ち劈かれた天河石で組み上がり、その葉はなめらかな硅孔雀石でできていました。黄色な草穂はかがやく猫睛石、いちめんのうめばちそうの花びらはかすかな虹を含む乳色の蛋白石、とうやくの葉は碧玉、そのつぼみは紫水晶の美しいさきを持っていました。</span>
+          </span>
+        </p>
+      </section>
+      <section id="d">
+        <h2>D. <code>background-size</code>で線の横幅を変えるアニメーション</h2>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper">
+          すると<span class="backgroundImage">小さなきれいな声</span>で、誰か歌いだしたものがあります。
+        </p>
+        <h3><code>box-decoration-break</code>の値によるアニメーションの違い</h3>
+        <h4><code>slice</code>の場合</h4>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper textWrapper__small">
+          <span class="backgroundImage backgroundImage__slice">
+            「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+        <h4><code>clone</code>の場合</h4>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper textWrapper__small">
+          <span
+            class="backgroundImage backgroundImage__clone">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+      </section>
+      <section id="e">
+        <h2>E. CSS疑似要素で作る下線で、自由度の高いアニメーションを</h2>
+        <h3>単語・1行以内はOK</h3>
+        <p class="textWrapper textWrapper__lineClamp1">その<span class="pseudoElement">宝石の雨</span>は、草に落ちてカチンカチンと鳴りました。
+        </p>
+        <h3>複数行はNG</h3>
+        <p class="textWrapper"><span
+            class="pseudoElement">その時、風が来て、りんどうの花はツァリンとからだを曲げて、その天河石の花の盃を下の方に向けましたので、トパァスはツァラツァランとこぼれて下のすずらんの葉に落ち、それからきらきらころがって草の底の方へもぐって行きました。</span>
+        </p>
+        <h3><code>transform</code>プロパティによるアニメーション</h3>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <div class="textWrapperUnit textWrapperUnit__small">
+          <p class="textWrapper"><span class="pseudoElement pseudoElement__rotate">硅孔雀石</span></p>
+          <p class="textWrapper"><span class="pseudoElement pseudoElement__translate">猫睛石</span></p>
+          <p class="textWrapper"><span class="pseudoElement pseudoElement__scale">蛋白石</span></p>
+        </div>
+      </section>
+      <section id="f">
+        <h2>F. 下線用のタグを作る方法で、複数行でも自由度の高いアニメーションを</h2>
+        <h3><code>clip-path</code>によるアニメーション</h3>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper textWrapper__small">
+          <span class="clipPath clipPath__fromLeft textDecoration" aria-hidden="true">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+          <span class="visibleText">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper textWrapper__small textWrapper__centering">
+          <span class="clipPath clipPath__centering textDecoration" aria-hidden="true">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+          <span class="visibleText visibleText__centering">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+        <h3><code>transform: translateY()</code>によるアニメーション</h3>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper textWrapper__small">
+          <span class="transformTranslateY textDecoration" aria-hidden="true">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+          <span class="visibleText">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+      </section>
+      <section id="add">
+        <h2>おまけ</h2>
+        <h3>画像なら<code>background-image: url();</code></h3>
+        <p class="textWrapper">むかし、ある<span class="starLine">霧のふかい朝</span>でした。</p>
+        <p class="textWrapper">
+          <span class="lineClamp3">
+            <span
+                class="starLine">そして蜂雀のついた青い大きな帽子を急いでかぶって、どんどん向こうへかけ出しました。「王子さま。王子さま。どちらにいらっしゃいますか。はて、王子さま」と、年よりのけらいが、室の中であっちを向いたりこっちを向いたりして叫けんでいるようすでした。王子は霧の中で、はあはあ笑って立ちどまり、ちょっとそっちを向きましたが、またすぐ向き直って音をたてないように剣のさやをにぎりながら、どんどんどんどん大臣の家の方へかけました。</span>
+          </span>
+        </p>
+        <p class="hoverHere">▼ ホバーしてご確認ください</p>
+        <p class="textWrapper">
+          <span class="clipPath clipPath__fromLeft">
+            <span class="starLine" aria-hidden="true">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+          </span>
+          <span class="visibleText">「ポッシャリ、ポッシャリ、ツイツイ、トン。<br>はやしのなかにふる霧は、<br>蟻のお手玉、三角帽子の、一寸法師のちいさなけまり」</span>
+        </p>
+      </section>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#a">A. text-decoration</a></li>
+        <li><a href="#b">B. border-bottom</a></li>
+        <li><a href="#c">C. background-image</a></li>
+        <li><a href="#d">D. background-size</a></li>
+        <li><a href="#e">E. CSS疑似要素</a></li>
+        <li><a href="#f">F. 下線用のタグ</a></li>
+        <li><a href="#add">おまけ. 背景画像</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
