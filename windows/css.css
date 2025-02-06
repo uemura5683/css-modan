@@ -1,0 +1,15 @@
+:root {
+  --gray: #666;
+  --white: #fff;
+  --black: #000;
+  --pink: #d77584;
+  --pinktwo: #ff9db5;
+  --brown: #752b42;
+  --pinkthree: #f0608b;
+  --red: #af2d13;
+  --waterblue: #8ed3dd;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
