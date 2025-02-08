@@ -13,6 +13,9 @@ body {
   padding: 0;
   margin: 0;
 }
+audio {
+  display: none;
+}
 
 .windows__bg {
   position: fixed;
@@ -21,6 +24,13 @@ body {
   width: 100%;
   height: 100%;
   background: black;
+  -webkit-animation: fadeout 1s linear 48s infinite;
+          animation: fadeout 1s linear 5s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  z-index: 10;
   .windows__bg--inner {
     position: fixed;
     left: 50%;
@@ -30,79 +40,79 @@ body {
     zoom: 0.5;
     animation:1s linear infinite;
   }
-  .windows__logo {
-    margin: 0 15% 0 0;
-    min-width: 15vw;
-    font-size: 0;
-    transform: skew(-10deg);
-    display: block;
-    position: relative;
-    float: right;
-  }
-  .windows__logo--inner{
-    width: calc(50% - .5vw);
-    height: auto;
-    background-color: white;
-    display: inline-block;
-    padding: calc( 47% - .5vw ) 0 0;
-    position: relative;
-    &::before, &::after {
-      content: '';      
-    }
-    &::before {
-      width: 100%;
-      height: 3vw;
-      position: absolute;
-      top: -2vw;
-      left: 0;
-      border-radius: 100% 60% 0 0;
-    }
-    &::after {
-      width: 100%;
-      height: 3vw;
-      position: absolute;
-      top: calc( 100% - 2vw );
-      left: 0;
-      background-color: black;
-      border: .1vw solid black;
-      border-radius: 100% 60% 0 0;
+}
+.windows__logo {
+  margin: 0 15% 0 0;
+  min-width: 15vw;
+  font-size: 0;
+  transform: skew(-10deg);
+  display: block;
+  position: relative;
+  float: right;
+  & .red{
+    margin: 0 0 2vw;
+    background: linear-gradient(90deg,#de641f,#de832f 20%,#d79d4c 40%,#de8430 60%,#df6420 70%,#bb4d20 80%,#a53624 90%,#a53624);
+    &:before {
+      background: linear-gradient(90deg,#de641f,#de832f 20%,#d79d4c 40%,#de8430 60%,#df6420 70%,#bb4d20 80%,#a53624 90%,#a53624);   
     }
   }
-}
-.windows__bg .windows__logo .red{
-  margin: 0 0 2vw;
-  background: linear-gradient(90deg,#de641f,#de832f 20%,#d79d4c 40%,#de8430 60%,#df6420 70%,#bb4d20 80%,#a53624 90%,#a53624);
-  &:before {
-    background: linear-gradient(90deg,#de641f,#de832f 20%,#d79d4c 40%,#de8430 60%,#df6420 70%,#bb4d20 80%,#a53624 90%,#a53624);   
+  & .green{
+    margin: 0 0 4vw .8vw;
+    transform: rotate(180deg);
+    z-index: 1;
+    background: linear-gradient(90deg,#7faa2a,#85c12d 8%,#85c12d 55%,#7faa2a 60%,#76802f 80%,#4a582a 90%,#4a582a);        
+    &:before {
+      background: linear-gradient(90deg,#7faa2a,#85c12d 8%,#85c12d 55%,#7faa2a 60%,#76802f 80%,#4a582a 90%,#4a582a);   
+    }
   }
-}
-.windows__bg .windows__logo .green{
-  margin: 0 0 4vw .8vw;
-  transform: rotate(180deg);
-  z-index: 1;
-  background: linear-gradient(90deg,#7faa2a,#85c12d 8%,#85c12d 55%,#7faa2a 60%,#76802f 80%,#4a582a 90%,#4a582a);        
-  &:before {
-    background: linear-gradient(90deg,#7faa2a,#85c12d 8%,#85c12d 55%,#7faa2a 60%,#76802f 80%,#4a582a 90%,#4a582a);   
-  }
-}
-.windows__bg .windows__logo .blue{
-  clear: both;
-  top: -1vw;
-  background: linear-gradient(90deg,#2e328e,#5b75b8 8%,#8097cc 30%,#5174b8 60%,#4057a5 70%,#324399 80%,#2e3280 90%,#2e3280);   
-  &:before {
+  & .blue{
+    clear: both;
+    top: -1vw;
     background: linear-gradient(90deg,#2e328e,#5b75b8 8%,#8097cc 30%,#5174b8 60%,#4057a5 70%,#324399 80%,#2e3280 90%,#2e3280);   
+    &:before {
+      background: linear-gradient(90deg,#2e328e,#5b75b8 8%,#8097cc 30%,#5174b8 60%,#4057a5 70%,#324399 80%,#2e3280 90%,#2e3280);   
+    }
   }
-}
-.windows__bg .windows__logo .yellow{
-  margin: 0 0 0 .8vw;
-  transform: rotate(180deg);
-  top: -3vw;
-  background: linear-gradient(90deg,#b39a1c,#dcb125 8%,#dcb125 55%,#b39a1c 60%,#b39a1c 80%,#946625 98%,#959536); 
-  &::before {
+  & .yellow{
+    margin: 0 0 0 .8vw;
+    transform: rotate(180deg);
+    top: -3vw;
     background: linear-gradient(90deg,#b39a1c,#dcb125 8%,#dcb125 55%,#b39a1c 60%,#b39a1c 80%,#946625 98%,#959536); 
+    &::before {
+      background: linear-gradient(90deg,#b39a1c,#dcb125 8%,#dcb125 55%,#b39a1c 60%,#b39a1c 80%,#946625 98%,#959536); 
+    }
   }
 }
-.windows__bg .windows__name {
+.windows__logo--inner{
+  width: calc(50% - .5vw);
+  height: auto;
+  background-color: white;
+  display: inline-block;
+  padding: calc( 47% - .5vw ) 0 0;
+  position: relative;
+  &::before, &::after {
+    content: '';      
+  }
+  &::before {
+    width: 100%;
+    height: 3vw;
+    position: absolute;
+    top: -2vw;
+    left: 0;
+    border-radius: 100% 60% 0 0;
+  }
+  &::after {
+    width: 100%;
+    height: 3vw;
+    position: absolute;
+    top: calc( 100% - 2vw );
+    left: 0;
+    background-color: black;
+    border: .1vw solid black;
+    border-radius: 100% 60% 0 0;
+  }
+}
+.windows__name {
   color: white;
   font-family: sans-serif;
   clear: both;
@@ -113,7 +123,7 @@ body {
     margin: 0;
   }
 }
-.windows__bg .windows__name .windows__name--inner{
+.windows__name .windows__name--inner{
   font-size: 6vw;
   font-weight: bold;
   & span {
@@ -123,7 +133,7 @@ body {
     position: relative;
   }
 }
-.windows__bg .windows__bg--loading {
+.windows__bg--loading {
   width: 20vw;
   height: 2.5vw;
   border: .2vw solid #878787;
@@ -153,6 +163,67 @@ body {
   100% { left: 20vw;}
 }
 
+@keyframes fadeout {
+  0% {
+      opacity: 1;
+  }
+  10% {
+      opacity: .5;
+  }
+  to {
+      opacity: 0;
+      z-index: -1
+  }
+}
+
 label[for="switch-type"] {
   display: none;
+}
+
+#container {
+  background: url(bg.jpg);
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-size: 100%;
+}
+
+.windows-footer {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  & .title-bar {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  & .title-bar-start {
+    font-family: Trebuchet MS;
+    background: linear-gradient(180deg, #1A7228, #208829 8%, #1F8328 40%, #1D7C21 88%, #1E7F24 93%, #1E8024 95%, #1D7C23 96%, #1E642C);
+    padding: 3px 15px 3px 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    font-size: 13px;
+    line-height: 13px;
+    text-shadow: 1px 1px #208621;
+    width: 75px;
+    height: 23px;
+    font-style: italic;
+    color: #fff;
+    border-top: 1px solid #3C8C37;
+    border-left: 1px solid #238E47;
+    border-right: 1px solid #146002;
+    margin-left: -4px;
+  }
+  & .windows__logo {
+    zoom: 0.05;
+    margin: 0 15px 0 0;
+    .windows__logo--inner {
+      &::after {
+          background-color: #1F8328;
+          border: .1vw solid #1F8328;
+      }
+    }
+  }
 }

@@ -9,7 +9,25 @@
   </head>
   <body>
     <main>
-      <div class="windows__bg">
+      <!--
+      <audio controls autoplay>
+        <source src="winxp.ogm">
+      </audio>
+      -->
+      <div
+        style="background: url(desktop.png);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        opacity: 0;
+        z-index: 20;"
+      >
+      </div>
+      <div class="windows__bg" style="display: none;">
         <div class="windows__bg--inner">
           <div class="windows__logo">
               <div class="windows__logo--inner red"></div>
@@ -34,7 +52,20 @@
       </div>
       <div id="container">
         <input type="checkbox" id="switch-type" name="switch">
-        <label for="switch-type"></label>        
+        <label for="switch-type"></label>
+        <footer class="windows-footer">
+          <div class="title-bar bottom-bar">
+            <div class="title-bar title-bar-start">
+              <div class="windows__logo">
+                  <div class="windows__logo--inner red"></div>
+                  <div class="windows__logo--inner green"></div>
+                  <div class="windows__logo--inner blue"></div>
+                  <div class="windows__logo--inner yellow"></div>
+              </div>
+              スタート
+            </div>
+          </div>
+        </footer> 
       </div>
     </main>
   </body>
