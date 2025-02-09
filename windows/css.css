@@ -17,6 +17,14 @@ audio {
   display: none;
 }
 
+#container {
+  background: url(bg.jpg);
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-size: 100%;
+}
+
 .windows__bg {
   position: fixed;
   top: 0;
@@ -122,15 +130,15 @@ audio {
     font-size: 1.8vw;
     margin: 0;
   }
-}
-.windows__name .windows__name--inner{
-  font-size: 6vw;
-  font-weight: bold;
-  & span {
-    color: #c3441d;
-    font-size: 4.8vw;
-    bottom: 2.8vw;
-    position: relative;
+  .windows__name--inner{
+    font-size: 6vw;
+    font-weight: bold;
+    & span {
+      color: #c3441d;
+      font-size: 4.8vw;
+      bottom: 2.8vw;
+      position: relative;
+    }
   }
 }
 .windows__bg--loading {
@@ -175,19 +183,6 @@ audio {
       z-index: -1
   }
 }
-
-label[for="switch-type"] {
-  display: none;
-}
-
-#container {
-  background: url(bg.jpg);
-  width: 100%;
-  height: 100vh;
-  display: block;
-  background-size: 100%;
-}
-
 .windows-footer {
   position: fixed;
   bottom:0;
@@ -215,7 +210,19 @@ label[for="switch-type"] {
     border-left: 1px solid #238E47;
     border-right: 1px solid #146002;
     margin-left: -4px;
+    position: relative;
   }
+  & .windows-start-menu {
+    position: absolute;
+    bottom: 27px;
+    & .title-bar {
+      color: #fff;
+    }
+    & .window-start-menu-inner {
+      display: flex;
+      background: #fff;
+    }
+ }
   & .windows__logo {
     zoom: 0.05;
     margin: 0 15px 0 0;

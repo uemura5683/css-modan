@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-modan</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+      body div {
+        font-size: 1rem;        
+      }
+      #app {
+        margin: 0 auto;
+      }
+      .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+      }  
+      .item {
+        width: calc((100% - 64px) / 3);
+        padding: 16px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: #eee;
+      }
+      .code {
+        font-family: Menlo, monospace;
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      .code-prop {
+        color: #2549cc;
+      }
+      .code-colon {
+        color: #0f0f0f;
+      }
+      .code-value {
+        color: #377b2a;
+      }
+      .column-2 {
+        display: flex;
+        gap: 16px;
+      }
+      .column-2-first {
+        flex-shrink: 0;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>CSSでの文章の折り返し指定</h1>
+      <h2 id="overflow-wrap">overflow-wrap</h2>
+      <div class="wrap">
+        <div class="item">
+          <div style="overflow-wrap: normal;">
+            <p class="code"><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">normal;</span></p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+            <div class="column-2">
+              <p class="column-2-first">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+              <p class="column-2-second">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div style="overflow-wrap: break-word;">
+            <p class="code"><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">break-word;</span></p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+            <div class="column-2">
+              <p class="column-2-first">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+              <p class="column-2-second">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div style="overflow-wrap: anywhere;">
+            <p class="code"><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">anywhere;</span></p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+            <div class="column-2">
+              <p class="column-2-first">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+              <p class="column-2-second">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 id="word-break">word-break</h2>
+      <div class="wrap">
+        <div class="item">
+          <div style="word-break: normal;">
+            <p class="code"><span class="code-prop">wordBreak</span><span class="code-colon">:</span> <span class="code-value">normal;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: break-all;">
+            <p class="code"><span class="code-prop">wordBreak</span><span class="code-colon">:</span> <span class="code-value">break-all;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: keep-all;">
+            <p class="code"><span class="code-prop">wordBreak</span><span class="code-colon">:</span> <span class="code-value">keep-all;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+      </div>
+      <h2 id="line-break">line-break</h2>
+      <div class="wrap">
+        <div class="item">
+          <div style="line-break: auto;">
+            <p class="code"><span class="code-prop">line-break</span><span class="code-colon">:</span> <span class="code-value">auto;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="line-break: anywhere;">
+            <p class="code"><span class="code-prop">line-break</span><span class="code-colon">:</span> <span class="code-value">anywhere;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="line-break: strict;">
+            <p class="code"><span class="code-prop">line-break</span><span class="code-colon">:</span> <span class="code-value">strict;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p>
+          </div>
+        </div>
+      </div>
+      <h2 id="hyphens">hyphens</h2>
+      <div class="wrap">
+        <div class="item">
+          <div style="hyphens: none;">
+            <p class="code"><span class="code-prop">hyphens</span><span class="code-colon">:</span> <span class="code-value">none;</span></p>
+            <p lang="en">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="hyphens: auto;">
+            <p class="code"><span class="code-prop">hyphens</span><span class="code-colon">:</span> <span class="code-value">auto;</span></p>
+            <p lang="en">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="hyphens: manual;">
+            <p class="code"><span class="code-prop">hyphens</span><span class="code-colon">:</span> <span class="code-value">manual;</span></p>
+            <p lang="en">This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+      </div>
+      <h2>word-break と overflow-wrap の組み合わせ</h2>
+      <div class="wrap">
+        <div class="item">
+          <div style="word-break: normal; overflow-wrap: normal;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">normal;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">normal;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: normal; overflow-wrap: break-word;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">normal;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">break-word;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: normal; overflow-wrap: anywhere;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">normal;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">anywhere;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: break-all; overflow-wrap: normal;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">break-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">normal;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: break-all; overflow-wrap: break-word;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">break-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">break-word;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: break-all; overflow-wrap: anywhere;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">break-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">anywhere;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: keep-all; overflow-wrap: normal;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">keep-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">normal;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: keep-all; overflow-wrap: break-word;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">keep-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">break-word;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+        <div class="item">
+          <div style="word-break: keep-all; overflow-wrap: anywhere;">
+            <p class="code"><span class="code-prop">word-break</span><span class="code-colon">:</span> <span class="code-value">keep-all;</span> <br><span class="code-prop">overflow-wrap</span><span class="code-colon">:</span> <span class="code-value">anywhere;</span></p><p>この文章は、テキストの折り返しポイントを確認するために用意しました。ブラウザの幅を調整して、折り返しがどのように発生するか観察してみてください。とくに、カギ括弧や読点などの特定の文字が折り返し位置にどのように影響するかに注目してください。例えば、「桜がぁ、咲いたよぉ」「やぁ、元気かい？」「日々是精進」というフレーズを見てみましょう。では、この文章の最初にどのような文字が表示されるか、確認してみてください。</p><p><a href="#">https://example.com/document/abcdefghijklmnopqrstuvwxyz1234567890</a></p><p>This manuscript is intentionally constructed to facilitate the examination of textual line-break peculiarities within varying browser dimensions. By manipulating the horizontal expansiveness of your viewing portal, one can meticulously observe the manifestation of distinct line-break junctures. What character, pray tell, inaugurates this textual composition?</p>
+          </div>
+        </div>
+      </div>
+      <h2>まとめ</h2>
+      <div>
+      今回の記事では、文末における折り返しの指定について解説しました。まとめると以下の使い分けになります。<br>
+      <br>
+      <h3>採用したい指定</h3><br>
+      <b>overflow-wrap: anywhere : </b>収まらない場合に折り返す指定<br>
+      <b>word-break: normal : </b>規定の折り返しの規則。<br>
+      ブラウザの規定値なので、指定しなくてもよい<br>
+      <b>line-break: strict : </b>禁則処理はお好みで。<br>
+      厳格指定にすると行頭の読みやすさが改善する<br>
+      <br>
+      <h3>今後は使わない指定</h3><br>
+      <b>word-wrapプロパティは使わない。</b><br>
+      使いたいならoverflow-wrapプロパティを使う<br>
+      <b>word-break: break-wordは非推奨</b><br>
+      <br>
+      <a href="https://ics.media/entry/240411/" target="_blank">https://ics.media/entry/240411/</a>
+      </div>
+    </div>
+  </body>
+</html>

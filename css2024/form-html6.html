@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-modan</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <style>
+      body {
+        padding: 24px;
+        font-family: sans-serif;
+      }
+      abbr[title] {
+        text-decoration: none;
+      }
+      section:not(:last-child) {
+        margin-bottom: 48px;
+      }
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 960px;
+        width: 100%;
+      }
+      .form-wrapper {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+      }
+      form {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+        width: 100%;
+      }
+      label, legend {
+        display: block;
+        margin-bottom: 16px;
+        color: #333;
+      }
+      .message {
+        color: red;
+      }
+      input:is([type="text"], [type="email"], [type="url"],
+      [type="tel"],
+      [type="password"],
+      [type="search"],
+      [type="number"],
+      [type="date"],
+      [type="datetime"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="week"],
+      [type="number"]
+      ),
+      textarea {
+        display: block;
+        appearance: none;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 8px;
+      }
+      fieldset {
+        appearance: none;
+        border: 1px solid #ccc;
+        margin-bottom: 16px;
+      }
+      .flex {
+        display: flex;
+        gap: 8px;
+      }
+      input:is(
+        [type="date"],
+        [type="datetime"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="week"],
+        [type="number"]) {
+        max-width: 200px;
+      }
+      form button {
+        appearance: none;
+        min-width: 200px;
+        background-color: mediumblue;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: normal;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button[type="submit"]:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      button[type="submit"]:hover {
+        background-color: darkblue;
+      }
+      input span::after {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+      }
+      label ~ .message {
+        visibility: hidden;
+        margin-bottom: 16px;
+      }
+      label:has(input:user-invalid) ~ .message {
+        visibility: visible;
+        color: red;
+      }
+      form:has(input:invalid) button[type="submit"] {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>送信ボタンの非活性化デモ（CSS）</h1>
+      <form>
+        <label>
+          名前：
+          <input type="text" required/>
+        </label>
+        <p class="message">名前を入力してください</p>
+        <div>
+          <button type="submit">送信</button>
+        </div>
+      </form>
+      <div>
+        user-invalid・・・ユーザーがリアルタイムに操作して失敗した場合に処理をする<br>
+        invalid・・・検証に失敗した時に処理をする
+      </div>
+    </div>
+  </body>
+</html>

@@ -24,7 +24,7 @@
         background-repeat: no-repeat;
         background-size: 100vw 100vh;
         opacity: 0;
-        z-index: 20;"
+        z-index: -1;"
       >
       </div>
       <div class="windows__bg" style="display: none;">
@@ -51,19 +51,42 @@
         </div>
       </div>
       <div id="container">
-        <input type="checkbox" id="switch-type" name="switch">
-        <label for="switch-type"></label>
         <footer class="windows-footer">
           <div class="title-bar bottom-bar">
-            <div class="title-bar title-bar-start">
-              <div class="windows__logo">
-                  <div class="windows__logo--inner red"></div>
-                  <div class="windows__logo--inner green"></div>
-                  <div class="windows__logo--inner blue"></div>
-                  <div class="windows__logo--inner yellow"></div>
+            <details class="windows-start">
+              <summary class="title-bar title-bar-start">
+                <div class="windows__logo">
+                    <div class="windows__logo--inner red"></div>
+                    <div class="windows__logo--inner green"></div>
+                    <div class="windows__logo--inner blue"></div>
+                    <div class="windows__logo--inner yellow"></div>
+                </div>
+                スタート
+              </summary>
+              <div class="windows-start-menu">
+                <div class="title-bar">うえむー</div>
+                <div class="window-start-menu-inner">
+                  <div class="window-start-menu-left">
+                    <dl>
+                      <dt></dt><dd>Internet Explorer</dd>
+                      <dt></dt><dd>Outlook Express</dd>
+                    </dl>
+                  </div>
+                  <div class="window-start-menu-right">
+                    <dl>
+                      <dt></dt><dd>My Documents</dd>
+                    </dl>
+                    <dl>
+                      <dt></dt><dd>My Picture</dd>
+                    </dl>                
+                  </div>                  
+                </div>
+                <div class="title-bar">
+                  <a href="">ログオフ</a>
+                  <a href="">終了オプション</a>                  
+                </div>
               </div>
-              スタート
-            </div>
+            </details>
           </div>
         </footer> 
       </div>

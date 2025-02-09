@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-modan</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <style>
+      body {
+        padding: 24px;
+        font-family: sans-serif;
+      }
+      abbr[title] {
+        text-decoration: none;
+      }
+      section:not(:last-child) {
+        margin-bottom: 48px;
+      }
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 960px;
+        width: 100%;
+      }
+      .form-wrapper {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+      }
+      form {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+        width: 100%;
+      }
+      label, legend {
+        display: block;
+        margin-bottom: 16px;
+        color: #333;
+      }
+      .message {
+        color: red;
+      }
+      input:is([type="text"], [type="email"], [type="url"],
+      [type="tel"],
+      [type="password"],
+      [type="search"],
+      [type="number"],
+      [type="date"],
+      [type="datetime"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="week"],
+      [type="number"]
+      ),
+      textarea {
+        display: block;
+        appearance: none;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 8px;
+      }
+      fieldset {
+        appearance: none;
+        border: 1px solid #ccc;
+        margin-bottom: 16px;
+      }
+      .flex {
+        display: flex;
+        gap: 8px;
+      }
+      input:is(
+        [type="date"],
+        [type="datetime"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="week"],
+        [type="number"]) {
+        max-width: 200px;
+      }
+      form button {
+        appearance: none;
+        min-width: 200px;
+        background-color: mediumblue;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: normal;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button[type="submit"]:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      button[type="submit"]:hover {
+        background-color: darkblue;
+      }
+      input span::after {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+      }
+      input:user-valid ~ span::after {
+        content: "✓入力済み";
+        color: green;
+      }
+      input:user-invalid ~ span::after {
+        content: "※バリデーションエラー";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>入力後にバリデーション結果が表示されるデモ</h1>
+      <p>3文字以上で入力してください</p>
+      <label>
+        名前（必須）：
+        <input type="text" required minlength="3"/>
+        <span></span>
+      </label>
+    </div>
+    <script defer>
+      const input = document.querySelector("input")
+      const errorEl = document.querySelector(".error")
+      input.addEventListener("blur", (e) => {
+        if (input.checkValidity()) {
+          errorEl.textContent = ""
+          return
+        }
+        // パターンミスマッチの場合はバリデーションメッセージを書き換え
+        if (input.validity.patternMismatch) {
+          input.setCustomValidity("半角英数字で入力してください。")
+        }
+        // エラーメッセージを取得
+        const errorMessage = input.validationMessage;
+        errorEl.textContent = errorMessage;
+      })
+    </script>
+  </body>
+</html>
