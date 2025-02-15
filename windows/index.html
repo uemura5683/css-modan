@@ -51,9 +51,6 @@
         </div>
       </div>
       <div id="container">
-        <div style="display: none;">
-          <iframe src="https://uemu-engineer.com/"></iframe>
-        </div>
         <footer class="windows-footer">
           <div class="title-bar bottom-bar">
             <details class="windows-start">
@@ -72,22 +69,43 @@
                   <div class="window-start-menu-left">
                     <dl class="window-start-menu-dl">
                       <dt class="window-start-menu-dt"><img src="ie.svg" class="window-menu-img"></dt>
-                      <dd class="window-start-menu-dd">Internet Explorer</dd>
-                    </dl>
-                    <dl class="window-start-menu-dl">
-                      <dt class="window-start-menu-dt"><img src="ie.svg" class="window-menu-img"></dt>
-                      <dd class="window-start-menu-dd">Outlook Express</dd>
+                      <dd class="window-start-menu-dd">
+                        <div class="window-start-menu-content">
+                          <button class="window-start-menu-content-button" onclick="document.querySelector('#myDialog').showModal()">Internet Explorer</button>
+                          <dialog class="window-start-menu-content-dialog" id="myDialog">
+                            <div class="window-start-menu-content-inner">
+                              <div class="title-bar">
+                                <div class="title-bar-text">Ustack | うえむーポートフォリオサイト</div>
+                                <div class="title-bar-controls">
+                                  <button aria-label="Minimize"></button>
+                                  <button aria-label="Restore"></button>
+                                  <button onclick="document.querySelector('#myDialog').close()" aria-label="Close"></button>
+                                </div>
+                              </div>
+                              <iframe src="https://uemu-engineer.com/" class="window-start-menu-content"></iframe>
+                            </div>
+                          </dialog>
+                        </div>
+                      </dd>
                     </dl>
                   </div>
                   <div class="window-start-menu-right">
                     <dl class="window-start-menu-dl">
                       <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
-                      <dd class="window-start-menu-dd">My Documents</dd>
+                      <dd class="window-start-menu-dd">コマンドプロンプト</dd>
                     </dl>
                     <dl class="window-start-menu-dl">
                       <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
-                      <dd class="window-start-menu-dd">My Picture</dd>
-                    </dl>                
+                      <dd class="window-start-menu-dd">マイ ドキュメント</dd>
+                    </dl>
+                    <dl class="window-start-menu-dl">
+                      <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
+                      <dd class="window-start-menu-dd">マイ ピクチャー</dd>
+                    </dl>
+                    <dl class="window-start-menu-dl">
+                      <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
+                      <dd class="window-start-menu-dd">アクセサリ</dd>
+                    </dl>
                   </div>                  
                 </div>
                 <div class="title-bar">
