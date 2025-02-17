@@ -71,18 +71,41 @@
                       <dt class="window-start-menu-dt"><img src="ie.svg" class="window-menu-img"></dt>
                       <dd class="window-start-menu-dd">
                         <div class="window-start-menu-content">
-                          <button class="window-start-menu-content-button" onclick="document.querySelector('#myDialog').showModal()">Internet Explorer</button>
-                          <dialog class="window-start-menu-content-dialog" id="myDialog">
+                          <button class="window-start-menu-content-button" onclick="document.querySelector('#internet').showModal()">インターネット<br>Internet Exploler</button>
+                          <dialog class="window-start-menu-content-dialog" id="internet">
                             <div class="window-start-menu-content-inner">
                               <div class="title-bar">
                                 <div class="title-bar-text">Ustack | うえむーポートフォリオサイト</div>
                                 <div class="title-bar-controls">
                                   <button aria-label="Minimize"></button>
                                   <button aria-label="Restore"></button>
-                                  <button onclick="document.querySelector('#myDialog').close()" aria-label="Close"></button>
+                                  <button onclick="document.querySelector('#internet').close()" aria-label="Close"></button>
                                 </div>
                               </div>
-                              <iframe src="https://uemu-engineer.com/" class="window-start-menu-content"></iframe>
+                              <iframe src="https://uemu-engineer.com/" class="window-start-menu-content window-body"></iframe>
+                            </div>
+                          </dialog>
+                        </div>
+                      </dd>
+                    </dl>
+                    <dl class="window-start-menu-dl">
+                      <dt class="window-start-menu-dt"><img src="mail.png" class="window-menu-img"></dt>
+                      <dd class="window-start-menu-dd">
+                        <div class="window-start-menu-content">
+                          <button class="window-start-menu-content-button" onclick="document.querySelector('#outlookexpress').showModal()">電子メール<br>Outlook Express</button>
+                          <dialog class="window-start-menu-content-dialog" id="outlookexpress">
+                            <div class="window-start-menu-content-inner window">
+                              <div class="title-bar">
+                                <div class="title-bar-text">お問合せ</div>
+                                <div class="title-bar-controls">
+                                  <button aria-label="Minimize"></button>
+                                  <button aria-label="Restore"></button>
+                                  <button onclick="document.querySelector('#outlookexpress').close()" aria-label="Close"></button>
+                                </div>
+                              </div>
+                              <div class="window-body">
+                                <p>どんな些細でもいいですので気軽にお問い合わせください。<br>Xでも受け付けております。</p>
+                              </div>
                             </div>
                           </dialog>
                         </div>
@@ -91,8 +114,40 @@
                   </div>
                   <div class="window-start-menu-right">
                     <dl class="window-start-menu-dl">
-                      <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
-                      <dd class="window-start-menu-dd">コマンドプロンプト</dd>
+                      <dt class="window-start-menu-dt"><img src="terminal.png" class="window-menu-img"></dt>
+                      <dd class="window-start-menu-dd">
+                        <div class="window-start-menu-content">
+                          <button class="window-start-menu-content-button" onclick="document.querySelector('#command').showModal()">コマンドプロンプト</button>
+                          <dialog class="window-start-menu-content-dialog" id="command">
+                            <div class="window-start-menu-content-inner">
+                              <div class="title-bar">
+                                <div class="title-bar-text">プロフィール</div>
+                                <div class="title-bar-controls">
+                                  <button aria-label="Minimize"></button>
+                                  <button aria-label="Restore"></button>
+                                  <button onclick="document.querySelector('#command').close()" aria-label="Close"></button>
+                                </div>
+                              </div>
+                              <div class="window-body">
+                                <pre>
+PROFILE
+
+Name：Uemu-
+Job：Frontend Engineer
+From：Saitama
+HobbyHobby：Mahjong/board games/golf/learning
+Skill：HTML/CSS/JavaScript/PHP/jQuery/Symfony/Laravel/WordPress/Movable Type etc...
+Link1：X　https://twitter.com/uemuragame5683
+Link2：GitHub　https://github.com/uemura5683
+Link3：NuBlog：https://nu-blogsite.net/
+</pre>
+                              </div>
+                            </div>
+                          </dialog>
+                        </div>
+                      </dd>                      
+                      
+                      </dd>
                     </dl>
                     <dl class="window-start-menu-dl">
                       <dt class="window-start-menu-dt"><img src="folder.png" class="window-menu-img"></dt>
