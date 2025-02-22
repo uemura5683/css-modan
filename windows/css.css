@@ -284,13 +284,16 @@ summary {
       outline: none;
       text-align: left;
     }
+    & .window-start-menu-content-dialog {
+      & .window-start-menu-content-inner {
+        &.window-start-menu-content-profile {
+          width: 45%;
+        }
+      }
+    }
     & .window-start-menu-content-dialog[open] {
       & .window-start-menu-content-inner {
         display: block;
-        overflow: hidden;
-        & .window-start-menu-content-profile {
-          width: 45%;
-        }
       }      
     }
     & .window-start-menu-content-inner {
@@ -300,9 +303,20 @@ summary {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 75%;
+      overflow: hidden;
     }
     & .window-start-menu-content-inner-content {
-      max-width: 600px;
+      max-width: 100%;
+      width: 300px;
+      & .window-body {
+        margin: 15px;
+      }
+      & .g-recaptcha {
+        margin: 10px 0 0;
+      }
+      & .window-start-menu-content-inner-content-btn {
+        margin: 10px 0 0;
+      }
     }
     & .window-start-menu-content {
       width: 100%;
