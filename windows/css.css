@@ -38,7 +38,7 @@ summary {
   width: 100%;
   height: 100%;
   background: black;
-  -webkit-animation: fadeout 1s linear 48s infinite;
+  -webkit-animation: fadeout 1s linear 5s infinite;
           animation: fadeout 1s linear 5s infinite;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -284,13 +284,6 @@ summary {
       outline: none;
       text-align: left;
     }
-    & .window-start-menu-content-dialog {
-      & .window-start-menu-content-inner {
-        &.window-start-menu-content-profile {
-          width: 45%;
-        }
-      }
-    }
     & .window-start-menu-content-dialog[open] {
       & .window-start-menu-content-inner {
         display: block;
@@ -305,16 +298,22 @@ summary {
       width: 75%;
       overflow: hidden;
     }
-    & .window-start-menu-content-inner-content {
+    & .window-start-menu-content-profile {
+      width: 45%;
+    }
+    & .window-start-menu-content-inner-picture {
+      max-width: 400px;
+    }
+    & .window-start-menu-content-inner-contact {
       max-width: 100%;
-      width: 300px;
+      width: 330px;
       & .window-body {
         margin: 15px;
       }
       & .g-recaptcha {
         margin: 10px 0 0;
       }
-      & .window-start-menu-content-inner-content-btn {
+      & .window-start-menu-content-inner-contact-btn {
         margin: 10px 0 0;
       }
     }

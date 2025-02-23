@@ -6,28 +6,14 @@
     <title>windows xp</title>
     <link type="text/css" rel="stylesheet" href="https://unpkg.com/xp.css"></link>
     <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <script is:inline src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
   </head>
   <body>
     <main>
-      <!--
-      <audio controls autoplay>
+      <audio controls id="winxpogm">
         <source src="winxp.ogm">
       </audio>
-      -->
-      <div
-        style="background: url(desktop.png);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: 100vw 100vh;
-        opacity: 0;
-        z-index: -1;"
-      >
-      </div>
-      <div class="windows__bg" style="display: none;">
+      <div class="windows__bg">
         <div class="windows__bg--inner">
           <div class="windows__logo">
               <div class="windows__logo--inner red"></div>
@@ -94,7 +80,7 @@
                         <div class="window-start-menu-content">
                           <button class="window-start-menu-content-button" onclick="document.querySelector('#outlookexpress').showModal()">電子メール<br>Outlook Express</button>
                           <dialog class="window-start-menu-content-dialog" id="outlookexpress">
-                            <div class="window-start-menu-content-inner window-start-menu-content-inner-content window">
+                            <div class="window-start-menu-content-inner window-start-menu-content-inner-contact window">
                               <div class="title-bar">
                                 <div class="title-bar-text">お問合せ</div>
                                 <div class="title-bar-controls">
@@ -105,7 +91,7 @@
                               </div>
                               <div class="window-body">
                                 <p>どんな些細でもいいですので気軽にお問い合わせください。<br> <a href="https://twitter.com/uemuragame5683" target="_blank" rel="noopener noreferrer">X</a>でも受け付けております。</p>
-                                <form action="https://ssgform.com/s/jC0jxAD9p3rO" method="post" class="window-start-menu-content-inner-content-inner">
+                                <form action="https://ssgform.com/s/jC0jxAD9p3rO" method="post" class="window-start-menu-content-inner-contact-inner">
                                   <div class="field-row-stacked">
                                     <label for="name">あなたの名前</label>
                                     <input id="name" type="text" />
@@ -123,7 +109,7 @@
                                     <textarea id="message" rows="8"></textarea>
                                   </div>
                                   <div class="g-recaptcha" data-sitekey="6LexA6opAAAAAIcvt25jyo6K6MYtYPXaoc2QC61E"></div>
-                                  <button class="window-start-menu-content-inner-content-btn">送信する</button>
+                                  <button class="window-start-menu-content-inner-contact-btn">送信する</button>
                                 </form>
                               </div>
                             </div>
@@ -175,7 +161,7 @@ Link3：NuBlog：https://nu-blogsite.net/
                         <div class="window-start-menu-content">
                           <button class="window-start-menu-content-button" onclick="document.querySelector('#mydocument').showModal()">マイ ドキュメント</button>
                           <dialog class="window-start-menu-content-dialog" id="mydocument">
-                            <div class="window-start-menu-content-inner window-start-menu-content-inner-content window">
+                            <div class="window-start-menu-content-inner window-start-menu-content-inner-picture window">
                               <div class="title-bar">
                                 <div class="title-bar-text">INFORMATION</div>
                                 <div class="title-bar-controls">
@@ -218,7 +204,7 @@ Link3：NuBlog：https://nu-blogsite.net/
                         <div class="window-start-menu-content">
                           <button class="window-start-menu-content-button" onclick="document.querySelector('#mypicture').showModal()">マイ ピクチャー</button>
                           <dialog class="window-start-menu-content-dialog" id="mypicture">
-                            <div class="window-start-menu-content-inner window-start-menu-content-inner-content window">
+                            <div class="window-start-menu-content-inner window-start-menu-content-inner-picture window">
                               <div class="title-bar">
                                 <div class="title-bar-text">WORK</div>
                                 <div class="title-bar-controls">
@@ -261,7 +247,7 @@ Link3：NuBlog：https://nu-blogsite.net/
                         <div class="window-start-menu-content">
                           <button class="window-start-menu-content-button" onclick="document.querySelector('#accessory').showModal()">アクセサリ</button>
                           <dialog class="window-start-menu-content-dialog" id="accessory">
-                            <div class="window-start-menu-content-inner window-start-menu-content-inner-content window">
+                            <div class="window-start-menu-content-inner window-start-menu-content-inner-picture window">
                               <div class="title-bar">
                                 <div class="title-bar-text">NuBlog</div>
                                 <div class="title-bar-controls">
@@ -303,8 +289,8 @@ Link3：NuBlog：https://nu-blogsite.net/
                   </div>                  
                 </div>
                 <div class="title-bar window-menufooter">
-                  <a href="" class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</a>
-                  <a href="" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</a>
+                  <a href="#" class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</a>
+                  <a href="#" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</a>
                 </div>
               </div>
             </details>
@@ -313,6 +299,7 @@ Link3：NuBlog：https://nu-blogsite.net/
       </div>
     </main>
     <script type="text/javascript">
+
         const tabs = document.querySelectorAll("menu[role=tablist]");
         for (let i = 0; i < tabs.length; i++) {
           const tab = tabs[i];
@@ -345,6 +332,17 @@ Link3：NuBlog：https://nu-blogsite.net/
           );
           article.removeAttribute("hidden");
         }
+
+        window.onload = function() {
+          const audio = document.getElementById("winxpogm");
+          setTimeout(() => {
+            audio.play().then(() => {
+              audio.muted = false; // 3秒後に音をONにする
+            }).catch(error => {
+              console.error("再生エラー:", error);
+            });
+          }, 5000);
+        };
     </script>
   </body>
 </html>
