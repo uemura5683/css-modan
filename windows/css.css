@@ -177,7 +177,6 @@ summary {
   0% { left: -4.6vw; } 
   100% { left: 20vw;}
 }
-
 @keyframes fadeout {
   0% {
       opacity: 1;
@@ -241,6 +240,14 @@ summary {
       padding: 3px 10px;
       &:last-child {
       height: 40px;        
+      }
+    }
+    & .windows-start-profile-bar {
+      justify-content: flex-start;
+      & .windows-start-menu-profile-img{
+        height: 55px;
+        clip-path: inset(0 0 round 10px 10px 10px 10px);    
+        margin: 0 10px 0 0;
       }
     }
     & .window-start-menu-inner {
@@ -338,3 +345,4 @@ summary {
     }
   }
 }
+/* logof */

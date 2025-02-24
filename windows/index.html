@@ -13,6 +13,7 @@
       <audio controls id="winxpogm">
         <source src="winxp.ogm">
       </audio>
+<!--      
       <div class="windows__bg">
         <div class="windows__bg--inner">
           <div class="windows__logo">
@@ -36,6 +37,7 @@
           </div>
         </div>
       </div>
+-->
       <div id="container">
         <footer class="windows-footer">
           <div class="title-bar bottom-bar">
@@ -50,7 +52,9 @@
                 スタート
               </summary>
               <div class="windows-start-menu">
-                <div class="title-bar">うえむー</div>
+                <div class="title-bar windows-start-profile-bar">
+                  <img src="profile.jpg" class="windows-start-menu-profile-img">うえむー
+                </div>
                 <div class="window-start-menu-inner">
                   <div class="window-start-menu-left">
                     <dl class="window-start-menu-dl">
@@ -289,8 +293,8 @@ Link3：NuBlog：https://nu-blogsite.net/
                   </div>                  
                 </div>
                 <div class="title-bar window-menufooter">
-                  <a href="#" class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</a>
-                  <a href="#" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</a>
+                  <a href="/" class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</a>
+                  <a href="/" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</a>
                 </div>
               </div>
             </details>
@@ -332,17 +336,18 @@ Link3：NuBlog：https://nu-blogsite.net/
           );
           article.removeAttribute("hidden");
         }
-
+/*
         window.onload = function() {
           const audio = document.getElementById("winxpogm");
           setTimeout(() => {
-            audio.play().then(() => {
-              audio.muted = false; // 3秒後に音をONにする
-            }).catch(error => {
+            audio.play().catch(error => {
               console.error("再生エラー:", error);
             });
           }, 5000);
+
+          document.addEventListener("click", audio);
         };
+*/
     </script>
   </body>
 </html>
