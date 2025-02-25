@@ -291,45 +291,6 @@ summary {
       outline: none;
       text-align: left;
     }
-    & .window-start-menu-content-dialog[open] {
-      & .window-start-menu-content-inner {
-        display: block;
-      }      
-    }
-    & .window-start-menu-content-inner {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 75%;
-      overflow: hidden;
-    }
-    & .window-start-menu-content-profile {
-      width: 45%;
-    }
-    & .window-start-menu-content-inner-picture {
-      max-width: 400px;
-    }
-    & .window-start-menu-content-inner-contact {
-      max-width: 100%;
-      width: 330px;
-      & .window-body {
-        margin: 15px;
-      }
-      & .g-recaptcha {
-        margin: 10px 0 0;
-      }
-      & .window-start-menu-content-inner-contact-btn {
-        margin: 10px 0 0;
-      }
-    }
-    & .window-start-menu-content {
-      width: 100%;
-      height: 75vh;
-      margin: 0;
-      border: none;
-    }
   }
   & .window-menufooter {
     display: flex;
@@ -345,4 +306,52 @@ summary {
     }
   }
 }
+
+/* dialog */
+& .window-start-menu-content-dialog {
+  border: none;
+  background: transparent;
+  &[open] {
+    & .window-start-menu-content-inner {
+      display: block;
+    }   
+  }
+  & .window-start-menu-content-inner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    overflow: hidden;
+  }
+  & .window-start-menu-content-iframe {
+    width: 100%;
+    height: 75vh;
+    margin: 0;
+    border: none;
+  }
+  & .window-start-menu-content-profile {
+    width: 45%;
+  }
+  & .window-start-menu-content-inner-picture {
+    max-width: 400px;
+  }
+  & .window-start-menu-content-inner-contact {
+    max-width: 100%;
+    width: 330px;
+    & .window-body {
+      margin: 15px;
+    }
+    & .g-recaptcha {
+      margin: 10px 0 0;
+    }
+    & .window-start-menu-content-inner-contact-btn {
+      margin: 10px 0 0;
+    }
+  }
+}
+
+
+
 /* logof */
