@@ -13,7 +13,7 @@
       <audio controls id="winxpogm">
         <source src="winxp.ogm">
       </audio>
-      <div class="windows__bg">
+      <div class="windows__bg" style="display: none;">
         <div class="windows__bg--inner">
           <div class="windows__logo">
               <div class="windows__logo--inner red"></div>
@@ -37,6 +37,17 @@
         </div>
       </div>
       <div id="container">
+
+        <main class="windows-main">
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#internet').showModal()"><img src="ie.svg" class="window-main-img"></button>
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#outlookexpress').showModal()"><img src="mail.png" class="window-main-img"></button>
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#command').showModal()"><img src="terminal.png" class="window-main-img"></button>
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#mydocument').showModal()"><img src="folder.png" class="window-main-img"></button>
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#mypicture').showModal()"><img src="folder.png" class="window-main-img"></button>
+          <button class="window-main-menu-content-button" onclick="document.querySelector('#accessory').showModal()"><img src="folder.png" class="window-main-img"></button>
+        </main>
+
+
         <footer class="windows-footer">
           <div class="title-bar bottom-bar">
             <details class="windows-start">
@@ -319,7 +330,6 @@ Link3：NuBlog：https://nu-blogsite.net/
           tabButtons.forEach((btn) =>
             btn.addEventListener("click", (e) => {
               e.preventDefault();
-
               tabButtons.forEach((button) => {
                 if (
                   button.getAttribute("aria-controls") ===
@@ -345,6 +355,7 @@ Link3：NuBlog：https://nu-blogsite.net/
           article.removeAttribute("hidden");
         }
 
+        /*
         window.onload = function() {
           const audio = document.getElementById("winxpogm");
           setTimeout(() => {
@@ -355,6 +366,7 @@ Link3：NuBlog：https://nu-blogsite.net/
 
           document.addEventListener("click", audio);
         };
+        */
 
     </script>
   </body>

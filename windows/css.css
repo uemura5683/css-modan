@@ -189,6 +189,31 @@ summary {
       z-index: -1
   }
 }
+/* main */
+.windows-main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  width: 50px;
+  overflow: hidden;
+  padding: 15px;
+  & .window-main-menu-content-button {
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    min-width: auto;
+    &:hover {
+      box-shadow: none;
+    }
+    & .window-main-img {
+      height: 30px;
+    }
+  }
+}
+
 /* footer */
 .windows-footer {
   position: fixed;
@@ -351,7 +376,5 @@ summary {
     }
   }
 }
-
-
 
 /* logof */
