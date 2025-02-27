@@ -207,9 +207,11 @@ summary {
     min-width: auto;
     &:hover {
       box-shadow: none;
+      background: transparent;
+      bordeer: none;
     }
     & .window-main-img {
-      height: 30px;
+      width: 35px;
     }
   }
 }
@@ -281,7 +283,7 @@ summary {
       width: 100%;
     }
     & .window-menu-img {
-      height: 30px;
+      width: 30px;
       padding: 0 10px 0 0;
     }
     & .window-start-menu-left,  & .window-start-menu-right {
@@ -292,7 +294,7 @@ summary {
       background:#cfe9ff
     }
     & .window-start-menu-dl {
-      margin: 5px 0;
+      margin: 10px 0;
       display: flex;
       align-items: center;
       width: 100%;
@@ -315,6 +317,9 @@ summary {
       text-shadow: 1px 1px #0f1089;
       outline: none;
       text-align: left;
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
   & .window-menufooter {
