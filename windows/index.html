@@ -47,7 +47,6 @@
           <button class="window-main-menu-content-button" onclick="document.querySelector('#accessory').showModal()"><img src="folder.png" class="window-main-img"></button>
         </main>
 
-
         <footer class="windows-footer">
           <div class="title-bar bottom-bar">
             <details class="windows-start">
@@ -124,6 +123,7 @@
                 </div>
               </div>
             </details>
+            <div class="window-timer"></div>
           </div>
         </footer> 
 
@@ -317,8 +317,6 @@ Link3：NuBlog：https://nu-blogsite.net/
             </div>
           </div>
         </dialog>
-
-        
       </div>
     </main>
     <script type="text/javascript">
@@ -365,6 +363,20 @@ Link3：NuBlog：https://nu-blogsite.net/
 
           document.addEventListener("click", audio);
         };
+
+        function displayTime() {
+          const padZero = (value) => value.toString().padStart(2, "0");
+
+          const now = new Date();
+          const hour = padZero(now.getHours());
+          const minute = padZero(now.getMinutes());
+
+          const currentTime = `${hour}:${minute}`;
+          document.querySelector(".window-timer").textContent = currentTime;
+        }
+        displayTime();
+        setInterval(displayTime, 1000);
+
     </script>
   </body>
 </html>

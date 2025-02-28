@@ -23,6 +23,9 @@ a {
 summary {
   list-style: none;
 }
+button.focused, button:focus {
+  box-shadow: none !important;
+}
 #container {
   background: url(bg.jpg);
   width: 100%;
@@ -225,6 +228,7 @@ summary {
   & .title-bar {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    padding: 3px 0 3px 3px;
   }
   & .title-bar-start {
     font-family: Trebuchet MS;
@@ -245,6 +249,7 @@ summary {
     border-right: 1px solid #146002;
     margin-left: -4px;
     position: relative;
+    cursor: pointer;
     & .windows__logo {
       zoom: 0.05;
       margin: 0 15px 0 0;
@@ -317,6 +322,7 @@ summary {
       text-shadow: 1px 1px #0f1089;
       outline: none;
       text-align: left;
+      cursor: pointer;
       &:hover {
         box-shadow: none;
       }
@@ -334,6 +340,15 @@ summary {
       margin: 0 5px 0 0;
       height: 25px;
     }
+  }
+  & .window-timer {
+    color: #ffffff;
+    background: linear-gradient(180deg, #37AEF4, #2E88F2 8%, #2E88EE 40%, #2E88EE 88%, #2E88EE 93%, #2E88EE 95%, #3198ED 96%, #3198ED);
+    padding: 8px 15px;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-shadow: none;
   }
 }
 
