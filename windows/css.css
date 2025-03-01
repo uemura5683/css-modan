@@ -398,3 +398,33 @@ button.focused, button:focus {
 }
 
 /* logof */
+
+@media (max-width: 767px) {
+  #container {
+    background: url(bg.jpg) center center;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    background-size: 200vh 100vh;
+  }
+  .windows__bg {
+    .windows__bg--inner {
+      zoom: 1;
+    }
+  }
+  .windows-footer {
+    & .windows-start-menu {
+        width: 100%;
+    }
+    & .title-bar-start {
+      & .windows__logo {
+        zoom: 0.15;
+      }
+    }
+  }
+  & .window-start-menu-content-dialog {
+    & .window-start-menu-content-profile {
+        width: 90%;
+    }
+  }
+}
