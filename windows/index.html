@@ -36,6 +36,24 @@
           </div>
         </div>
       </div>
+      <div class="windows__bg__shutdown" style="display:none;">
+        <div class="windows__bg--inner">
+          <div class="windows__logo">
+              <div class="windows__logo--inner red"></div>
+              <div class="windows__logo--inner green"></div>
+              <div class="windows__logo--inner blue"></div>
+              <div class="windows__logo--inner yellow"></div>
+          </div>
+          <div class="windows__name">
+              <p>Microsoft</p>
+              <div class="windows__name--inner">
+                  Windows<span>xp</span>
+              </div>
+              <div class="windows__text"><p>Windows をシャットダウンしています。</p></div>
+          </div>
+        </div>
+      </div>
+
       <div id="container">
         <main class="windows-main">
           <button class="window-main-menu-content-button" onclick="document.querySelector('#internet').showModal()"><img src="ie.svg" class="window-main-img"></button>
@@ -116,8 +134,8 @@
                   </div>                  
                 </div>
                 <div class="title-bar window-menufooter">
-                  <a href="/" class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</a>
-                  <a href="/" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</a>
+                  <span class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</span>
+                  <button href="/" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</button>
                 </div>
               </div>
             </details>
@@ -361,6 +379,7 @@ Link3：NuBlog：https://nu-blogsite.net/
 
           document.addEventListener("click", audio);
         };
+
 
         function displayTime() {
           const padZero = (value) => value.toString().padStart(2, "0");

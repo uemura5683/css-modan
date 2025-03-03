@@ -13,7 +13,7 @@ body {
   padding: 0;
   margin: 0;
 }
-audio {
+audio, #startButton {
   display: none;
 }
 a {
@@ -23,7 +23,7 @@ a {
 summary {
   list-style: none;
 }
-button.focused, button:focus {
+button.focused, button:focus, button:not(:disabled):hover {
   box-shadow: none !important;
 }
 #container {
@@ -192,6 +192,31 @@ button.focused, button:focus {
       z-index: -1
   }
 }
+.windows__bg__shutdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:#5B7EDC;
+  z-index: 10;
+  background: linear-gradient(0deg, #13319A, #13319A 10%, #C5B0B0 10%, #5B7EDC 10.5%, #5B7EDC 30%, #5B7EDC 60%, #5B7EDC 70%, #5B7EDC 80%, #5B7EDC 89.5%, #C5B0B0 90%, #13319A 90%, #13319A);
+  .windows__bg--inner {
+    position: fixed;
+    left: 52.5%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    zoom: 0.3;
+    animation:1s linear infinite;
+  }
+  .windows__logo--inner{
+    &::after {
+      background-color: #5B7EDC;
+      border: .1vw solid #5B7EDC;
+    }
+  }
+}
 /* main */
 .windows-main {
   display: flex;
@@ -333,8 +358,15 @@ button.focused, button:focus {
     justify-content: flex-end;
     & .window-menufooter-link {
       display: flex;
-      align-items: center;      
+      align-items: center;
       margin: 0 0 0 10px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-family: Trebuchet MS;
+      font-size: 13px;
+      text-shadow: 1px 1px #0f1089;
+      -webkit-font-smoothing: auto;
     }
     & .window-menufooter-img {
       margin: 0 5px 0 0;
@@ -423,6 +455,7 @@ button.focused, button:focus {
     }
   }
   & .window-start-menu-content-dialog {
+    & .window-start-menu-content-inner,
     & .window-start-menu-content-profile {
         width: 90%;
     }
