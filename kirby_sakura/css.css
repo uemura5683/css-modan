@@ -481,8 +481,7 @@ body {
     bottom: 10px;
     left: 0;
     overflow: hidden;
-    
-    
+    perspective: 50px;
     & img {
       width: 20px;
     }
@@ -523,7 +522,23 @@ body {
       &:nth-child(8) {
         left: 50%;
         animation: fall 7s linear infinite, rotate1 3s ease-in-out infinite alternate;
-      }  
+      } 
+      &:nth-child(9) {
+        left: 60%;
+        animation: fall 10s linear infinite, rotate1 4s ease-in-out infinite alternate;
+      }
+      &:nth-child(10) {
+        left: 75%;
+        animation: fall 10s linear infinite, rotate2 3.5s ease-in-out infinite alternate;
+      }
+      &:nth-child(11) {
+        left: 85%;
+        animation: fall 5s linear infinite, rotate2 4s ease-in-out infinite alternate;
+      }
+      &:nth-child(12) {
+        left: 90%;
+        animation: fall 10s linear infinite, rotate1 3.5s ease-in-out infinite alternate;
+      } 
     }
   }
 }
@@ -533,22 +548,22 @@ body {
     top:30%;
   }  
   to {
-    top: 100%;
+    top: 150%;
   }
 }
 @keyframes rotate1 {
   from {
-    transform: translateX(0px) translateZ(0px) rotate(0deg);
+    transform: translateX(0px) translateZ(-20px) rotate(0deg);
   }
   to {
-    transform: translateX(100px) translateZ(100px) rotateZ(-80deg) rotateX(180deg);
+    transform: translateX(100px) translateZ(-40px) rotateY(30deg);
   }
 }
 @keyframes rotate2 {
   from {
-    transform: translateX(0px) translateZ(0px) rotate(-45deg);
+    transform: translateX(0px) translateZ(-20px) rotate(0deg);
   }
   to {
-    transform: translateX(100px) translateZ(100px) rotateY(0deg);
+    transform: translateX(100px) translateZ(-30px) rotateY(30deg);
   }
 }
