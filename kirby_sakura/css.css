@@ -183,6 +183,28 @@ body {
       border-radius: 50%;
       width: 100%;
       padding: 100% 0px 0px;
+      &:before, &:after {
+          content: '';          
+          position: absolute;
+          background: #F5E1C6;
+      }
+      &:before {
+          top: 12%;
+          left: 46%;
+          width: 69%;
+          height: 60%;
+          border-radius: 50% 50% 40%;
+          transform: translateX(-50%);
+      }
+      &:after {
+          top: 43%;
+          left: 46%;
+          width: 81%;
+          height: 45%;
+          border-radius: 40%;
+          transform: translateX(-50%);
+          z-index: 0;
+      }
   }
   & .eye, & .mouth, & .cheek, & .hand, & .foot {
       position: absolute;
@@ -196,6 +218,11 @@ body {
       top: 23%;
       left: 25%;
       animation: var(--eye-animation-timing) 0s infinite normal none running eye;
+      z-index: 10;
+      
+      
+      
+      
       &::before {
           content: "";
           background-color: var(--white);
@@ -274,13 +301,14 @@ body {
       width: 30%;
       padding: 30% 0px 0px;
       transform: rotate(34deg);
-      z-index: -1;
+      z-index: 1;
+      
       &.two {
           top: 19%;
-          left: -15%;
+          left: -13%;
           background: linear-gradient(-35deg, #d56e18 38%, #E3761A);
           transform: rotate(253deg);
-          z-index: 1;
+          z-index: -1;
       }
   }
   & [class*="foot"] {
