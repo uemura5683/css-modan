@@ -1,538 +1,599 @@
 :root {
-  --gray: #666;
-  --white: #fff;
-  --black: #000;
-  --pink: #d77584;
-  --pinktwo: #ff9db5;
-  --brown: #752b42;
-  --pinkthree: #f0608b;
-  --red: #af2d13;
-  --waterblue: #8ed3dd;
-  --switch-transition: 250ms ease-out;
-  --border-width: 0.2vw;
-  --switch-shadow: 0.3vw 0.3vw 0.1vw 0;
-  --label-size: 30px;
-  --checkbox-size: 15px;
-  --kirby-animation-timing: 0.25s ease-in-out;
-  --eye-animation-timing: 5s ease-out;
-  --eye-gradient: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
-  --eye2-gradient: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
-  --eye3-gradient: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
-  --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
-  --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
-  --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
-  --foot-gradient: linear-gradient(75deg, var(--brown), var(--red) 20%, #cf472c);
-  --tree-color: linear-gradient(10deg, #7d502b, #B5753F 30%, #B5753F);
-}
-body {
-  padding: 0px;
-  margin: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 25%, rgba(91, 220, 219, 0.36) 26%, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
-}
-#container .kirby_content {
-  position: absolute;
-  transform: translateX(-50%) translateY(0%);
-  bottom: 20px;
-  left: 25%;
-  width: 100px;
-  height: auto;
-  animation: kirbymove var(--kirby-animation-timing) infinite;
-  opacity: 1;
-  z-index: 100;
-  & .kirby_inner {
-      background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
-      border-radius: 50%;
-      width: 100%;
-      padding: 100% 0px 0px;
- }
-  & .eye, & .mouth, & .cheek, & .hand, & .foot {
-      position: absolute;
-      transition: 0.3s ease-in-out;
- }
-  & .eye {
-      width: 14%;
-      padding: 33% 0px 0px;
-      background: var(--black);
-      border-radius: 50%;
-      top: 23%;
-      left: 37%;
-      animation: var(--eye-animation-timing) 0s infinite normal none running eye;
-      &::before {
-          content: "";
-          background-color: var(--white);
-          position: absolute;
-          width: 65%;
-          height: 45%;
-          border-radius: 50%;
-          top: 5%;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 2;
-          animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
-     }
-      &.two {
-          left: 61%;
-          &::after {
-              transform: rotate(-60deg);
-              background-image: var(--eye3-gradient);
-              left: 35%;
-         }
-     }
-      & .eye_inner {
-          background: var(--eye-gradient);
-          border-radius: 50%;
-          width: 100%;
-          padding: 65% 0px 0px;
-          transform: rotate(-90deg);
-          bottom: 15%;
-          position: absolute;
-          animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
-     }
- }
-  & .mouth {
-      z-index: 50;
-      border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
-      height: 16%;
-      width: 21%;
-      left: 46%;
-      top: 59%;
-      background: var(--brown);
-      animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
-      &::before {
-          content: "";
-          bottom: 3%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 70%;
-          height: 70%;
-          border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
-          background: var(--pinkthree);
-          display: block;
-          position: absolute;
-     }
- }
-  & .cheek {
-      background-color: var(--pinkthree);
-      top: 56%;
-      left: 20%;
-      filter: blur(0.1vw);
-      width: 14%;
-      height: 8%;
-      border-radius: 50%;
-      transform: rotate(-10deg);
-      z-index: 3;
-      &.two {
-          left: auto;
-          right: 9%;
-          transform: rotate(10deg);
-     }
- }
-  & .hand {
-      top: 22%;
-      left: -12%;
-      background: var(--kirby-hand-gradient);
-      border-radius: 60% 40% 40% 60% / 60% 40%;
-      width: 30%;
-      padding: 30% 0px 0px;
-      transform: rotate(34deg);
-      &.two {
-          top: 19%;
-          left: auto;
-          right: -12%;
-          background: var(--kirby-hand2-gradient);
-          transform: rotate(164deg);
-          z-index: -1;
-     }
- }
-  & [class*="foot"] {
-      width: 50%;
-      height: 35%;
-      position: absolute;
-      background: var(--foot-gradient);
-      border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
-      z-index: 10;
- }
-  & .foot-right {
-      bottom: 0%;
-      left: -10%;
-      transform: rotate(-112deg);
- }
-  & .foot-left {
-      right: -16%;
-      bottom: 1%;
-      transform: rotate(-34deg);
-      animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
- }
-}
-#container .wado_content {
-  position: absolute;
-  transform: translateX(100%) translateY(0%);
-  bottom: 20px;
-  right: 25%;
-  width: 100px;
-  height: auto;
-  animation: kirbymove var(--kirby-animation-timing) infinite;
-  opacity: 1;
-  z-index: 100;
-  & .wado_inner {
-      background: linear-gradient(0deg, rgb(185, 127, 78), rgb(227, 118, 26) 20%, rgb(227, 118, 26));
-      border-radius: 50%;
-      width: 100%;
-      padding: 100% 0px 0px;
-      &::before, &::after {
-          content: "";
-          position: absolute;
-          background: rgb(245, 225, 198);
-     }
-      &::before {
-          top: 12%;
-          left: 46%;
-          width: 69%;
-          height: 60%;
-          border-radius: 50% 50% 40%;
-          transform: translateX(-50%);
-     }
-      &::after {
-          top: 43%;
-          left: 46%;
-          width: 81%;
-          height: 45%;
-          border-radius: 40%;
-          transform: translateX(-50%);
-          z-index: 0;
-     }
- }
-  & .eye, & .mouth, & .cheek, & .hand, & .foot {
-      position: absolute;
-      transition: 0.3s ease-in-out;
- }
-  & .eye {
-      width: 14%;
-      padding: 33% 0px 0px;
-      background: var(--black);
-      border-radius: 50%;
-      top: 23%;
-      left: 25%;
-      animation: var(--eye-animation-timing) 0s infinite normal none running eye;
-      z-index: 10;
-      &::before {
-          content: "";
-          background-color: var(--white);
-          position: absolute;
-          width: 65%;
-          height: 45%;
-          border-radius: 50%;
-          top: 5%;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 2;
-          animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
-     }
-      &.two {
-          left: 51%;
-          &::after {
-              transform: rotate(-60deg);
-              background-image: var(--eye3-gradient);
-              left: 35%;
-         }
-     }
-      & .eye_inner {
-          background: var(--eye-gradient);
-          border-radius: 50%;
-          width: 100%;
-          padding: 65% 0px 0px;
-          transform: rotate(-90deg);
-          bottom: 15%;
-          position: absolute;
-          animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
-     }
- }
-  & .mouth {
-      z-index: 50;
-      border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
-      height: 16%;
-      width: 21%;
-      left: 46%;
-      top: 59%;
-      background: var(--brown);
-      animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
-      &::before {
-          content: "";
-          bottom: 3%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 70%;
-          height: 70%;
-          border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
-          background: var(--pinkthree);
-          display: block;
-          position: absolute;
-     }
- }
-  & .cheek {
-      background-color: var(--pinkthree);
-      top: 56%;
-      left: 8%;
-      filter: blur(0.1vw);
-      width: 14%;
-      height: 8%;
-      border-radius: 50%;
-      transform: rotate(-10deg);
-      z-index: 3;
-      &.two {
-          left: auto;
-          right: 15%;
-          transform: rotate(10deg);
-     }
- }
-  & .hand {
-      top: 22%;
-      left: 87%;
-      background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
-      border-radius: 60% 40% 40% 60% / 60% 40%;
-      width: 30%;
-      padding: 30% 0px 0px;
-      transform: rotate(34deg);
-      z-index: 1;
-      &.two {
-          top: 19%;
-          left: -13%;
-          background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
-          transform: rotate(253deg);
-          z-index: -1;
-     }
- }
-  & [class*="foot"] {
-      width: 50%;
-      height: 35%;
-      position: absolute;
-      background: var(--foot-gradient);
-      border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
-      z-index: 10;
- }
-  & .foot-right {
-      bottom: 0%;
-      left: -13%;
-      transform: rotate(72deg);
- }
-  & .foot-left {
-      right: -10%;
-      bottom: -1%;
-      transform: rotate(-34deg);
-      animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
- }
-}
-@keyframes eye {
-  0%, 51%, 53%, 98%, 100% {
-      background: var(--black);
- }
-  51.5%, 52.5%, 98.5%, 99.5% {
-      background: transparent;
- }
-  52%, 99% {
-      background: var(--black);
- }
-}
-@keyframes eye-inner {
-  0%, 51%, 53%, 98%, 100% {
-      background: var(--eye-gradient);
- }
-  51.5%, 52.5%, 98.5%, 99.5% {
-      background: transparent;
- }
-  52%, 99% {
-      background: var(--eye-gradient);
- }
-}
-@keyframes eye-before {
-  0%, 51%, 52%, 53%, 98%, 99%, 100% {
-      top: 5%;
-      background-color: var(--white);
-      width: 65%;
-      height: 45%;
- }
-  51.5%, 52.5%, 98.5%, 99.5% {
-      top: 62%;
-      background-color: var(--black);
-      width: 200%;
-      height: 2%;
- }
-  100% {
-      width: 60%;
- }
-}
-#container .sakura_content {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  width: 600px;
-  height: auto;
-  transform: translateX(-50%) translateY(0%);
-  & .sakura_content_tree {
-      background: var(--tree-color);
-      mask-image: url("tree.png");
-      mask-size: 600px;
-      mask-repeat: no-repeat;
-      mask-position: center bottom;
-      height: 750px;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      & .eye, & .mouth {
-          position: absolute;
-          transition: 0.3s ease-in-out;
-     }
-      & .eye {
-          width: 3%;
-          padding: 7% 0px 0px;
-          background: var(--black);
-          border-radius: 50%;
-          top: 63%;
-          left: 53%;
-          animation: var(--eye-animation-timing) 0s infinite normal none running eye;
-          z-index: 10;
-          &.two {
-              left: 58%;
-              &::after {
-                  transform: rotate(-60deg);
-                  background-image: var(--eye3-gradient);
-                  left: 35%;
-             }
-         }
-     }
-      & .mouth {
-         z-index: 50;
-         border-radius: 50%;
-         height: 5%;
-         width: 3%;
-         left: 55.5%;
-         top: 73%;
-         background: var(--brown);
-         animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
-     }
- }
-  & .sakura_content_leaf {
-      content: "";
-      background-image: radial-gradient(circle at 19% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 34%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 20% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 28% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 22% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 29% 69%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 54%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 46%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 41% 22%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 34% 25%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 37% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 42% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 39% 37%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 44% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 73%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 76%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 46% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 65%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 72%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 63% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 26%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 54% 20%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 61% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 56% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 40%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 36%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 58% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 76% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 27%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 35%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 79% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 70% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 88% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 80% 68%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 75% 28%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 81% 33%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 66% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 83% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 87% 60%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 86% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%);
-      background-size: 100% 100%;
-      display: block;
-      width: calc(20% + 600px);
-      height: 500px;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 0px;
-      left: 0%;
-      z-index: 10;
-      transform: translateX(-10%) translateY(0%);
- }
-  & .sakura {
-      position: absolute;
-      padding: 0px;
-      margin: 0px;
-      width: 100%;
-      height: 75%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      bottom: 10px;
-      left: 0px;
-      overflow: hidden;
-      perspective: 50px;
-      border-radius: 0% 70%;
-      & li {
-          padding: 10px;
-          position: absolute;
-          list-style: none;
-          background: rgb(252, 181, 199);
-          border-radius: 0% 80% 0% 60% / 0% 70% 0% 90%;
-          top: 0px;
-          &:nth-child(2n) {
-              background: rgb(255, 204, 217);
-              border-radius: 0% 70% 0% 90% / 0% 90% 0% 70%;
-         }
-          animation: 4s linear 0s infinite normal none running fall, 1s ease-in-out 0s infinite alternate none running rotate1;
-          &:nth-child(1) {
-              left: 0px;
-              animation: 10s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate2;
-         }
-          &:nth-child(2) {
-              left: 5%;
-              animation: 15s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate3;
-         }
-          &:nth-child(3) {
-              left: 15%;
-              animation: 9s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
-         }
-          &:nth-child(4) {
-              left: 30%;
-              animation: 8s linear 0s infinite normal none running fall, 6s ease-in-out 0s infinite alternate none running rotate2;
-         }
-          &:nth-child(5) {
-              left: 40%;
-              animation: 10s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
-         }
-          &:nth-child(6) {
-              left: 55%;
-              animation: 11s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate1;
-         }
-          &:nth-child(7) {
-              left: 65%;
-              animation: 7s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
-         }
-          &:nth-child(8) {
-              left: 50%;
-              animation: 7s linear 0s infinite normal none running fall, 5s ease-in-out 0s infinite alternate none running rotate3;
-         }
-          &:nth-child(9) {
-              left: 60%;
-              animation: 10s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate1;
-         }
-          &:nth-child(10) {
-              left: 75%;
-              animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
-         }
-          &:nth-child(11) {
-              left: 85%;
-              animation: 5s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
-         }
-          &:nth-child(12) {
-              left: 90%;
-              animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
-         }
-     }
- }
-}
-@keyframes fall {
-  0% {
-      top: 0%;
- }
-  100% {
-      top: 150%;
- }
-}
-@keyframes rotate1 {
-  0% {
-      transform: translateX(0px) translateZ(-50px) rotate(0deg);
- }
-  100% {
-      transform: translateX(100px) translateZ(-30px) rotateY(10deg);
- }
-}
-@keyframes rotate2 {
-  0% {
-      transform: translateX(0px) translateZ(-40px) rotate(0deg);
- }
-  100% {
-      transform: translateX(100px) translateZ(-60px) rotateY(20deg);
- }
-}
-@keyframes rotate3 {
-  0% {
-      transform: translateX(0px) translateZ(-40px) rotate(10deg);
- }
-  100% {
-      transform: translateX(100px) translateZ(-60px) rotateY(0deg);
- }
-}
+    --gray: #666;
+    --white: #fff;
+    --black: #000;
+    --pink: #d77584;
+    --pinktwo: #ff9db5;
+    --brown: #752b42;
+    --pinkthree: #f0608b;
+    --red: #af2d13;
+    --waterblue: #8ed3dd;
+    --switch-transition: 250ms ease-out;
+    --border-width: 0.2vw;
+    --switch-shadow: 0.3vw 0.3vw 0.1vw 0;
+    --label-size: 30px;
+    --checkbox-size: 15px;
+    --kirby-animation-timing: 0.25s ease-in-out;
+    --eye-animation-timing: 5s ease-out;
+    --eye-gradient: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
+    --eye2-gradient: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
+    --eye3-gradient: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
+    --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
+    --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
+    --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
+    --foot-gradient: linear-gradient(75deg, var(--brown), var(--red) 20%, #cf472c);
+    --tree-color: linear-gradient(10deg, #7d502b, #B5753F 30%, #B5753F);
+  }
+  body {
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 25%, rgba(91, 220, 219, 0.36) 26%, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
+  }
+  #container .kirby_content {
+    position: absolute;
+    transform: translateX(-50%) translateY(0%);
+    bottom: 20px;
+    left: calc(50% - 80px);
+    width: 100px;
+    height: auto;
+    animation: kirbymove var(--kirby-animation-timing) infinite;
+    opacity: 1;
+    z-index: 100;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    & .kirby_inner {
+        background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
+        border-radius: 50%;
+        width: 100%;
+        padding: 100% 0px 0px;
+   }
+    & .eye, & .mouth, & .cheek, & .hand, & .foot {
+        position: absolute;
+        transition: 0.3s ease-in-out;
+   }
+    & .eye {
+        width: 14%;
+        padding: 33% 0px 0px;
+        background: var(--black);
+        border-radius: 50%;
+        top: 23%;
+        left: 37%;
+        animation: var(--eye-animation-timing) 0s infinite normal none running eye;
+        &::before {
+            content: "";
+            background-color: var(--white);
+            position: absolute;
+            width: 65%;
+            height: 45%;
+            border-radius: 50%;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
+       }
+        &.two {
+            left: 61%;
+            &::after {
+                transform: rotate(-60deg);
+                background-image: var(--eye3-gradient);
+                left: 35%;
+           }
+       }
+        & .eye_inner {
+            background: var(--eye-gradient);
+            border-radius: 50%;
+            width: 100%;
+            padding: 65% 0px 0px;
+            transform: rotate(-90deg);
+            bottom: 15%;
+            position: absolute;
+            animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
+       }
+   }
+    & .mouth {
+        z-index: 50;
+        border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
+        height: 16%;
+        width: 21%;
+        left: 46%;
+        top: 59%;
+        background: var(--brown);
+        animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
+        &::before {
+            content: "";
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
+            background: var(--pinkthree);
+            display: block;
+            position: absolute;
+       }
+   }
+    & .cheek {
+        background-color: var(--pinkthree);
+        top: 56%;
+        left: 20%;
+        filter: blur(0.1vw);
+        width: 14%;
+        height: 8%;
+        border-radius: 50%;
+        transform: rotate(-10deg);
+        z-index: 3;
+        &.two {
+            left: auto;
+            right: 9%;
+            transform: rotate(10deg);
+       }
+   }
+    & .hand {
+        top: 22%;
+        left: -12%;
+        background: var(--kirby-hand-gradient);
+        border-radius: 60% 40% 40% 60% / 60% 40%;
+        width: 30%;
+        padding: 30% 0px 0px;
+        transform: rotate(34deg);
+        &.two {
+            top: 19%;
+            left: auto;
+            right: -12%;
+            background: var(--kirby-hand2-gradient);
+            transform: rotate(164deg);
+            z-index: -1;
+       }
+   }
+    & [class*="foot"] {
+        width: 50%;
+        height: 35%;
+        position: absolute;
+        background: var(--foot-gradient);
+        border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
+        z-index: 10;
+   }
+    & .foot-right {
+        bottom: 0%;
+        left: -10%;
+        transform: rotate(-112deg);
+   }
+    & .foot-left {
+        right: -16%;
+        bottom: 1%;
+        transform: rotate(-34deg);
+        animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
+   }
+  }
+  #container .wado_content {
+    position: absolute;
+    transform: translateX(100%) translateY(0%);
+    bottom: 20px;
+    right: calc(50% - 100px);
+    width: 100px;
+    height: auto;
+    animation: kirbymove var(--kirby-animation-timing) infinite;
+    opacity: 1;
+    z-index: 100;
+    & .wado_inner {
+        background: linear-gradient(0deg, rgb(185, 127, 78), rgb(227, 118, 26) 20%, rgb(227, 118, 26));
+        border-radius: 50%;
+        width: 100%;
+        padding: 100% 0px 0px;
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            background: rgb(245, 225, 198);
+       }
+        &::before {
+            top: 12%;
+            left: 46%;
+            width: 69%;
+            height: 60%;
+            border-radius: 50% 50% 40%;
+            transform: translateX(-50%);
+       }
+        &::after {
+            top: 43%;
+            left: 46%;
+            width: 81%;
+            height: 45%;
+            border-radius: 40%;
+            transform: translateX(-50%);
+            z-index: 0;
+       }
+   }
+    & .eye, & .mouth, & .cheek, & .hand, & .foot {
+        position: absolute;
+        transition: 0.3s ease-in-out;
+   }
+    & .eye {
+        width: 14%;
+        padding: 33% 0px 0px;
+        background: var(--black);
+        border-radius: 50%;
+        top: 23%;
+        left: 25%;
+        animation: var(--eye-animation-timing) 0s infinite normal none running eye;
+        z-index: 10;
+        &::before {
+            content: "";
+            background-color: var(--white);
+            position: absolute;
+            width: 65%;
+            height: 45%;
+            border-radius: 50%;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
+       }
+        &.two {
+            left: 51%;
+            &::after {
+                transform: rotate(-60deg);
+                background-image: var(--eye3-gradient);
+                left: 35%;
+           }
+       }
+        & .eye_inner {
+            background: var(--eye-gradient);
+            border-radius: 50%;
+            width: 100%;
+            padding: 65% 0px 0px;
+            transform: rotate(-90deg);
+            bottom: 15%;
+            position: absolute;
+            animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
+       }
+   }
+    & .mouth {
+        z-index: 50;
+        border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
+        height: 16%;
+        width: 21%;
+        left: 46%;
+        top: 59%;
+        background: var(--brown);
+        animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
+        &::before {
+            content: "";
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
+            background: var(--pinkthree);
+            display: block;
+            position: absolute;
+       }
+   }
+    & .cheek {
+        background-color: var(--pinkthree);
+        top: 56%;
+        left: 8%;
+        filter: blur(0.1vw);
+        width: 14%;
+        height: 8%;
+        border-radius: 50%;
+        transform: rotate(-10deg);
+        z-index: 3;
+        &.two {
+            left: auto;
+            right: 15%;
+            transform: rotate(10deg);
+       }
+   }
+    & .hand {
+        top: 22%;
+        left: 87%;
+        background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
+        border-radius: 60% 40% 40% 60% / 60% 40%;
+        width: 30%;
+        padding: 30% 0px 0px;
+        transform: rotate(34deg);
+        z-index: 1;
+        &.two {
+            top: 19%;
+            left: -13%;
+            background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
+            transform: rotate(253deg);
+            z-index: -1;
+       }
+   }
+    & [class*="foot"] {
+        width: 50%;
+        height: 35%;
+        position: absolute;
+        background: var(--foot-gradient);
+        border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
+        z-index: 10;
+   }
+    & .foot-right {
+        bottom: 0%;
+        left: -13%;
+        transform: rotate(72deg);
+   }
+    & .foot-left {
+        right: -10%;
+        bottom: -1%;
+        transform: rotate(-34deg);
+        animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
+   }
+  }
+  @keyframes eye {
+    0%, 51%, 53%, 98%, 100% {
+        background: var(--black);
+   }
+    51.5%, 52.5%, 98.5%, 99.5% {
+        background: transparent;
+   }
+    52%, 99% {
+        background: var(--black);
+   }
+  }
+  @keyframes eye-inner {
+    0%, 51%, 53%, 98%, 100% {
+        background: var(--eye-gradient);
+   }
+    51.5%, 52.5%, 98.5%, 99.5% {
+        background: transparent;
+   }
+    52%, 99% {
+        background: var(--eye-gradient);
+   }
+  }
+  @keyframes eye-before {
+    0%, 51%, 52%, 53%, 98%, 99%, 100% {
+        top: 5%;
+        background-color: var(--white);
+        width: 65%;
+        height: 45%;
+   }
+    51.5%, 52.5%, 98.5%, 99.5% {
+        top: 62%;
+        background-color: var(--black);
+        width: 200%;
+        height: 2%;
+   }
+    100% {
+        width: 60%;
+   }
+  }
+  #container .sakura_content {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    width: 600px;
+    height: auto;
+    transform: translateX(-50%) translateY(0%);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    & .sakura_content_tree {
+        background: var(--tree-color);
+        mask-image: url("tree.png");
+        mask-size: 600px;
+        mask-repeat: no-repeat;
+        mask-position: center bottom;
+        height: 750px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        & .eye, & .mouth {
+            position: absolute;
+            transition: 0.3s ease-in-out;
+       }
+        & .eye {
+            width: 3%;
+            padding: 7% 0px 0px;
+            background: var(--black);
+            border-radius: 50%;
+            top: 63%;
+            left: 53%;
+            animation: var(--eye-animation-timing) 0s infinite normal none running eye;
+            z-index: 10;
+            &.two {
+                left: 58%;
+                &::after {
+                    transform: rotate(-60deg);
+                    background-image: var(--eye3-gradient);
+                    left: 35%;
+               }
+           }
+       }
+        & .mouth {
+           z-index: 50;
+           border-radius: 50%;
+           height: 5%;
+           width: 3%;
+           left: 55.5%;
+           top: 73%;
+           background: var(--brown);
+           animation: 1s ease-in-out 0s infinite alternate none running mouthmove;
+       }
+   }
+    & .sakura_content_leaf {
+        content: "";
+        background-image: radial-gradient(circle at 19% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 34%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 20% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 28% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 22% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 29% 69%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 54%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 46%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 41% 22%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 34% 25%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 37% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 42% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 39% 37%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 44% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 73%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 76%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 46% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 65%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 72%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 63% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 26%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 54% 20%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 61% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 56% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 40%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 36%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 58% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 76% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 27%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 35%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 79% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 70% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 88% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 80% 68%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 75% 28%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 81% 33%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 66% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 83% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 87% 60%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 86% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%);
+        background-size: 100% 100%;
+        display: block;
+        width: 600px;
+        height: 500px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0px;
+        left: -1%;
+        z-index: 10;
+        transform: translateX(0%) translateY(0%);
+   }
+    & .sakura {
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 10px;
+        left: 0px;
+        overflow: hidden;
+        perspective: 50px;
+        border-radius: 0% 70%;
+        & li {
+            padding: 10px;
+            position: absolute;
+            list-style: none;
+            background: rgb(252, 181, 199);
+            border-radius: 0% 80% 0% 60% / 0% 70% 0% 90%;
+            top: 0px;
+            &:nth-child(2n) {
+                background: rgb(255, 204, 217);
+                border-radius: 0% 70% 0% 90% / 0% 90% 0% 70%;
+           }
+            animation: 4s linear 0s infinite normal none running fall, 1s ease-in-out 0s infinite alternate none running rotate1;
+            &:nth-child(1) {
+                left: 0px;
+                animation: 10s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate2;
+           }
+            &:nth-child(2) {
+                left: 5%;
+                animation: 15s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate3;
+           }
+            &:nth-child(3) {
+                left: 15%;
+                animation: 9s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
+           }
+            &:nth-child(4) {
+                left: 30%;
+                animation: 8s linear 0s infinite normal none running fall, 6s ease-in-out 0s infinite alternate none running rotate2;
+           }
+            &:nth-child(5) {
+                left: 40%;
+                animation: 10s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
+           }
+            &:nth-child(6) {
+                left: 55%;
+                animation: 11s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate1;
+           }
+            &:nth-child(7) {
+                left: 65%;
+                animation: 7s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
+           }
+            &:nth-child(8) {
+                left: 50%;
+                animation: 7s linear 0s infinite normal none running fall, 5s ease-in-out 0s infinite alternate none running rotate3;
+           }
+            &:nth-child(9) {
+                left: 60%;
+                animation: 10s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate1;
+           }
+            &:nth-child(10) {
+                left: 75%;
+                animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
+           }
+            &:nth-child(11) {
+                left: 85%;
+                animation: 5s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
+           }
+            &:nth-child(12) {
+                left: 90%;
+                animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
+           }
+       }
+   }
+  }
+  @keyframes fall {
+    0% {
+        top: 0%;
+   }
+    100% {
+        top: 150%;
+   }
+  }
+  @keyframes rotate1 {
+    0% {
+        transform: translateX(0px) translateZ(-50px) rotate(0deg);
+   }
+    100% {
+        transform: translateX(100px) translateZ(-30px) rotateY(10deg);
+   }
+  }
+  @keyframes rotate2 {
+    0% {
+        transform: translateX(0px) translateZ(-40px) rotate(0deg);
+   }
+    100% {
+        transform: translateX(100px) translateZ(-60px) rotateY(20deg);
+   }
+  }
+  @keyframes rotate3 {
+    0% {
+        transform: translateX(0px) translateZ(-40px) rotate(10deg);
+   }
+    100% {
+        transform: translateX(100px) translateZ(-60px) rotateY(0deg);
+   }
+  }
+
+  @media (420px <= width <= 600px ){
+    .sakura_content, .kirby_content, .wado_content {
+        zoom: 0.75;
+    }
+  }  
+
+  @media (420px >= width){
+    .sakura_content, .kirby_content, .wado_content {
+        zoom: 0.5;
+    }
+  }
