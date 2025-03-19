@@ -1108,14 +1108,39 @@
     100% { opacity: 0; bottom: 50%; }
   }  
 
-  @media (420px <= width <= 600px ){
-    .sakura_content, .kirby_content, .wado_content, .bento_content, .sheet_content {
-        zoom: 0.75;
-    }
+  @media (420px <= width <= 600px ) {
+      #container  {
+        .sakura_content, .kirby_content, .wado_content, .bento_content, .sheet_content {
+            zoom: 0.75;
+        }
+      }
   }  
 
   @media (420px >= width){
-    .sakura_content, .kirby_content, .wado_content, .bento_content, .sheet_content {
-        zoom: 0.5;
+    body {
+        background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 50%, rgba(91, 220, 219, 0.36) 51%, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
+    }
+    #container  {
+        & .sakura_content, & .kirby_content, & .wado_content, & .bento_content, & .sheet_content {
+            zoom: 0.5;
+        }
+        & .sakura_content{
+            bottom: calc(50% + 120px);
+            transform: translateX(-50%) translateY(50%);
+        }
+        & .kirby_content{
+            bottom: calc(50% - 300px);
+            transform: translateX(-50%) translateY(50%);
+        }
+        & .wado_content{
+            bottom: calc(50% - 300px);
+            transform: translateX(100%) translateY(50%);
+        }
+        & .bento_content{
+            bottom: calc(50% - 375px);
+        }
+        & .sheet_content {
+            bottom: calc(50% - 380px);
+        }        
     }
   }
