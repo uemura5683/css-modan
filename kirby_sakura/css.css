@@ -23,15 +23,18 @@
     --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
     --foot-gradient: linear-gradient(75deg, var(--brown), var(--red) 20%, #cf472c);
     --tree-color: linear-gradient(10deg, #7d502b, #B5753F 30%, #B5753F);
-  }
-  body {
+}
+body {
     padding: 0px;
     margin: 0px;
     width: 100vw;
     height: 100vh;
     background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 200px, rgba(91, 220, 219, 0.36) 205px, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
-  }
-  #container .kirby_content {
+}
+li {
+    list-style-type: none;
+}
+.kirby_content {
     position: absolute;
     transform: translateX(-50%) translateY(0%);
     bottom: 20px;
@@ -46,11 +49,11 @@
         border-radius: 50%;
         width: 100%;
         padding: 100% 0px 0px;
-   }
+    }
     & .eye, & .mouth, & .cheek, & .hand, & .foot {
         position: absolute;
         transition: 0.3s ease-in-out;
-   }
+    }
     & .eye {
         width: 14%;
         padding: 33% 0px 0px;
@@ -71,15 +74,15 @@
             transform: translateX(-50%);
             z-index: 2;
             animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
-       }
+        }
         &.two {
             left: 61%;
             &::after {
                 transform: rotate(-60deg);
                 background-image: var(--eye3-gradient);
                 left: 35%;
-           }
-       }
+            }
+        }
         & .eye_inner {
             background: var(--eye-gradient);
             border-radius: 50%;
@@ -89,8 +92,8 @@
             bottom: 15%;
             position: absolute;
             animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
-       }
-   }
+        }
+    }
     & .mouth {
         z-index: 50;
         border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
@@ -110,8 +113,8 @@
             background: var(--pinkthree);
             display: block;
             position: absolute;
-       }
-   }
+        }
+    }
     & .cheek {
         background-color: var(--pinkthree);
         top: 56%;
@@ -126,8 +129,8 @@
             left: auto;
             right: 9%;
             transform: rotate(10deg);
-       }
-   }
+        }
+    }
     & .hand {
         top: 22%;
         left: -12%;
@@ -143,8 +146,8 @@
             background: var(--kirby-hand2-gradient);
             transform: rotate(164deg);
             z-index: -1;
-       }
-   }
+        }
+    }
     & [class*="foot"] {
         width: 50%;
         height: 35%;
@@ -152,20 +155,20 @@
         background: var(--foot-gradient);
         border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
         z-index: 10;
-   }
+    }
     & .foot-right {
         bottom: 0%;
         left: -10%;
         transform: rotate(-112deg);
-   }
+    }
     & .foot-left {
         right: -16%;
         bottom: 1%;
         transform: rotate(-34deg);
         animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
-   }
-  }
-  #container .wado_content {
+    }
+}
+.wado_content {
     position: absolute;
     transform: translateX(100%) translateY(0%);
     bottom: 20px;
@@ -184,7 +187,7 @@
             content: "";
             position: absolute;
             background: rgb(245, 225, 198);
-       }
+        }
         &::before {
             top: 12%;
             left: 46%;
@@ -192,7 +195,7 @@
             height: 60%;
             border-radius: 50% 50% 40%;
             transform: translateX(-50%);
-       }
+        }
         &::after {
             top: 43%;
             left: 46%;
@@ -201,12 +204,12 @@
             border-radius: 40%;
             transform: translateX(-50%);
             z-index: 0;
-       }
-   }
+        }
+    }
     & .eye, & .mouth, & .cheek, & .hand, & .foot {
         position: absolute;
         transition: 0.3s ease-in-out;
-   }
+    }
     & .eye {
         width: 14%;
         padding: 33% 0px 0px;
@@ -228,15 +231,15 @@
             transform: translateX(-50%);
             z-index: 2;
             animation: var(--eye-animation-timing) 0s infinite normal none running eye-before;
-       }
+        }
         &.two {
             left: 51%;
             &::after {
                 transform: rotate(-60deg);
                 background-image: var(--eye3-gradient);
                 left: 35%;
-           }
-       }
+            }
+        }
         & .eye_inner {
             background: var(--eye-gradient);
             border-radius: 50%;
@@ -246,8 +249,8 @@
             bottom: 15%;
             position: absolute;
             animation: var(--eye-animation-timing) 0s infinite normal none running eye-inner;
-       }
-   }
+        }
+    }
     & .mouth {
         z-index: 50;
         border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
@@ -267,8 +270,8 @@
             background: var(--pinkthree);
             display: block;
             position: absolute;
-       }
-   }
+        }
+    }
     & .cheek {
         background-color: var(--pinkthree);
         top: 56%;
@@ -283,8 +286,8 @@
             left: auto;
             right: 15%;
             transform: rotate(10deg);
-       }
-   }
+        }
+    }
     & .hand {
         top: 22%;
         left: 87%;
@@ -300,8 +303,8 @@
             background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
             transform: rotate(253deg);
             z-index: -1;
-       }
-   }
+        }
+    }
     & [class*="foot"] {
         width: 50%;
         height: 35%;
@@ -309,20 +312,20 @@
         background: var(--foot-gradient);
         border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
         z-index: 10;
-   }
+    }
     & .foot-right {
         bottom: 0%;
         left: -13%;
         transform: rotate(72deg);
-   }
+    }
     & .foot-left {
         right: -10%;
         bottom: -1%;
         transform: rotate(-34deg);
         animation: 0.1s ease-in-out 0s infinite normal none running foot-mov-3;
-   }
-  }
-  #container .sakura_content {
+    }
+}
+.sakura_content {
     position: absolute;
     left: 50%;
     bottom: 120px;
@@ -379,13 +382,13 @@
             background: linear-gradient(10deg, #7d502b,  #B5753F);
         }
         & .mouth {
-           z-index: 50;
-           border-radius: 50%;
-           height: 5%;
-           width: 3%;
-           left: 55.5%;
-           top: 73%;
-           background: #7d502b;
+        z-index: 50;
+        border-radius: 50%;
+        height: 5%;
+        width: 3%;
+        left: 55.5%;
+        top: 73%;
+        background: #7d502b;
             &:before {
                 content: '';
                 box-shadow: inset 0 0 0 10px var(--black);
@@ -413,7 +416,7 @@
         left: -1%;
         z-index: 10;
         transform: translateX(0%) translateY(0%);
-   }
+}
     & .sakura {
         position: absolute;
         padding: 0px;
@@ -438,62 +441,60 @@
             &:nth-child(2n) {
                 background: rgb(255, 204, 217);
                 border-radius: 0% 70% 0% 90% / 0% 90% 0% 70%;
-           }
+            }
             animation: 4s linear 0s infinite normal none running fall, 1s ease-in-out 0s infinite alternate none running rotate1;
             &:nth-child(1) {
                 left: 0px;
                 animation: 10s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate2;
-           }
+            }
             &:nth-child(2) {
                 left: 5%;
                 animation: 15s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate3;
-           }
+            }
             &:nth-child(3) {
                 left: 15%;
                 animation: 9s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
-           }
+            }
             &:nth-child(4) {
                 left: 30%;
                 animation: 8s linear 0s infinite normal none running fall, 6s ease-in-out 0s infinite alternate none running rotate2;
-           }
+            }
             &:nth-child(5) {
                 left: 40%;
                 animation: 10s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
-           }
+            }
             &:nth-child(6) {
                 left: 55%;
                 animation: 11s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate1;
-           }
+            }
             &:nth-child(7) {
                 left: 65%;
                 animation: 7s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
-           }
+            }
             &:nth-child(8) {
                 left: 50%;
                 animation: 7s linear 0s infinite normal none running fall, 5s ease-in-out 0s infinite alternate none running rotate3;
-           }
+            }
             &:nth-child(9) {
                 left: 60%;
                 animation: 10s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate1;
-           }
+            }
             &:nth-child(10) {
                 left: 75%;
                 animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
-           }
+            }
             &:nth-child(11) {
                 left: 85%;
                 animation: 5s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
-           }
+            }
             &:nth-child(12) {
                 left: 90%;
                 animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
-           }
-       }
-   }
-  }
-
-
-  .sheet_content {
+            }
+        }
+    }
+}
+.sheet_content {
     position: absolute;
     width: 500px;
     height: 23%;
@@ -503,10 +504,10 @@
     border-bottom: 92px solid #578fea;
     border-left: 5vw solid transparent;
     border-right: 5vw solid transparent;
-  }
+}
 
-  /* 弁当 */
-  .bento_content {
+/* 弁当 */
+.bento_content {
     overflow: hidden;
     width: 150px;
     position: absolute;
@@ -639,396 +640,384 @@
                 }
             }
         }
-
+        & .bento__block__left__bottom {
+            border: .25vw solid #1c2484;
+            width: 100%;
+            padding: 0;
+            background-color: #141a56;
+            box-shadow: inset 0.25vw 0.25vw 0 #0c103a;
+            & .bento__sukiyaki {
+                & .sukiyakientry {
+                    position: relative;
+                    padding: 70% 0 0;
+                    &:before {
+                        position: absolute;
+                        transform: translateY(-50%) translateX(-50%);
+                        border-radius: 60% 70% 50% 30% / 80% 80% 80% 80%;
+                        background-color: #3c1f1f;
+                        width: 90%;
+                        padding: 60% 0 0 0;
+                        top: 50%;
+                        left: 50%;
+                    }
+                    & .sukiyakientry_item {
+                        position: absolute;
+                    }
+                    & .ninjin {
+                        top: 0;
+                        left: 9%;
+                        width: 30%;
+                        padding: 50% 0 0;
+                        background: #FF5F00;
+                        border-radius: 80% 40% 30% 70% / 60% 30% 80% 40%;
+                        box-shadow: inset -.25vw -.25vw 0 #F44A1C;
+                        transform: rotate(126deg);
+                    }
+                    & .niku {
+                        width: 60%;
+                        padding: 50% 0 0;
+                        background: linear-gradient(#7d2b21,#9a2800 40%,#802f10 70%,#75280d 80%);
+                        border-radius: 60% 70% 100% 30% / 50% 30% 70% 80%;
+                        box-shadow: inset -0.75vw -0.025vw .25vw #562010;
+                        top: -2%;
+                        right: 10%;
+                    }
+                    & .mushroom {
+                        width: 40%;
+                        padding: 42% 0 0;
+                        background: radial-gradient(#443d3d,#402e28 40%,#4a2a1e 70%,#3c1c11 80%);
+                        border-radius: 40% 40% 40% 40%;
+                        box-shadow: inset -.1vw -.1vw .1vw #84644e;
+                        top: 39%;
+                        left: 0;
+                        transform: rotate(10deg);
+                        & .mushroom-skew {
+                            display: block;
+                            width: 40%;
+                            height: 40%;
+                            background: #795f5f;
+                            position: absolute;
+                            & > * {
+                            transform: translateY(-50%) translateX(-50%);
+                            }
+                            &.mushroom-skew-1 {
+                                transform: rotate(0deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
+                                left: 23%;
+                                top: 30%;
+                            }
+                            &.mushroom-skew-2 {
+                                transform: rotate(60deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
+                                top: 28%;
+                                left: 24%;
+                            }
+                            &.mushroom-skew-3 {
+                                transform: rotate(120deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
+                                top: 30%;
+                                left: 24%;
+                            }
+                        }
+                    }
+                    & .shungiku {
+                        position: absolute;
+                        top: 49%;
+                        right: 8%;
+                        width: 10%;
+                        padding: 38% 0 0;
+                        transform: rotate(22deg);
+                        &:last-child {
+                            right: 18%;
+                            top: 45%;
+                            transform:rotate(-5deg);
+                        }    
+                        & .shungiku-skew {
+                            display: block;
+                            width: 50%;
+                            padding: 70% 0 0;
+                            background: #7B9D52;
+                            position: absolute;
+                            border-radius: .5vw;
+                            box-shadow: inset -.25vw -.1vw 0 #5a733c;
+                            z-index: 3;
+                            &.shungiku-skew-1 {
+                                transform: rotate(50deg) skew(calc((60deg - 3deg)));
+                                right: 29%;
+                                top: 9%;
+                            }
+                            &.shungiku-skew-2 {
+                                transform: rotate(30deg) skew(calc((60deg - 3deg)));
+                                right: 61%;
+                                top: 23%;
+                            }
+                            &.shungiku-skew-3 {
+                                transform: rotate(70deg) skew(calc((60deg - 3deg)));
+                                left: 50%;
+                                top: 30%;
+                            }
+                            &.shungiku-skew-4 {
+                                transform: rotate(90deg) skew(calc((60deg - 0deg)));
+                                left: 60%;
+                                top: 40%;
+                            }
+                            &.shungiku-skew-5 {
+                                transform: rotate(41deg) skew(calc((60deg - 3deg)));
+                                right: 43%;
+                                top: 19%;
+                            }
+                            &.shungiku-skew-6 {
+                                transform: rotate(30deg) skew(calc((60deg - 3deg)));
+                                right: 50%;
+                                top: 40%;
+                            }
+                            &.shungiku-skew-7 {
+                                transform: rotate(70deg) skew(calc((60deg - 3deg)));
+                                left: 58%;
+                                top: 50%;
+                            }
+                            &.shungiku-skew-8 {
+                                transform: rotate(90deg) skew(calc((60deg - 0deg)));
+                                left: 60%;
+                                top: 28%;
+                            }
+                            &.shungiku-skew-9 {
+                                transform: rotate(39deg) skew(calc((60deg - 3deg)));
+                                right: 43%;
+                                top: 55%;
+                            }
+                            &.shungiku-skew-10 {
+                                transform: rotate(30deg) skew(calc((60deg - 3deg)));
+                                right: 59%;
+                                top: 60%;
+                            }
+                            &.shungiku-skew-11 {
+                                transform: rotate(70deg) skew(calc((60deg - 3deg)));
+                                left: 42%;
+                                top: 6%;
+                            }
+                            &.shungiku-skew-12 {
+                                transform: rotate(90deg) skew(calc((60deg - 0deg)));
+                                left: 60%;
+                                top: 58%;
+                            }
+                            & :after {
+                                content: "";
+                                position: absolute;
+                                height: 100%;
+                                border-left: .25vw solid #a5cc75;
+                                padding: 100% 0 0;
+                                left: 50%;
+                                top: 0;
+                                z-index: 2;
+                                border-radius: 1vw .2vw .1vw 0;
+                                transform: translateY(-0%) translateX(-50%);
+                            }
+                        }
+                    }
+                    & .greenonions {
+                        width: 12%;
+                        background: linear-gradient(#fbfbfb,#e6e6e6 40%,#e2dede 70%,#d6d1d1 80%);
+                        border-radius: 40% 20% 30% 10%;
+                        box-shadow: inset -0.15vw -0.15vw 0 #8c8c8c, inset -0.15vw -0.15vw 0.3vw #8c8c8c;
+                        padding: 30% 0 0;
+                        top: 0;
+                        right: 15%;
+                        z-index: 1;
+                        transform: rotate(26deg);
+                        & .sukiyakientry_item_inner {
+                            border: .1vw solid #5ed422;
+                            position: absolute;
+                            width: 64%;
+                            height: 70%;
+                            border-radius: 50% 20% 50% 20%;
+                            top: 50%;
+                            left: 45%;
+                            transform: translateY(-50%) translateX(-50%);
+                        }
+                        &:nth-of-type( 2 ) {
+                            top: 7%;
+                            right: 4%;
+                            transform: rotate(33deg);
+                        }
+                    }
+                    & .tofu {
+                        width: 30%;
+                        padding: 40% 0 0;
+                        background: #e6e6e6;
+                        border-radius: 10% 21% 10% 24%;
+                        box-shadow: inset -0.5vw -0.3vw 0 #c5c5c5;
+                        top: 74%;
+                        right: 10%;
+                        transform: translateY(-50%) translateX(-50%) rotate(80deg);
+                    }
+                }
+            }
+        }
     }
-  }
-
-
-.bento__block__left__bottom {
-    border: .25vw solid #1c2484;
-    width: 100%;
-    padding: 0;
-    background-color: #141a56;
-    box-shadow: inset 0.25vw 0.25vw 0 #0c103a;
-    & .bento__sukiyaki {
-
-    }
-}
-.sukiyakientry {
-    position: relative;
-    padding: 70% 0 0;
-    &:before {
+    & .bento__rice {
+        width: 85%;
+        height: 85%;
+        background: #fff;
         position: absolute;
-        transform: translateY(-50%) translateX(-50%);
-        border-radius: 60% 70% 50% 30% / 80% 80% 80% 80%;
-        background-color: #3c1f1f;
-        width: 90%;
-        padding: 60% 0 0 0;
         top: 50%;
         left: 50%;
-    }
-    & .sukiyakientry_item {
-        position: absolute;
-    }
-    & .ninjin {
-        top: 0;
-        left: 9%;
-        width: 30%;
-        padding: 50% 0 0;
-        background: #FF5F00;
-        border-radius: 80% 40% 30% 70% / 60% 30% 80% 40%;
-        box-shadow: inset -.25vw -.25vw 0 #F44A1C;
-        transform: rotate(126deg);
-    }
-    & .niku {
-        width: 60%;
-        padding: 50% 0 0;
-        background: linear-gradient(#7d2b21,#9a2800 40%,#802f10 70%,#75280d 80%);
-        border-radius: 60% 70% 100% 30% / 50% 30% 70% 80%;
-        box-shadow: inset -0.75vw -0.025vw .25vw #562010;
-        top: -2%;
-        right: 10%;
-    }
-    & .mushroom {
-        width: 40%;
-        padding: 42% 0 0;
-        background: radial-gradient(#443d3d,#402e28 40%,#4a2a1e 70%,#3c1c11 80%);
-        border-radius: 40% 40% 40% 40%;
-        box-shadow: inset -.1vw -.1vw .1vw #84644e;
-        top: 39%;
-        left: 0;
-        transform: rotate(10deg);
-        & .mushroom-skew {
-            display: block;
-            width: 40%;
-            height: 40%;
-            background: #795f5f;
+        transform: translateY(-50%) translateX(-50%);
+        border-radius: 26% 20% 25% 10% / 18% 14% 20% 10%;
+        & .bento__rice__saltedplum {
             position: absolute;
-            & > * {
-               transform: translateY(-50%) translateX(-50%);
-            }
-            &.mushroom-skew-1 {
-                transform: rotate(0deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
-                left: 23%;
-                top: 30%;
-            }
-            &.mushroom-skew-2 {
-                transform: rotate(60deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
-                top: 28%;
-                left: 24%;
-            }
-            &.mushroom-skew-3 {
-                transform: rotate(120deg) skew(calc((90deg - 30deg) / 2), calc((90deg - 30deg) / 2));
-                top: 30%;
-                left: 24%;
-            }
-        }
-        
-    }
-    & .shungiku {
-        position: absolute;
-        top: 49%;
-        right: 8%;
-        width: 10%;
-        padding: 38% 0 0;
-        transform: rotate(22deg);
-        &:last-child {
-            right: 18%;
-            top: 45%;
-            transform:rotate(-5deg);
-        }    
-        & .shungiku-skew {
-            display: block;
-            width: 50%;
-            padding: 70% 0 0;
-            background: #7B9D52;
-            position: absolute;
-            border-radius: .5vw;
-            box-shadow: inset -.25vw -.1vw 0 #5a733c;
-            z-index: 3;
-            &.shungiku-skew-1 {
-                transform: rotate(50deg) skew(calc((60deg - 3deg)));
-                right: 29%;
-                top: 9%;
-            }
-            &.shungiku-skew-2 {
-                transform: rotate(30deg) skew(calc((60deg - 3deg)));
-                right: 61%;
-                top: 23%;
-            }
-            &.shungiku-skew-3 {
-                transform: rotate(70deg) skew(calc((60deg - 3deg)));
-                left: 50%;
-                top: 30%;
-            }
-            &.shungiku-skew-4 {
-                transform: rotate(90deg) skew(calc((60deg - 0deg)));
-                left: 60%;
-                top: 40%;
-            }
-            &.shungiku-skew-5 {
-                transform: rotate(41deg) skew(calc((60deg - 3deg)));
-                right: 43%;
-                top: 19%;
-            }
-            &.shungiku-skew-6 {
-                transform: rotate(30deg) skew(calc((60deg - 3deg)));
-                right: 50%;
-                top: 40%;
-            }
-            &.shungiku-skew-7 {
-                transform: rotate(70deg) skew(calc((60deg - 3deg)));
-                left: 58%;
-                top: 50%;
-            }
-            &.shungiku-skew-8 {
-                transform: rotate(90deg) skew(calc((60deg - 0deg)));
-                left: 60%;
-                top: 28%;
-            }
-            &.shungiku-skew-9 {
-                transform: rotate(39deg) skew(calc((60deg - 3deg)));
-                right: 43%;
-                top: 55%;
-            }
-            &.shungiku-skew-10 {
-                transform: rotate(30deg) skew(calc((60deg - 3deg)));
-                right: 59%;
-                top: 60%;
-            }
-            &.shungiku-skew-11 {
-                transform: rotate(70deg) skew(calc((60deg - 3deg)));
-                left: 42%;
-                top: 6%;
-            }
-            &.shungiku-skew-12 {
-                transform: rotate(90deg) skew(calc((60deg - 0deg)));
-                left: 60%;
-                top: 58%;
-            }
-            & :after {
-                content: "";
-                position: absolute;
-                height: 100%;
-                border-left: .25vw solid #a5cc75;
-                padding: 100% 0 0;
-                left: 50%;
-                top: 0;
-                z-index: 2;
-                border-radius: 1vw .2vw .1vw 0;
-                transform: translateY(-0%) translateX(-50%);
-            }
-        }
-    }
-    & .greenonions {
-        width: 12%;
-        background: linear-gradient(#fbfbfb,#e6e6e6 40%,#e2dede 70%,#d6d1d1 80%);
-        border-radius: 40% 20% 30% 10%;
-        box-shadow: inset -0.15vw -0.15vw 0 #8c8c8c, inset -0.15vw -0.15vw 0.3vw #8c8c8c;
-        padding: 30% 0 0;
-        top: 0;
-        right: 15%;
-        z-index: 1;
-        transform: rotate(26deg);
-        & .sukiyakientry_item_inner {
-            border: .1vw solid #5ed422;
-            position: absolute;
-            width: 64%;
-            height: 70%;
-            border-radius: 50% 20% 50% 20%;
             top: 50%;
-            left: 45%;
+            left: 50%;
             transform: translateY(-50%) translateX(-50%);
+            width: 10%;
+            padding: 10% 0 0;
+            background: radial-gradient(#ff8879,#fd6b38 40%,#fd6b38 70%,#fd6b38 80%);
+            border-radius: 40% 50% 50% 40%;
+            box-shadow: inset -0.15vw -0.23vw 0 #b5401c;
         }
-        &:nth-of-type( 2 ) {
-            top: 7%;
-            right: 4%;
-            transform: rotate(33deg);
+        & .bento__rice__pattern {
+            width: 25%;
+            padding: 12% 0 0;
+            top: -2%;
+            left: 69%;
+            transform: rotate(25deg);
+            border-radius: 60%;
+            background: #fff;
+            position: absolute;
+            border-radius: 86% 80% 75% 80% / 88% 84% 60% 80%;
+            &:nth-of-type(2) {
+                border-radius: 86% 80% 85% 80% / 88% 84% 80% 10%;
+                top: -3%;
+                left: 30%;
+                width: 50%;
+                padding: 14% 0 0;
+                transform: rotate(0deg);
+                &:before {
+                    left: 26%;
+                    top: 61%;
+                }
+            }
+            &:nth-of-type(3) {
+                border-radius: 86% 80% 85% 80% / 88% 84% 80% 60%;
+                top: 70%;
+                left: 33%;
+                width: 52%;
+                padding: 30% 0 0;
+                z-index: 2;
+                box-shadow: inset 0 -0.1vw 0 #E8D6CC;
+                transform: rotate(0deg);
+            }
+            &:nth-of-type(4) {
+                border-radius: 86% 80% 85% 80% / 88% 84% 80% 50%;
+                top: 70%;
+                left: 3%;
+                transform: rotate(0deg);
+                box-shadow: inset 0 -0.127vw 0 #E8D6CC;
+                width: 30%;
+                padding: 30% 0 0;
+                &:before {
+                    top: 8%;
+                    width: 14%;
+                    padding: 22% 0 0;
+                    transform: rotate(110deg);
+                }
+                &:after {
+                    top: 0;
+                }
+            }
+            &:nth-of-type(5) {
+                border-radius: 86% 80% 85% 80% / 88% 84% 80% 80%;
+                top: 42%;
+                left: -22%;
+                transform: rotate(90deg);
+                width: 50%;
+                padding: 11% 0 0;
+                &:before {
+                    transform: rotate(45deg);
+                    top: -136%;
+                }
+                &:after {
+                    transform: rotate(45deg);
+                    top: -100%;
+                }
+            }
+            &:nth-of-type(6) {
+                border-radius: 86% 80% 85% 80% / 58% 54% 30% 50%;
+                top: 27%;
+                left: 63%;
+                transform: rotate(90deg);
+                width: 55%;
+                padding: 31% 0 0;
+                box-shadow: inset 0 0.075vw 0 #E8D6CC;
+                &:before {
+                    transform: rotate(45deg);
+                    top: 80%;
+                    left: 26%;
+                }
+                &:after {
+                    transform: rotate(45deg);
+                    top: 98%;
+                    left: 15%;
+                }
+            }
+            &:nth-of-type(7) {
+                top: 74%;
+                left: 73%;
+                transform: rotate(-10deg);
+                padding: 14% 0 0;
+                z-index: 4;
+                box-shadow: inset 0 -0.125vw 0 #E8D6CC;
+                &:before {
+                    width: 13%;
+                    padding: 26% 0 0;
+                }
+                &:after {
+                    width: 13%;
+                    padding: 26% 0 0;
+                    left: 5%;
+                }
+            }
+            &:before, &:after {
+                content: '';
+                background: #fff;
+                width: 8%;
+                padding: 15% 0 0;
+                border-radius: 50%;
+                position: absolute;
+                transform: rotate(125deg);
+                box-shadow: inset 0.15vw 0 0 #e4e2da, inset 0.15vw 0.15vw 0 #e4e2da, inset 0 0 0 #e4e2da, inset 0.15vw 0.05vw 0 #e4e2da;
+            }
+            &:before {
+                left: 26%;
+                top: 39%;
+            }
+            &:after {
+                left: 15%;
+                top: 26%;
+            }
         }
     }
-    & .tofu {
-        width: 30%;
-        padding: 40% 0 0;
-        background: #e6e6e6;
-        border-radius: 10% 21% 10% 24%;
-        box-shadow: inset -0.5vw -0.3vw 0 #c5c5c5;
-        top: 74%;
-        right: 10%;
-        transform: translateY(-50%) translateX(-50%) rotate(80deg);
-    }
 }
-
-
-
-
-
-.bento__rice {
-    width: 85%;
-    height: 85%;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    border-radius: 26% 20% 25% 10% / 18% 14% 20% 10%;
-}
-.bento__rice__saltedplum {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    width: 10%;
-    padding: 10% 0 0;
-    background: radial-gradient(#ff8879,#fd6b38 40%,#fd6b38 70%,#fd6b38 80%);
-    border-radius: 40% 50% 50% 40%;
-    box-shadow: inset -0.15vw -0.23vw 0 #b5401c;
-}
-.bento__rice__pattern {
-    width: 25%;
-    padding: 12% 0 0;
-    top: -2%;
-    left: 69%;
-    transform: rotate(25deg);
-    border-radius: 60%;
-    background: #fff;
-    position: absolute;
-    border-radius: 86% 80% 75% 80% / 88% 84% 60% 80%;
-}
-.bento__rice__pattern:nth-of-type(2) {
-    border-radius: 86% 80% 85% 80% / 88% 84% 80% 10%;
-    top: -3%;
-    left: 30%;
-    width: 50%;
-    padding: 14% 0 0;
-    transform: rotate(0deg);
-}
-.bento__rice__pattern:nth-of-type(3) {
-    border-radius: 86% 80% 85% 80% / 88% 84% 80% 60%;
-    top: 70%;
-    left: 33%;
-    width: 52%;
-    padding: 30% 0 0;
-    z-index: 2;
-    box-shadow: inset 0 -0.1vw 0 #E8D6CC;
-    transform: rotate(0deg);
-}
-.bento__rice__pattern:nth-of-type(4) {
-    border-radius: 86% 80% 85% 80% / 88% 84% 80% 50%;
-    top: 70%;
-    left: 3%;
-    transform: rotate(0deg);
-    box-shadow: inset 0 -0.127vw 0 #E8D6CC;
-    width: 30%;
-    padding: 30% 0 0;
-}
-.bento__rice__pattern:nth-of-type(5) {
-    border-radius: 86% 80% 85% 80% / 88% 84% 80% 80%;
-    top: 42%;
-    left: -22%;
-    transform: rotate(90deg);
-    width: 50%;
-    padding: 11% 0 0;
-}
-.bento__rice__pattern:nth-of-type(6) {
-    border-radius: 86% 80% 85% 80% / 58% 54% 30% 50%;
-    top: 27%;
-    left: 63%;
-    transform: rotate(90deg);
-    width: 55%;
-    padding: 31% 0 0;
-    box-shadow: inset 0 0.075vw 0 #E8D6CC;
-}
-.bento__rice__pattern:nth-of-type(7) {
-    top: 74%;
-    left: 73%;
-    transform: rotate(-10deg);
-    padding: 14% 0 0;
-    z-index: 4;
-    box-shadow: inset 0 -0.125vw 0 #E8D6CC;
-}
-.bento__rice__pattern:before, .bento__rice__pattern:after {
-    content: '';
-    background: #fff;
-    width: 8%;
-    padding: 15% 0 0;
-    border-radius: 50%;
-    position: absolute;
-    transform: rotate(125deg);
-    box-shadow: inset 0.15vw 0 0 #e4e2da, inset 0.15vw 0.15vw 0 #e4e2da, inset 0 0 0 #e4e2da, inset 0.15vw 0.05vw 0 #e4e2da;
-}
-.bento__rice__pattern:before {
-    left: 26%;
-    top: 39%;
-}
-.bento__rice__pattern:after {
-    left: 15%;
-    top: 26%;
-}
-.bento__rice__pattern:nth-of-type(2):before {
-    left: 26%;
-    top: 61%;
-}
-.bento__rice__pattern:nth-of-type(4):before {
-    top: 8%;
-    width: 14%;
-    padding: 22% 0 0;
-    transform: rotate(110deg);
-}
-.bento__rice__pattern:nth-of-type(4):after {
-    top: 0;
-}
-.bento__rice__pattern:nth-of-type(5):before {
-    transform: rotate(45deg);
-    top: -136%;
-}
-.bento__rice__pattern:nth-of-type(5):after {
-    transform: rotate(45deg);
-    top: -100%;
-}
-.bento__rice__pattern:nth-of-type(6):before {
-    transform: rotate(45deg);
-    top: 80%;
-    left: 26%;
-}
-.bento__rice__pattern:nth-of-type(6):after {
-    transform: rotate(45deg);
-    top: 98%;
-    left: 15%;
-}
-.bento__rice__pattern:nth-of-type(7):before {
-    width: 13%;
-    padding: 26% 0 0;
-}
-.bento__rice__pattern:nth-of-type(7):after {
-    width: 13%;
-    padding: 26% 0 0;
-    left: 5%;
-}
-
-
 @keyframes eye {
     0%, 51%, 53%, 98%, 100% {
         background: var(--black);
-   }
+    }
     51.5%, 52.5%, 98.5%, 99.5% {
         background: transparent;
-   }
+    }
     52%, 99% {
         background: var(--black);
-   }
-  }
-  @keyframes eye-inner {
+    }
+}
+@keyframes eye-inner {
     0%, 51%, 53%, 98%, 100% {
         background: var(--eye-gradient);
-   }
+    }
     51.5%, 52.5%, 98.5%, 99.5% {
         background: transparent;
-   }
+    }
     52%, 99% {
         background: var(--eye-gradient);
-   }
-  }
-  @keyframes eye-before {
+    }
+}
+@keyframes eye-before {
     0%, 51%, 52%, 53%, 98%, 99%, 100% {
         top: 5%;
         background-color: var(--white);
@@ -1044,8 +1033,8 @@
     100% {
         width: 60%;
     }
-  }
-  @keyframes eye2 {
+}
+@keyframes eye2 {
     0%, 51%, 53%, 98%, 100% {
         background: #7d502b;
     }
@@ -1055,8 +1044,8 @@
     52%, 99% {
         background: #7d502b;
     }
-  }
-  @keyframes eye-before2 {
+}
+@keyframes eye-before2 {
     0%, 51%, 53%, 98%, 100% {
         box-shadow: inset 0 0 0 10px black;
     }
@@ -1066,57 +1055,53 @@
     52%, 99% {
         box-shadow: inset 0 0 0 10px black;
     }
-  }
-
-  @keyframes fall {
+}
+@keyframes fall {
     0% {
         top: 0%;
-   }
+    }
     100% {
         top: 150%;
-   }
-  }
-  @keyframes rotate1 {
+    }
+}
+@keyframes rotate1 {
     0% {
         transform: translateX(0px) translateZ(-50px) rotate(0deg);
-   }
+    }
     100% {
         transform: translateX(100px) translateZ(-30px) rotateY(10deg);
-   }
-  }
-  @keyframes rotate2 {
+    }
+}
+@keyframes rotate2 {
     0% {
         transform: translateX(0px) translateZ(-40px) rotate(0deg);
-   }
+    }
     100% {
         transform: translateX(100px) translateZ(-60px) rotateY(20deg);
-   }
-  }
-  @keyframes rotate3 {
+    }
+}
+@keyframes rotate3 {
     0% {
         transform: translateX(0px) translateZ(-40px) rotate(10deg);
-   }
+    }
     100% {
         transform: translateX(100px) translateZ(-60px) rotateY(0deg);
-   }
-  }
-
-  @keyframes mokumoku { 
+    }
+}
+@keyframes mokumoku { 
     0% { opacity: 0; bottom: 10%;  } 
     25% { opacity: 0.7; } 
     75% { opacity: 0.7; } 
     100% { opacity: 0; bottom: 50%; }
-  }  
-
-  @media (420px <= width <= 600px ) {
-      #container  {
+}  
+@media (420px <= width <= 600px ) {
+    #container  {
         .sakura_content, .kirby_content, .wado_content, .bento_content, .sheet_content {
             zoom: 0.75;
         }
-      }
-  }  
-
-  @media (420px >= width){
+    }
+}
+@media (420px >= width){
     body {
         background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 50%, rgba(91, 220, 219, 0.36) 51%, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
     }
@@ -1141,6 +1126,6 @@
         }
         & .sheet_content {
             bottom: calc(50% - 380px);
-        }        
+        }
     }
-  }
+}
