@@ -1,13 +1,23 @@
 :root {
     --gray: #666;
     --white: #fff;
+    --white2: #efefef;
     --black: #000;
     --pink: #d77584;
     --pinktwo: #ff9db5;
-    --brown: #752b42;
     --pinkthree: #f0608b;
+    --pinkfour: #ffc8d6;
+    --brown: #5b2234;
+    --brown2: #B5753F;
     --red: #af2d13;
+    --sakura: rgb(252, 181, 199);
+    --sakura2: rgb(252, 175, 188);
+    --blue: rgb(28, 34, 213);
+    --blue2: #1c2484;
     --waterblue: #8ed3dd;
+    --ricecolor: #E8D6CC;
+    --ricecolor2: #e4e2da;
+    --ricecolor3 :#ffffff;
     --switch-transition: 250ms ease-out;
     --border-width: 0.2vw;
     --switch-shadow: 0.3vw 0.3vw 0.1vw 0;
@@ -15,14 +25,14 @@
     --checkbox-size: 15px;
     --kirby-animation-timing: 0.25s ease-in-out;
     --eye-animation-timing: 5s ease-out;
-    --eye-gradient: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
+    --eye-gradient: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, var(--blue) 75%, var(--blue) 75%);
     --eye2-gradient: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
     --eye3-gradient: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
-    --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
+    --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, var(--pinkfour));
     --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
     --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
     --foot-gradient: linear-gradient(75deg, var(--brown), var(--red) 20%, #cf472c);
-    --tree-color: linear-gradient(10deg, #7d502b, #B5753F 30%, #B5753F);
+    --tree-color: linear-gradient(10deg, var(--brown), var(--brown2) 30%, var(--brown2));
 }
 body {
     padding: 0px;
@@ -45,7 +55,7 @@ li {
     opacity: 1;
     z-index: 100;
     & .kirby_inner {
-        background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
+        background: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, var(--pinkfour));
         border-radius: 50%;
         width: 100%;
         padding: 100% 0px 0px;
@@ -354,13 +364,13 @@ li {
             left: 53%;
             animation: var(--eye-animation-timing) 0s infinite normal none running eye2;
             z-index: 10;
-            background: #7d502b;
+            background: var(--brown);
             &.two {
                 left: 58%;
             }
             &:before {
                 content: '';
-                box-shadow: inset 0 0 0 10px black;
+                box-shadow: inset 0 0 0 10px var(--black);
                 width: 90%;
                 height: 100%;
                 display: block;
@@ -379,7 +389,7 @@ li {
             height: 2%;
             border-radius: 50% 30% 30% 50%;
             z-index: 1000;
-            background: linear-gradient(10deg, #7d502b,  #B5753F);
+            background: linear-gradient(10deg, var(--brown),  var(--brown2));
         }
         & .mouth {
         z-index: 50;
@@ -388,7 +398,7 @@ li {
         width: 3%;
         left: 55.5%;
         top: 73%;
-        background: #7d502b;
+        background: var(--brown);
             &:before {
                 content: '';
                 box-shadow: inset 0 0 0 10px var(--black);
@@ -405,7 +415,69 @@ li {
     }
     & .sakura_content_leaf {
         content: "";
-        background-image: radial-gradient(circle at 19% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 34%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 20% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 28% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 22% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 27% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 29% 69%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 33% 54%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 35% 46%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 41% 22%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 34% 25%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 37% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 42% 61%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 39% 37%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 44% 32%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 73%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 76%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 46% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 43% 49%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 65%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 72%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 63% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 26%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 49% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 54% 20%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 48% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 61% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 56% 43%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 50% 40%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 38%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 29%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 36%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 57% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 75%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 58% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 76% 51%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 62% 21%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 27%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 65% 35%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 79% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 63%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 70% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 88% 50%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 72% 71%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 80% 68%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 58%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 74% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 75% 28%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 81% 33%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 66% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 67% 44%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 55% 53%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 83% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 87% 60%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%), radial-gradient(circle at 86% 41%, rgb(252, 181, 199) 0.25%, rgb(252, 175, 188) 2.5%, transparent 11%);
+        background-image:
+            radial-gradient(circle at 19% 49%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 33% 34%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 20% 61%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 28% 61%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 27% 44%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 27% 53%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 22% 38%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 27% 32%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%), 
+            radial-gradient(circle at 35% 71%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 29% 69%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 33% 54%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 35% 46%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 41% 22%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 34% 25%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 37% 58%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 42% 61%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 39% 37%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 44% 32%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 43% 73%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 50% 76%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 46% 43%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 43% 49%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 49% 65%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 62% 72%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 48% 58%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 63% 58%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 55% 26%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 49% 29%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 54% 20%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 48% 21%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 50% 50%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 61% 44%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 56% 43%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 50% 40%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 72% 38%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 55% 29%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 57% 63%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 57% 36%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 57% 75%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 65% 75%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 58% 51%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 76% 51%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 62% 21%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 62% 21%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 67% 27%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 65% 35%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 79% 63%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 67% 63%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 70% 50%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 88% 50%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 72% 71%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 80% 68%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 74% 58%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 74% 44%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 75% 28%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 81% 33%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 66% 53%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 67% 44%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 55% 53%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 83% 41%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 87% 60%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%),
+            radial-gradient(circle at 86% 41%, var(--sakura) 0.25%, var(--sakura2) 2.5%, transparent 11%);
         background-size: 100% 100%;
         display: block;
         width: 600px;
@@ -431,65 +503,88 @@ li {
         overflow: hidden;
         perspective: 50px;
         border-radius: 0% 70%;
-        & li {
+        & .sakura_inner {
             padding: 10px;
             position: absolute;
             list-style: none;
-            background: rgb(252, 181, 199);
+            background: var(--sakura);
             border-radius: 0% 80% 0% 60% / 0% 70% 0% 90%;
             top: 0px;
             &:nth-child(2n) {
-                background: rgb(255, 204, 217);
+                background: var(--sakura2);
                 border-radius: 0% 70% 0% 90% / 0% 90% 0% 70%;
             }
-            animation: 4s linear 0s infinite normal none running fall, 1s ease-in-out 0s infinite alternate none running rotate1;
             &:nth-child(1) {
                 left: 0px;
-                animation: 10s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate2;
+                animation:
+                    10s linear 0s infinite normal none running fall,
+                    3s ease-in-out 0s infinite alternate none running rotate2;
             }
             &:nth-child(2) {
                 left: 5%;
-                animation: 15s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate3;
+                animation:
+                    15s linear 0s infinite normal none running fall,
+                    2s ease-in-out 0s infinite alternate none running rotate3;
             }
             &:nth-child(3) {
                 left: 15%;
-                animation: 9s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
+                animation:
+                    9s linear 0s infinite normal none running fall,
+                    3.5s ease-in-out 0s infinite alternate none running rotate1;
             }
             &:nth-child(4) {
                 left: 30%;
-                animation: 8s linear 0s infinite normal none running fall, 6s ease-in-out 0s infinite alternate none running rotate2;
+                animation:
+                    8s linear 0s infinite normal none running fall,
+                    6s ease-in-out 0s infinite alternate none running rotate2;
             }
             &:nth-child(5) {
                 left: 40%;
-                animation: 10s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
+                animation:
+                    10s linear 0s infinite normal none running fall,
+                    4s ease-in-out 0s infinite alternate none running rotate3;
             }
             &:nth-child(6) {
                 left: 55%;
-                animation: 11s linear 0s infinite normal none running fall, 3s ease-in-out 0s infinite alternate none running rotate1;
+                animation:
+                    11s linear 0s infinite normal none running fall,
+                    3s ease-in-out 0s infinite alternate none running rotate1;
             }
             &:nth-child(7) {
                 left: 65%;
-                animation: 7s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
+                animation:
+                    7s linear 0s infinite normal none running fall,
+                    3.5s ease-in-out 0s infinite alternate none running rotate2;
             }
             &:nth-child(8) {
                 left: 50%;
-                animation: 7s linear 0s infinite normal none running fall, 5s ease-in-out 0s infinite alternate none running rotate3;
+                animation:
+                    7s linear 0s infinite normal none running fall,
+                    5s ease-in-out 0s infinite alternate none running rotate3;
             }
             &:nth-child(9) {
                 left: 60%;
-                animation: 10s linear 0s infinite normal none running fall, 2s ease-in-out 0s infinite alternate none running rotate1;
+                animation:
+                    10s linear 0s infinite normal none running fall,
+                    2s ease-in-out 0s infinite alternate none running rotate1;
             }
             &:nth-child(10) {
                 left: 75%;
-                animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate2;
+                animation:
+                    10s linear 0s infinite normal none running fall,
+                    3.5s ease-in-out 0s infinite alternate none running rotate2;
             }
             &:nth-child(11) {
                 left: 85%;
-                animation: 5s linear 0s infinite normal none running fall, 4s ease-in-out 0s infinite alternate none running rotate3;
+                animation:
+                    5s linear 0s infinite normal none running fall,
+                    4s ease-in-out 0s infinite alternate none running rotate3;
             }
             &:nth-child(12) {
                 left: 90%;
-                animation: 10s linear 0s infinite normal none running fall, 3.5s ease-in-out 0s infinite alternate none running rotate1;
+                animation:
+                    10s linear 0s infinite normal none running fall,
+                    3.5s ease-in-out 0s infinite alternate none running rotate1;
             }
         }
     }
@@ -501,7 +596,7 @@ li {
     left: 50%;
     bottom: 10px;
     transform: translate(-50%, 0);
-    border-bottom: 92px solid #578fea;
+    border-bottom: 92px solid var(--blue);
     border-left: 5vw solid transparent;
     border-right: 5vw solid transparent;
 }
@@ -513,26 +608,26 @@ li {
     position: absolute;
     bottom: 2px;
     left: calc(50% + 20px);
-    background: #d8b28d;
+    background: var(--brown2);
     padding: 0 0 0.5%;
     transform: translateX(-50%) translateY(0%) scale(1, 0.7);
     & .bento__content_inner {
-        border: 0.2vw solid #EFC398;
+        border: 0.2vw solid var(--brown);
         height: auto;
         display: flex;
         flex-wrap: wrap;
         padding: 0;
-        box-shadow: 0 2vw 0 #d8b28d;
+        box-shadow: 0 2vw 0 var(--brown);
         margin: 0px;
     }
     & .bento__block {
-        border: .25vw solid #e69b51;
+        border: .25vw solid var(--brow2);
         width: 50%;
         display: flex;
         flex-wrap: wrap;
         padding: 0;
-        background: #c78646;
-        box-shadow: inset .05vw .10vw 0 #a56f39;
+        background: var(--brown2);
+        box-shadow: inset .05vw .10vw 0 var(--brown);
         position: relative;
         box-sizing: border-box;
         & .bento__block__left {
@@ -622,7 +717,7 @@ li {
                     }
                     &:before, &:after {
                         position: absolute;
-                        background-color: white;
+                        background-color: var(--white);
                         width: 50%;
                         padding: 10% 0 0;
                         transform: translateY(-50%) translateX(-50%);
@@ -641,11 +736,12 @@ li {
             }
         }
         & .bento__block__left__bottom {
-            border: .25vw solid #1c2484;
+            border: .25vw solid var(--blue2);
             width: 100%;
             padding: 0;
-            background-color: #141a56;
-            box-shadow: inset 0.25vw 0.25vw 0 #0c103a;
+            background-color: var(--blue);
+            box-shadow: inset 0.25vw 0.25vw 0 var(--blue2);
+
             & .bento__sukiyaki {
                 & .sukiyakientry {
                     position: relative;
@@ -814,7 +910,7 @@ li {
                     }
                     & .greenonions {
                         width: 12%;
-                        background: linear-gradient(#fbfbfb,#e6e6e6 40%,#e2dede 70%,#d6d1d1 80%);
+                        background: var(--white);
                         border-radius: 40% 20% 30% 10%;
                         box-shadow: inset -0.15vw -0.15vw 0 #8c8c8c, inset -0.15vw -0.15vw 0.3vw #8c8c8c;
                         padding: 30% 0 0;
@@ -841,9 +937,9 @@ li {
                     & .tofu {
                         width: 30%;
                         padding: 40% 0 0;
-                        background: #e6e6e6;
+                        background: var(--white);
                         border-radius: 10% 21% 10% 24%;
-                        box-shadow: inset -0.5vw -0.3vw 0 #c5c5c5;
+                        box-shadow: inset -0.5vw -0.3vw 0 var(--white2);
                         top: 74%;
                         right: 10%;
                         transform: translateY(-50%) translateX(-50%) rotate(80deg);
@@ -855,7 +951,7 @@ li {
     & .bento__rice {
         width: 85%;
         height: 85%;
-        background: #fff;
+        background: var(--ricecolor3);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -868,9 +964,8 @@ li {
             transform: translateY(-50%) translateX(-50%);
             width: 10%;
             padding: 10% 0 0;
-            background: radial-gradient(#ff8879,#fd6b38 40%,#fd6b38 70%,#fd6b38 80%);
+            background: var(--red);
             border-radius: 40% 50% 50% 40%;
-            box-shadow: inset -0.15vw -0.23vw 0 #b5401c;
         }
         & .bento__rice__pattern {
             width: 25%;
@@ -879,7 +974,7 @@ li {
             left: 69%;
             transform: rotate(25deg);
             border-radius: 60%;
-            background: #fff;
+            background: var(--ricecolor3);
             position: absolute;
             border-radius: 86% 80% 75% 80% / 88% 84% 60% 80%;
             &:nth-of-type(2) {
@@ -901,7 +996,7 @@ li {
                 width: 52%;
                 padding: 30% 0 0;
                 z-index: 2;
-                box-shadow: inset 0 -0.1vw 0 #E8D6CC;
+                box-shadow: inset 0 -0.1vw 0 var(--ricecolor);
                 transform: rotate(0deg);
             }
             &:nth-of-type(4) {
@@ -909,7 +1004,7 @@ li {
                 top: 70%;
                 left: 3%;
                 transform: rotate(0deg);
-                box-shadow: inset 0 -0.127vw 0 #E8D6CC;
+                box-shadow: inset 0 -0.127vw 0 var(--ricecolor);
                 width: 30%;
                 padding: 30% 0 0;
                 &:before {
@@ -945,7 +1040,7 @@ li {
                 transform: rotate(90deg);
                 width: 55%;
                 padding: 31% 0 0;
-                box-shadow: inset 0 0.075vw 0 #E8D6CC;
+                box-shadow: inset 0 0.075vw 0 var(--ricecolor);
                 &:before {
                     transform: rotate(45deg);
                     top: 80%;
@@ -963,7 +1058,7 @@ li {
                 transform: rotate(-10deg);
                 padding: 14% 0 0;
                 z-index: 4;
-                box-shadow: inset 0 -0.125vw 0 #E8D6CC;
+                box-shadow: inset 0 -0.125vw 0 var(--ricecolor);
                 &:before {
                     width: 13%;
                     padding: 26% 0 0;
@@ -976,13 +1071,13 @@ li {
             }
             &:before, &:after {
                 content: '';
-                background: #fff;
+                background: var(--ricecolor);
                 width: 8%;
                 padding: 15% 0 0;
                 border-radius: 50%;
                 position: absolute;
                 transform: rotate(125deg);
-                box-shadow: inset 0.15vw 0 0 #e4e2da, inset 0.15vw 0.15vw 0 #e4e2da, inset 0 0 0 #e4e2da, inset 0.15vw 0.05vw 0 #e4e2da;
+                box-shadow: inset 0.15vw 0 0 var(--ricecolor2), inset 0.15vw 0.15vw 0 var(--ricecolor2), inset 0 0 0 var(--ricecolor2), inset 0.15vw 0.05vw 0 var(--ricecolor2);
             }
             &:before {
                 left: 26%;
@@ -1047,13 +1142,13 @@ li {
 }
 @keyframes eye-before2 {
     0%, 51%, 53%, 98%, 100% {
-        box-shadow: inset 0 0 0 10px black;
+        box-shadow: inset 0 0 0 10px var(--black);
     }
     51.5%, 52.5%, 98.5%, 99.5% {
         box-shadow: inset 0 0 0 10px transparent;
     }
     52%, 99% {
-        box-shadow: inset 0 0 0 10px black;
+        box-shadow: inset 0 0 0 10px var(--black);
     }
 }
 @keyframes fall {
@@ -1088,12 +1183,6 @@ li {
         transform: translateX(100px) translateZ(-60px) rotateY(0deg);
     }
 }
-@keyframes mokumoku { 
-    0% { opacity: 0; bottom: 10%;  } 
-    25% { opacity: 0.7; } 
-    75% { opacity: 0.7; } 
-    100% { opacity: 0; bottom: 50%; }
-}  
 @media (420px <= width <= 600px ) {
     #container  {
         .sakura_content, .kirby_content, .wado_content, .bento_content, .sheet_content {
