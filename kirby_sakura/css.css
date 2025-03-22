@@ -1,7 +1,7 @@
 :root {
     --gray: #666;
     --white: #fff;
-    --white2: #efefef;
+    --white2: #dfdfdf;
     --black: #000;
     --pink: #d77584;
     --pinktwo: #ff9db5;
@@ -9,11 +9,16 @@
     --pinkfour: #ffc8d6;
     --brown: #5b2234;
     --brown2: #B5753F;
+    --darkbrown: #654541;
+    --darkbrown2: #84644e;    
     --red: #af2d13;
     --sakura: rgb(252, 181, 199);
     --sakura2: rgb(252, 175, 188);
     --blue: rgb(28, 34, 213);
     --blue2: #1c2484;
+    --green: rgb(19, 154, 68);
+    --green2: rgb(15 134 17);
+    --yellow: #F9BE35;
     --waterblue: #8ed3dd;
     --ricecolor: #E8D6CC;
     --ricecolor2: #e4e2da;
@@ -31,7 +36,7 @@
     --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, var(--pinkfour));
     --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
     --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
-    --foot-gradient: linear-gradient(75deg, var(--brown), var(--red) 20%, #cf472c);
+    --foot-gradient: linear-gradient(75deg, var(--brown), #9e3520 40%, #c73e23);
     --tree-color: linear-gradient(10deg, var(--brown), var(--brown2) 30%, var(--brown2));
 }
 body {
@@ -39,7 +44,7 @@ body {
     margin: 0px;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 200px, rgba(91, 220, 219, 0.36) 205px, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
+    background: linear-gradient(0deg, var(--green), var(--green2) 200px, var(--waterblue) 205px, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
 }
 li {
     list-style-type: none;
@@ -326,7 +331,7 @@ li {
     & .foot-right {
         bottom: 0%;
         left: -13%;
-        transform: rotate(72deg);
+        transform: rotate(251deg);
     }
     & .foot-left {
         right: -10%;
@@ -651,7 +656,7 @@ li {
                 flex-wrap: wrap;
                 width: 50%;
                 & .bento__egg__element {
-                    background-color: #F9BE35;
+                    background-color: var(--yellow););)0;););)0;);
                     width: 100%;
                     padding: 30% 0 0;
                     border-radius: 30% 30% 50% 30% / 40% 30% 40% 40%;
@@ -772,7 +777,7 @@ li {
                     & .niku {
                         width: 60%;
                         padding: 50% 0 0;
-                        background: linear-gradient(#7d2b21,#9a2800 40%,#802f10 70%,#75280d 80%);
+                        background: var(--foot-gradient);
                         border-radius: 60% 70% 100% 30% / 50% 30% 70% 80%;
                         box-shadow: inset -0.75vw -0.025vw .25vw #562010;
                         top: -2%;
@@ -829,10 +834,10 @@ li {
                             display: block;
                             width: 50%;
                             padding: 70% 0 0;
-                            background: #7B9D52;
+                            background: var(--green);
                             position: absolute;
                             border-radius: .5vw;
-                            box-shadow: inset -.25vw -.1vw 0 #5a733c;
+                            box-shadow: inset -.25vw -.1vw 0 var(--green2);
                             z-index: 3;
                             &.shungiku-skew-1 {
                                 transform: rotate(50deg) skew(calc((60deg - 3deg)));
@@ -898,7 +903,7 @@ li {
                                 content: "";
                                 position: absolute;
                                 height: 100%;
-                                border-left: .25vw solid #a5cc75;
+                                border-left: .25vw solid var(--green2);
                                 padding: 100% 0 0;
                                 left: 50%;
                                 top: 0;
@@ -912,14 +917,17 @@ li {
                         width: 12%;
                         background: var(--white);
                         border-radius: 40% 20% 30% 10%;
-                        box-shadow: inset -0.15vw -0.15vw 0 #8c8c8c, inset -0.15vw -0.15vw 0.3vw #8c8c8c;
+                        box-shadow: inset -0.15vw -0.15vw 0 var(--white2), inset -0.15vw -0.15vw 0.3vw var(--white2);
                         padding: 30% 0 0;
                         top: 0;
                         right: 15%;
                         z-index: 1;
                         transform: rotate(26deg);
+                        
+                        
+                        
                         & .sukiyakientry_item_inner {
-                            border: .1vw solid #5ed422;
+                            border: .1vw solid var(--green);
                             position: absolute;
                             width: 64%;
                             height: 70%;
