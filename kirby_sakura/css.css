@@ -2,6 +2,7 @@
     --gray: #666;
     --white: #fff;
     --white2: #dfdfdf;
+    --white3: rgb(245, 225, 198);
     --black: #000;
     --pink: #d77584;
     --pinktwo: #ff9db5;
@@ -10,16 +11,22 @@
     --brown: #5b2234;
     --brown2: #B5753F;
     --darkbrown: #654541;
-    --darkbrown2: #84644e;    
+    --darkbrown2: #84644e;
+    --darkbrown3: #443d3d;
+    --darkbrown4: #795f5f;    
     --red: #af2d13;
+    --red2: #861d08;
     --sakura: rgb(252, 181, 199);
     --sakura2: rgb(252, 175, 188);
     --blue: rgb(28, 34, 213);
     --blue2: #1c2484;
     --green: rgb(19, 154, 68);
     --green2: rgb(15 134 17);
+    --orange: rgb(213, 110, 24);
+    --orange2: rgb(227, 118, 26);
     --yellow: #F9BE35;
     --waterblue: #8ed3dd;
+    --waterblue2: rgb(215, 254, 255);
     --ricecolor: #E8D6CC;
     --ricecolor2: #e4e2da;
     --ricecolor3 :#ffffff;
@@ -36,7 +43,7 @@
     --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, var(--pinkfour));
     --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
     --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
-    --foot-gradient: linear-gradient(75deg, var(--brown), #9e3520 40%, #c73e23);
+    --red-gradient: linear-gradient(75deg, var(--brown), var(--red2) 40%, var(--red));
     --tree-color: linear-gradient(10deg, var(--brown), var(--brown2) 30%, var(--brown2));
 }
 body {
@@ -44,7 +51,7 @@ body {
     margin: 0px;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(0deg, var(--green), var(--green2) 200px, var(--waterblue) 205px, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
+    background: linear-gradient(0deg, var(--green), var(--green2) 200px, var(--waterblue) 205px, var(--waterblue2) 89.5%) no-repeat;
 }
 li {
     list-style-type: none;
@@ -167,7 +174,7 @@ li {
         width: 50%;
         height: 35%;
         position: absolute;
-        background: var(--foot-gradient);
+        background: var(--red-gradient);
         border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
         z-index: 10;
     }
@@ -194,14 +201,14 @@ li {
     opacity: 1;
     z-index: 100;
     & .wado_inner {
-        background: linear-gradient(0deg, rgb(185, 127, 78), rgb(227, 118, 26) 20%, rgb(227, 118, 26));
+        background: linear-gradient(314deg, var(--orange) 38%, var(--orange2));
         border-radius: 50%;
         width: 100%;
         padding: 100% 0px 0px;
         &::before, &::after {
             content: "";
             position: absolute;
-            background: rgb(245, 225, 198);
+            background: var(--white3);
         }
         &::before {
             top: 12%;
@@ -306,7 +313,7 @@ li {
     & .hand {
         top: 22%;
         left: 87%;
-        background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
+        background: linear-gradient(-35deg, var(--orange) 38%, var(--orange2));
         border-radius: 60% 40% 40% 60% / 60% 40%;
         width: 30%;
         padding: 30% 0px 0px;
@@ -315,7 +322,7 @@ li {
         &.two {
             top: 19%;
             left: -13%;
-            background: linear-gradient(-35deg, rgb(213, 110, 24) 38%, rgb(227, 118, 26));
+            background: linear-gradient(-35deg, var(--orange) 38%, var(--orange2));
             transform: rotate(253deg);
             z-index: -1;
         }
@@ -324,7 +331,7 @@ li {
         width: 50%;
         height: 35%;
         position: absolute;
-        background: var(--foot-gradient);
+        background: var(--red-gradient);
         border-radius: 78% 22% 70% 30% / 59% 29% 71% 41%;
         z-index: 10;
     }
@@ -394,28 +401,28 @@ li {
             height: 2%;
             border-radius: 50% 30% 30% 50%;
             z-index: 1000;
-            background: linear-gradient(10deg, var(--brown),  var(--brown2));
+            background: linear-gradient(10deg, var(--brown), var(--brown2));
         }
         & .mouth {
-        z-index: 50;
-        border-radius: 50%;
-        height: 5%;
-        width: 3%;
-        left: 55.5%;
-        top: 73%;
-        background: var(--brown);
-            &:before {
-                content: '';
-                box-shadow: inset 0 0 0 10px var(--black);
-                width: 85%;
-                height: 100%;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 15%;
-                z-index: 100;
-                border-radius: 50%;
-            } 
+            z-index: 50;
+            border-radius: 50%;
+            height: 5%;
+            width: 3%;
+            left: 55.5%;
+            top: 73%;
+            background: var(--brown);
+                &:before {
+                    content: '';
+                    box-shadow: inset 0 0 0 10px var(--black);
+                    width: 85%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 15%;
+                    z-index: 100;
+                    border-radius: 50%;
+                } 
         }
     }
     & .sakura_content_leaf {
@@ -493,7 +500,7 @@ li {
         left: -1%;
         z-index: 10;
         transform: translateX(0%) translateY(0%);
-}
+    }
     & .sakura {
         position: absolute;
         padding: 0px;
@@ -643,26 +650,26 @@ li {
             flex-wrap: wrap;
         }
         & .bento__block__left__top {
-            border: .25vw solid #af3636;
+            border: .25vw solid var(--red2);
             width: 100%;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
             padding: 0.1vw;
-            background-color: #8c2f2f;
-            box-shadow: inset .05vw .05vw 0 #712727;
+            background-color: var(--red);
+            box-shadow: inset .05vw .05vw 0 var(--darkbrown);
             & .bento__egg__block {
                 display: flex;
                 flex-wrap: wrap;
                 width: 50%;
                 & .bento__egg__element {
-                    background-color: var(--yellow););)0;););)0;);
+                    background-color: var(--yellow);
                     width: 100%;
                     padding: 30% 0 0;
                     border-radius: 30% 30% 50% 30% / 40% 30% 40% 40%;
                     margin: 0 0 -.1vw;
                     position: relative;
-                    box-shadow: inset -0.1vw -0.13vw 0 #96622E;
+                    box-shadow: inset -0.1vw -0.13vw 0 var(--darkbrown);
                     &:nth-of-type( 1 ):before {
                         top: 57%;
                     }
@@ -671,11 +678,11 @@ li {
                     }
                     &:nth-of-type( 2 ) {
                         border-radius: 60% 50% 50% 30% / 20% 30% 30% 80%;
-                        box-shadow: inset -.1vw -.1vw 0 #96622E;
+                        box-shadow: inset -.1vw -.1vw 0 var(--darkbrown);
                     }
                     &:before, &:after {
                         position: absolute;
-                        background: white;
+                        background: var(--white);
                         width: 25%;
                         padding: 10% 0 0 0;
                         transform: translateY(-50%) translateX(-50%);
@@ -701,7 +708,7 @@ li {
                 & .bento__chicken__element {
                     width: 100%;
                     padding: 30%;
-                    background: linear-gradient(#8a6143,#6f4e36 40%,#715038 70%,#715038 80%);
+                    background: linear-gradient(#8a6143,#715038 80%);
                     border-radius: 60% 50% 50% 30% / 20% 30% 30% 50%;
                     box-shadow: inset -.2vw -.3vw 0 #614326;
                     position: relative;
@@ -713,7 +720,7 @@ li {
                     position: absolute;
                     transform: translateY(-50%) translateX(-50%);
                     &:nth-of-type( 1 ) {
-                        background: radial-gradient(#654541,#402e28 40%,#4a2a1e 70%,#3c1c11 80%);
+                        background: radial-gradient(#654541,#3c1c11 80%);
                         width: 80%;
                         padding: 50% 0 0 0;
                         border-radius: 30% 70% 50% 30% / 50% 30% 60% 70%;
@@ -746,7 +753,6 @@ li {
             padding: 0;
             background-color: var(--blue);
             box-shadow: inset 0.25vw 0.25vw 0 var(--blue2);
-
             & .bento__sukiyaki {
                 & .sukiyakientry {
                     position: relative;
@@ -769,26 +775,26 @@ li {
                         left: 9%;
                         width: 30%;
                         padding: 50% 0 0;
-                        background: #FF5F00;
+                        background: var(--orange);
                         border-radius: 80% 40% 30% 70% / 60% 30% 80% 40%;
-                        box-shadow: inset -.25vw -.25vw 0 #F44A1C;
+                        box-shadow: inset -.25vw -.25vw 0 var(--orange2);
                         transform: rotate(126deg);
                     }
                     & .niku {
                         width: 60%;
                         padding: 50% 0 0;
-                        background: var(--foot-gradient);
+                        background: var(--red-gradient);
                         border-radius: 60% 70% 100% 30% / 50% 30% 70% 80%;
-                        box-shadow: inset -0.75vw -0.025vw .25vw #562010;
+                        box-shadow: inset -0.75vw -0.025vw .25vw var(--brown);
                         top: -2%;
                         right: 10%;
                     }
                     & .mushroom {
                         width: 40%;
                         padding: 42% 0 0;
-                        background: radial-gradient(#443d3d,#402e28 40%,#4a2a1e 70%,#3c1c11 80%);
+                        background: var(--darkbrown3);
                         border-radius: 40% 40% 40% 40%;
-                        box-shadow: inset -.1vw -.1vw .1vw #84644e;
+                        box-shadow: inset -.1vw -.1vw .1vw var(--darkbrown2);
                         top: 39%;
                         left: 0;
                         transform: rotate(10deg);
@@ -796,7 +802,7 @@ li {
                             display: block;
                             width: 40%;
                             height: 40%;
-                            background: #795f5f;
+                            background: var(--darkbrown2);
                             position: absolute;
                             & > * {
                             transform: translateY(-50%) translateX(-50%);
@@ -923,9 +929,6 @@ li {
                         right: 15%;
                         z-index: 1;
                         transform: rotate(26deg);
-                        
-                        
-                        
                         & .sukiyakientry_item_inner {
                             border: .1vw solid var(--green);
                             position: absolute;
@@ -1200,7 +1203,7 @@ li {
 }
 @media (420px >= width){
     body {
-        background: linear-gradient(0deg, rgb(19, 154, 68), rgba(19, 154, 21, 0.77) 50%, rgba(91, 220, 219, 0.36) 51%, rgba(91, 216, 220, 0.09) 89.5%) no-repeat;
+        background: linear-gradient(0deg, var(--green), var(--green2) 50%, var(--waterblue) 51%, var(--waterblue2) 89.5%) no-repeat;
     }
     #container  {
         & .sakura_content, & .kirby_content, & .wado_content, & .bento_content, & .sheet_content {
