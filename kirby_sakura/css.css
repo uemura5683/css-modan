@@ -529,74 +529,74 @@ li {
             &:nth-child(1) {
                 left: 0px;
                 animation:
-                    10s linear 0s infinite normal none running fall,
-                    3s ease-in-out 0s infinite alternate none running rotate2;
+                    10s ease-in-out 0s infinite normal none running fall,
+                    3s ease-in-out 0s infinite alternate none running sakura_rotate2;
             }
             &:nth-child(2) {
                 left: 5%;
                 animation:
-                    15s linear 0s infinite normal none running fall,
-                    2s ease-in-out 0s infinite alternate none running rotate3;
+                    15s ease-in-out 0s infinite normal none running fall,
+                    2s ease-in-out 0s infinite alternate none running sakura_rotate3;
             }
             &:nth-child(3) {
                 left: 15%;
                 animation:
-                    9s linear 0s infinite normal none running fall,
-                    3.5s ease-in-out 0s infinite alternate none running rotate1;
+                    9s ease-in-out 0s infinite normal none running fall,
+                    3.5s ease-in-out 0s infinite alternate none running sakura_rotate1;
             }
             &:nth-child(4) {
                 left: 30%;
                 animation:
-                    8s linear 0s infinite normal none running fall,
-                    6s ease-in-out 0s infinite alternate none running rotate2;
+                    8s ease-in-out 0s infinite normal none running fall,
+                    6s ease-in-out 0s infinite alternate none running sakura_rotate2;
             }
             &:nth-child(5) {
                 left: 40%;
                 animation:
-                    10s linear 0s infinite normal none running fall,
-                    4s ease-in-out 0s infinite alternate none running rotate3;
+                    10s ease-in-out 0s infinite normal none running fall,
+                    4s ease-in-out 0s infinite alternate none running sakura_rotate3;
             }
             &:nth-child(6) {
                 left: 55%;
                 animation:
-                    11s linear 0s infinite normal none running fall,
-                    3s ease-in-out 0s infinite alternate none running rotate1;
+                    11s ease-in-out 0s infinite normal none running sakura_fall,
+                    3s ease-in-out 0s infinite alternate none running sakura_rotate1;
             }
             &:nth-child(7) {
                 left: 65%;
                 animation:
-                    7s linear 0s infinite normal none running fall,
-                    3.5s ease-in-out 0s infinite alternate none running rotate2;
+                    7s ease-in-out 0s infinite normal none running sakura_fall,
+                    3.5s ease-in-out 0s infinite alternate none running sakura_rotate2;
             }
             &:nth-child(8) {
                 left: 50%;
                 animation:
-                    7s linear 0s infinite normal none running fall,
-                    5s ease-in-out 0s infinite alternate none running rotate3;
+                    7s ease-in-out 0s infinite normal none running sakura_fall,
+                    5s ease-in-out 0s infinite alternate none running sakura_rotate3;
             }
             &:nth-child(9) {
                 left: 60%;
                 animation:
-                    10s linear 0s infinite normal none running fall,
-                    2s ease-in-out 0s infinite alternate none running rotate1;
+                    10s ease-in-out 0s infinite normal sakura_fall,
+                    2s ease-in-out 0s infinite alternate sakura_rotate1;
             }
             &:nth-child(10) {
                 left: 75%;
                 animation:
-                    10s linear 0s infinite normal none running fall,
-                    3.5s ease-in-out 0s infinite alternate none running rotate2;
+                    10s ease-in-out 0s infinite normal sakura_fall,
+                    3.5s ease-in-out 0s infinite alternate sakura_rotate2;
             }
             &:nth-child(11) {
                 left: 85%;
                 animation:
-                    5s linear 0s infinite normal none running fall,
-                    4s ease-in-out 0s infinite alternate none running rotate3;
+                    5s ease-in-out 0s infinite normal sakura_fall,
+                    4s ease-in-out 0s infinite alternate sakura_rotate3;
             }
             &:nth-child(12) {
                 left: 90%;
                 animation:
-                    10s linear 0s infinite normal none running fall,
-                    3.5s ease-in-out 0s infinite alternate none running rotate1;
+                    10s ease-in-out 0s infinite normal sakura_fall,
+                    3.5s ease-in-out 0s infinite alternate sakura_rotate1;
             }
         }
     }
@@ -1158,7 +1158,7 @@ li {
         box-shadow: inset 0 0 0 10px var(--black);
     }
 }
-@keyframes fall {
+@keyframes sakura_fall {
     0% {
         top: 0%;
     }
@@ -1166,7 +1166,7 @@ li {
         top: 150%;
     }
 }
-@keyframes rotate1 {
+@keyframes sakura_rotate1 {
     0% {
         transform: translateX(0px) translateZ(-50px) rotate(0deg);
     }
@@ -1174,7 +1174,7 @@ li {
         transform: translateX(100px) translateZ(-30px) rotateY(10deg);
     }
 }
-@keyframes rotate2 {
+@keyframes sakura_rotate2 {
     0% {
         transform: translateX(0px) translateZ(-40px) rotate(0deg);
     }
@@ -1182,7 +1182,7 @@ li {
         transform: translateX(100px) translateZ(-60px) rotateY(20deg);
     }
 }
-@keyframes rotate3 {
+@keyframes sakura_rotate3 {
     0% {
         transform: translateX(0px) translateZ(-40px) rotate(10deg);
     }
