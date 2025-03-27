@@ -10,8 +10,11 @@
   </head>
   <body>
     <main>
-      <audio controls id="winxpogm">
+      <audio controls id="winxpopen">
         <source src="winxp.ogm">
+      </audio>
+      <audio controls id="winxpshutdown">
+        <source src="shutdown.mp3">
       </audio>
       <div class="windows__bg">
         <div class="windows__bg--inner">
@@ -36,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="windows__bg__shutdown" style="display:none;">
+      <dialog class="windows__bg__shutdown" id="windows_shutdown">
         <div class="windows__bg--inner">
           <div class="windows__logo">
               <div class="windows__logo--inner red"></div>
@@ -52,7 +55,7 @@
               <div class="windows__text"><p>Windows をシャットダウンしています。</p></div>
           </div>
         </div>
-      </div>
+      </dialog>
 
       <div id="container">
         <main class="windows-main">
@@ -135,7 +138,7 @@
                 </div>
                 <div class="title-bar window-menufooter">
                   <span class="window-menufooter-link"><img src="logof.png" class="window-menufooter-img">ログオフ</span>
-                  <button href="/" class="window-menufooter-link"><img src="shutdown.png" class="window-menufooter-img">終了オプション</button>
+                  <button class="window-menufooter-link" onclick="document.querySelector('#windows_shutdown').showModal()" id="windows-shutdown-button"><img src="shutdown.png" class="window-menufooter-img">終了オプション</button>
                 </div>
               </div>
             </details>
@@ -335,8 +338,9 @@ Link3：NuBlog：https://nu-blogsite.net/
         </dialog>
       </div>
     </main>
-    <script type="text/javascript">
 
+    <script type="text/javascript">
+        // tablist
         const tabs = document.querySelectorAll("menu[role=tablist]");
         for (let i = 0; i < tabs.length; i++) {
           const tab = tabs[i];
@@ -369,18 +373,18 @@ Link3：NuBlog：https://nu-blogsite.net/
           article.removeAttribute("hidden");
         }
 
+        // audio
         window.onload = function() {
-          const audio = document.getElementById("winxpogm");
+          const winxpopen = document.getElementById("winxpopen");
           setTimeout(() => {
-            audio.play().catch(error => {
+            winxpopen.play().catch(error => {
               console.error("再生エラー:", error);
             });
           }, 5000);
-
-          document.addEventListener("click", audio);
+          document.addEventListener("click", winxpopen);
         };
 
-
+        // clock
         function displayTime() {
           const padZero = (value) => value.toString().padStart(2, "0");
 
@@ -393,6 +397,21 @@ Link3：NuBlog：https://nu-blogsite.net/
         }
         displayTime();
         setInterval(displayTime, 1000);
+
+        // shutdown
+        const winshutdown = document.getElementById("winxpshutdown");
+        document
+          .getElementById('windows-shutdown-button')
+          .addEventListener("click", shutdown);
+          
+        function shutdown(){
+          winshutdown.play().catch(error => {
+            console.error("再生エラー:", error);
+          });
+          setTimeout(() => {
+            location.href = "/";
+          }, 5000);
+        }
 
     </script>
   </body>
