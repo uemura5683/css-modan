@@ -1,0 +1,71 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+box-sizing: border-box;
+margin: 0;
+}
+html {
+block-size: 100%;
+}
+body {
+min-block-size: 100%;
+font-family: system-ui, sans-serif;
+font-size: 62.5%;
+}
+
+.stage {
+--radius: 100px;
+--base-angle: (360deg / 6);
+margin: 10px;
+position: relative;
+border: 1px solid #ccc;
+border-radius: 50%;
+width: calc(var(--radius) * 2);
+aspect-ratio: 1;
+}
+
+.stage .ball {
+  --angle: var(--base-angle) * var(--n) - 90deg;
+  --x: calc(cos(var(--angle)) * var(--radius) - 50%);
+  --y: calc(sin(var(--angle)) * var(--radius) - 50%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 20px;
+  aspect-ratio: 1;
+  background-color: #eb6bb1;
+}
+
+.stage .ball:nth-child(1) {
+  --n: 1;
+  translate: var(--x) var(--y);
+}
+
+.stage .ball:nth-child(2) {
+  --n: 2;
+  translate: var(--x) var(--y);
+}
+
+.stage .ball:nth-child(3) {
+  --n: 3;
+  translate: var(--x) var(--y);
+}
+
+.stage .ball:nth-child(4) {
+  --n: 4;
+  translate: var(--x) var(--y);
+}
+
+.stage .ball:nth-child(5) {
+  --n: 5;
+  translate: var(--x) var(--y);
+}
+
+.stage .ball:nth-child(6) {
+  --n: 6;
+  translate: var(--x) var(--y);
+}
