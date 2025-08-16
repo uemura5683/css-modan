@@ -1,0 +1,146 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
+/**
+* components
+**/
+@property --zoom-factor {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.zoom-wrapper {
+  --_min-viewport-width: 640px; /* viewportの最小値を下回ったら縮小をやめる */
+  --_max-viewport-width: 1280px; /* viewportの最大値を上回ったら拡大をやめる */
+  --_zoom-value: clamp(
+    tan(atan2(var(--_min-viewport-width), var(--_max-viewport-width))),
+    tan(atan2(var(--zoom-factor), var(--_max-viewport-width))),
+    1
+  );
+  --zoom-factor: clamp(
+    var(--_min-viewport-width),
+    100dvi,
+    var(--_max-viewport-width)
+  );
+
+  zoom: var(--_zoom-value);
+  -webkit-text-size-adjust: initial; /* iOS Safariのバグを修正 */
+}
+
+.viewport-display {
+  margin-block-end: 1em;
+  color: oklch(from red calc(l - 0.1) c h);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-wrap: balance;
+
+  &::after {
+    --zoom-factor: 100dvi;
+    --_current-vw-to-px: calc(tan(atan2(var(--zoom-factor), 1px)));
+    content: counter(v) "px";
+    counter-reset: v var(--_current-vw-to-px);
+  }
+}
+
+table {
+  --_border-color: #ddd;
+  --_background-head: #6a6a6a;
+  --_background-body: #fcfcfc;
+  --_background-prompt: #0089ba;
+  --_foreground-head: #fcfcfc;
+  --_foreground-body: #6a6a6a;
+  --_foreground-prompt: #fcfcfc;
+
+  position: relative;
+  container-type: scroll-state;
+  display: block flow;
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  max-inline-size: 100%;
+
+  &::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 16px;
+    display: block grid;
+    place-items: center;
+    inline-size: 2.5rem;
+    aspect-ratio: 1;
+    margin-block: auto;
+    border-radius: calc(1px / 0);
+    box-shadow: 0 0 10px oklch(from var(--_background-prompt) l c h / 30%);
+    background-color: var(--_background-prompt);
+    color: var(--_foreground-prompt);
+    transition-duration: 0.3s;
+    transition-property: opacity, visibility;
+  }
+
+  @supports (container-type: scroll-state) {
+    &::after {
+      content: "→";
+    }
+  }
+
+  @container scroll-state((scrollable: inline-start) or (not (scrollable: inline-end))) {
+    &::after {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  & :where(th, td) {
+    padding-block: 1em;
+    padding-inline: 2em;
+    border: 1px solid var(--_border-color);
+    text-align: center;
+    text-wrap: nowrap;
+
+    &:is(thead *) {
+      background-color: var(--_background-head);
+      color: var(--_foreground-head);
+    }
+
+    &:is(tbody *) {
+      background-color: var(--_background-body);
+      color: var(--_foreground-body);
+    }
+  }
+}
+
+:root {
+  --color-light: #fcfcfc;
+  --color-dark: #333;
+  --_background: #fcfcfc;
+  --_grid-color: #efefef;
+
+  background-image: linear-gradient(var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(90deg, var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(var(--_grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-color) 1px, var(--_background) 1px);
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  color: var(--color-dark);
+  font-family: Montserrat, sans-serif;
+  line-height: 1.618;
+}
+
+body {
+  display: block grid;
+  row-gap: 40px;
+  align-content: center;
+  justify-items: center;
+  padding: 20px;
+
+  & > * {
+    inline-size: min(800px, 100%);
+  }
+}
