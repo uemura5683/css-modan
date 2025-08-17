@@ -1,0 +1,120 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
+/**
+* components
+**/
+.battery {
+  display: block grid;
+  grid-template-columns: 104px 1fr;
+  column-gap: 0.5em;
+  align-items: center;
+  inline-size: fit-content;
+
+  & * {
+    --_accent: oklch(from green calc(l + 0.05) c h);
+
+    @container style(--battery-low: true) {
+      --_accent: oklch(from red calc(l - 0.1) c h);
+    }
+  }
+}
+
+.battery-image {
+  display: block grid;
+  grid-template-columns: 1fr 4px;
+  block-size: 40px;
+
+  &::before {
+    --_background-offset: 6px;
+
+    content: "";
+    grid-area: 1 / 1;
+    border: 4px solid var(--_accent);
+    border-radius: 4px;
+    background-image: linear-gradient(
+      90deg,
+      var(--_accent) var(--battery-level),
+      transparent 0
+    );
+    background-position: center;
+    background-size: calc(100% - var(--_background-offset))
+      calc(100% - var(--_background-offset));
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: "";
+    grid-area: 1 / 2;
+    align-self: center;
+    aspect-ratio: 1 / 2;
+    border-start-end-radius: 2px;
+    border-end-end-radius: 2px;
+    background-color: var(--_accent);
+  }
+
+  & svg {
+    grid-area: 1 / 1;
+    place-self: center;
+    inline-size: 24px;
+    color: oklch(from yellow calc(l + 0.5) c h);
+
+    @container style(--battery-charging: false) {
+      display: none;
+    }
+  }
+}
+
+.battery-status {
+  align-self: center;
+  color: var(--_accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@property --battery-level {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
+
+@property --battery-low {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+}
+
+@property --battery-charging {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+}
+
+:root {
+  --_background: #fcfcfc;
+  --_grid-color: #efefef;
+
+  background-image: linear-gradient(var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(90deg, var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(var(--_grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-color) 1px, var(--_background) 1px);
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  align-content: center;
+  padding: 5dvi;
+
+  & > * {
+    margin-inline: auto;
+  }
+}
