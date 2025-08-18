@@ -1,0 +1,146 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
+h1 {
+  text-shadow: 0 0 5px black;
+}
+.image-slider {
+  --_button-size: 40px;
+  --_button-foreground-default: #fcfcfc;
+  --_button-background-default: #333;
+  --_button-background-hoverable: #999;
+  --_pagination-size: 12px;
+  --_pagination-background: #333;
+  --_pagination-foreground-default: #fcfcfc;
+  --_pagination-foreground-active: #ffc75f;
+
+  position: relative;
+}
+
+.image-slider__scroller {
+  display: block grid;
+  grid-auto-columns: 100%;
+  grid-auto-flow: column;
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
+
+  @supports (scroll-marker-group: after) {
+    scroll-marker-group: after;
+    scrollbar-width: none;
+
+    &::scroll-marker-group {
+      display: block flex;
+      column-gap: 4px;
+      justify-content: center;
+      align-items: center;
+      padding-block: 16px;
+      background-color: var(--_pagination-background);
+    }
+
+    &::scroll-button(*) {
+      position: absolute;
+      inset-block: 0;
+      block-size: var(--_button-size);
+      aspect-ratio: 1;
+      margin-block: auto;
+      padding: unset;
+      border: unset;
+      border-radius: calc(1px / 0);
+      background-position: center;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-color: var(--_button-background-default);
+      cursor: pointer;
+      appearance: none;
+      transition-duration: 0.3s;
+      transition-property: background-color, color, opacity;
+    }
+
+    &::scroll-button(*):focus-visible {
+      background-color: var(--_button-background-hoverable);
+    }
+
+    &::scroll-button(*):enabled:hover {
+      @media (any-hover: hover) {
+        background-color: var(--_button-background-hoverable);
+      }
+    }
+
+    &::scroll-button(*):disabled {
+      opacity: 0.5;
+      interactivity: inert;
+    }
+
+    &::scroll-button(inline-start) {
+      content: "" / "前のスライド";
+      inset-inline-start: calc(var(--_button-size) / -2);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4L8 12L16 20" /></svg>');
+    }
+
+    &::scroll-button(inline-end) {
+      content: "" / "次のスライド";
+      inset-inline-end: calc(var(--_button-size) / -2);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4L16 12L8 20" /></svg>');
+    }
+  }
+
+  & > * {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    @supports (scroll-marker-group: after) {
+      &::scroll-marker {
+        content: "";
+        inline-size: var(--_pagination-size);
+        aspect-ratio: 1;
+        border-radius: calc(1px / 0);
+        background: conic-gradient(currentColor 0 0), CanvasText;
+        color: var(--_pagination-foreground-default);
+      }
+
+      &::scroll-marker:target-current {
+        color: var(--_pagination-foreground-active);
+      }
+    }
+  }
+}
+
+:root {
+  --color-light: #fcfcfc;
+  --color-dark: #333;
+  --_background: #fcfcfc;
+  --_grid-color: #efefef;
+
+  background-image: linear-gradient(var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(90deg, var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(var(--_grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-color) 1px, var(--_background) 1px);
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  color: var(--color-dark);
+  font-family: Montserrat, sans-serif;
+  line-height: 1.618;
+}
+
+img {
+  inline-size: 100%;
+}
+
+body {
+  align-content: center;
+  padding: 20px;
+
+  & > * {
+    inline-size: min(800px, 100%);
+    margin-inline: auto;
+  }
+}
