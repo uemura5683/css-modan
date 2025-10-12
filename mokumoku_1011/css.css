@@ -1,0 +1,215 @@
+:root {
+  --gray: #666;
+  --white: #fff;
+  --black: #000;
+  --pink: #d77584;
+  --pinktwo: #ff9db5;
+  --brown: #752b42;
+  --pinkthree: #f0608b;
+  --red: #af2d13;
+  --waterblue: #8ed3dd;
+  --switch-transition: 250ms ease-out;
+  --border-width: 0.2vw;
+  --switch-shadow: 0.3vw 0.3vw 0.1vw;
+  --label-size: 30px;
+  --checkbox-size: 15px;
+  --kirby-animation-timing: 0.25s ease-in-out;
+  --eye-animation-timing: 5s ease-out;
+  --eye-gradient: radial-gradient(circle at 100% center, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(28, 34, 213) 75%, rgb(28, 34, 213) 75%);
+  --eye2-gradient: linear-gradient(90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);
+  --eye3-gradient: linear-gradient(-90deg, #f6bfce, #fcb5c7 95%, var(--black) 95% 100%);  
+  --kirby-gradient: linear-gradient(0deg, var(--pink), var(--pinktwo) 20%, #ffc8d6);
+  --kirby-hand-gradient: linear-gradient(116deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
+  --kirby-hand2-gradient: linear-gradient(-35deg, rgb(248, 182, 199) 38%, rgb(255, 153, 178));
+  --foot-gradient: linear-gradient(0deg, var(--brown), var(--red) 20%, #cf472c);
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+#container .kirby_content {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  width: 25%;
+  height: auto;
+  opacity: .8;
+}
+#container .kirby_content .kirby_inner {
+  background: var(--kirby-gradient);
+  border-radius: 50%;
+  width: 100%;
+  padding-top: 100%;
+}
+#container .kirby_content .kirby_inner .tears,
+#container .kirby_content .kirby_inner .eye,
+#container .kirby_content .kirby_inner .mouth,
+#container .kirby_content .kirby_inner .cheek,
+#container .kirby_content .kirby_inner .hand,
+#container .kirby_content .kirby_inner .foot {
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+#container .kirby_content .kirby_inner .eye {
+  width: 14%;
+  padding-top: 33%;
+  background: var(--black);
+  border-radius: 50%;
+  top: 27%;
+  left: 32%;
+  animation: eye var(--eye-animation-timing) infinite;  
+  &::before {
+    content: "";
+    background-color: var(--white);
+    position: absolute;
+    width: 65%;
+    height: 45%;
+    border-radius: 50%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: eye-before var(--eye-animation-timing) infinite;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(60deg);
+    top: -30%;
+    left: -33%;
+    padding-top: 130%;
+    background-image: var(--eye2-gradient);
+  }
+  &.two {
+    left: 57%;
+    
+    
+    
+    
+    &::after {
+      transform: rotate(-60deg);
+      background-image: var(--eye3-gradient);
+      left: 35%;
+    }
+  }
+}
+#container .kirby_content .kirby_inner .eye_inner {
+  background: var(--eye-gradient);
+  border-radius: 50%;
+  width: 100%;
+  padding-top: 65%;
+  transform: rotate(-90deg);
+  bottom: 15%;
+  position: absolute;
+  animation: eye-inner var(--eye-animation-timing) infinite;
+}
+#container .kirby_content .kirby_inner .mouth {
+  top: 68%;
+  left: 53%;
+  z-index: 50;
+  height: 3%;
+  width: 5%;
+  border-radius: 60% 60% 50% 50%;
+  background: var(--brown);
+  &::before {
+    content: "";
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 70%;
+    border-radius: 40% 40% 50% 50% / 40% 40% 70% 70%;
+    background: var(--pinkthree);
+    display: block;
+    position: absolute;
+  }
+}
+#container .kirby_content .kirby_inner .cheek {
+  background-color: var(--pinkthree);
+  top: 60%;
+  left: 15%;
+  filter: blur(0.1vw);
+  width: 14%;
+  height: 8%;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+  z-index: 3;
+  
+  
+  
+  
+  
+  &.two {
+    left: auto;
+    right: 13%;
+    transform: rotate(10deg);
+  }
+}
+#container .kirby_content .kirby_inner .eye {
+  top: 23%;
+  &::after {
+    display: none;
+  }
+}
+#container .kirby_content .kirby_inner .cheek {
+  top: 56%;
+}
+#container .kirby_content .kirby_inner .mouth {
+  border-radius: 35% 35% 50% 50% / 30% 30% 70% 70%;
+  height: 16%;
+  width: 21%;
+  left: 41%;
+  top: 59%;
+  
+  
+  
+  
+  
+  &::after {
+    content: "";
+    border-radius: 40% 40% 50% 50% / 30% 30% 70% 70%;
+  }
+}
+#container .kirby_content .kirby_inner .hand {
+  top: 27%;
+  transform: rotate(16deg);
+  &.two {
+    top: 25%;
+    transform: rotate(164deg);
+  }
+}
+@media (max-width: 767px) {
+  #container .kirby_content {
+      width: 50%;
+  }
+}
+@keyframes eye {
+  0%, 51%, 53%, 98%, 100% { background: var(--black); }
+  51.5%, 52.5%, 98.5%, 99.5% { background: transparent; }
+  52%, 99% { background: var(--black); }
+}
+@keyframes eye-inner {
+  0%, 51%, 53%, 98%, 100% { background: var(--eye-gradient); }
+  51.5%, 52.5%, 98.5%, 99.5% { background: transparent; }
+  52%, 99% { background: var(--eye-gradient); }
+}
+@keyframes eye-before {
+  0%, 51%, 52%, 53%, 98%, 99%, 100% {
+    top: 5%;
+    background-color: var(--white);
+    width: 65%;
+    height: 45%;
+  }
+  51.5%, 52.5%, 98.5%, 99.5% {
+    top: 62%;
+    background-color: var(--black);
+    width: 200%;
+    height: 2%;
+  }
+  100% {
+    width: 60%;
+  }
+}
