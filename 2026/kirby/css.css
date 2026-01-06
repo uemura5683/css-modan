@@ -73,15 +73,7 @@ body {
    Background & Text
    ========================= */
 #bg {
-  background: linear-gradient(
-    0deg,
-    #223818,
-    5%,
-    #5e9a44,
-    34.9%,
-    var(--pinktwo) 35%,
-    #ffc8d6
-  );
+  background: linear-gradient( 0deg,#223818, 5%, #5e9a44, 34.9%, var(--pinktwo) 35%, #ffc8d6);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100%;
