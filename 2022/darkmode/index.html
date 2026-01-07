@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>dark-mode</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>
+  <body>
+    <main>
+      <h1><b class="txt">Light</b> Mode</h1>
+      <small>LightMode DarkMode html/css</small>
+      <label for="Name">
+        <span>Name</span><input type="text" name="name" id="Name" value="">
+      </label>
+        <span>gender</span>
+        <fieldset>
+          <input type="radio" name="gender" checked>
+          <span>MALE</span>
+          <input type="radio" name="gender">
+          <span>FEMALE</span>
+        </fieldset>
+      </label>
+      <label for="Agree">
+        <input type="checkbox" id="Agree"><span>agree</span>
+      </label>
+      <button type="submit" value="agree and go to thee nextstage" name="submit">
+        Submit
+      </button>
+      <div class="switch">
+        <label>
+          <input type="radio" name="mode" data-mode='light' checked onclick="modechange(this)">
+          <span>lightmode</span>
+        </label>
+        <label>
+          <input type="radio" name="mode" data-mode='dark' onclick="modechange(this)">
+          <span>darkmode</span>
+        </label>
+      </div>
+    </main>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
