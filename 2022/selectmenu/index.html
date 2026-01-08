@@ -1,0 +1,70 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>selectmenu</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <script src="https://unpkg.com/@oddbird/css-toggles@1.0.2/dist/css-toggles.min.js" type="module"></script>
+  </head>  
+  <body>
+    <div class="selectmenu">
+      <div class="selectmenu-inner">
+        <selectmenu class="my-select-menu">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </selectmenu>
+      </div>
+      <div class="selectmenu-inner">
+        <selectmenu class="my-custom-select">
+          <div slot="button">
+            <button behavior="button">Open</button>
+            <span class="label">Choose an option</span>
+          </div>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </selectmenu>
+      </div>
+      <div class="selectmenu-inner">
+        <selectmenu class="my-custom-select_2">
+          <div slot="listbox">
+            <div popup="popup" behavior="listbox">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+              <option>Option 5</option>
+            </div>
+          </div>
+        </selectmenu>
+      </div>
+      <div class="selectmenu-inner">
+        <selectmenu class="my-custom-select_3">
+          <div slot="button">
+            <span class="label">Choose a plant</span>
+            <span behavior="selected-value" slot="selected-value"></span>
+            <button behavior="button"></button>
+          </div>
+          <div slot="listbox">
+            <div popup="popup" behavior="listbox">
+              <div class="section">
+                <h3>Flowers</h3>
+                <option>Rose</option>
+                <option>Lily</option>
+                <option>Orchid</option>
+                <option>Tulip</option>
+              </div>
+              <div class="section">
+                <h3>Trees</h3>
+                <option>Weeping willow</option>
+                <option>Dragon tree</option>
+                <option>Giant sequoia</option>
+              </div>
+            </div>
+          </div>
+        </selectmenu>
+      </div>
+    </div>
+  </body>
+</html>
