@@ -1,0 +1,393 @@
+@charset 'UTF-8';
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+.valueSection {
+  margin-bottom: 40px;
+}
+.valueWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.valueImages {
+  display: flex;
+
+  img {
+    display: block;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+  }
+}
+.maskWrapper {
+  border: 1px solid var(--color-border);
+}
+.mask {
+  width: 300px;
+  height: 200px;
+  background-color: var(--color-primary);
+  mask-size: 300px 200px;
+
+  &.add {
+    mask-composite: add;
+  }
+
+  &.subtract {
+    mask-composite: subtract;
+  }
+
+  &.intersect {
+    mask-composite: intersect;
+  }
+
+  &.exclude {
+    mask-composite: exclude;
+  }
+
+  &.single {
+    mask-image: url("img/mask_single.png");
+  }
+
+  &.multi {
+    mask-image: url("img/mask1.png"), url("img/mask2.png");
+  }
+
+  &.triple {
+    mask-image: url("/241025_mask_composite/assets/mask_triple1.png"), url("/241025_mask_composite/assets/mask_triple2.png"),
+      url("/241025_mask_composite/assets/mask_triple3.png");
+  }
+
+  &.addSubtract {
+    mask-composite: add, subtract;
+  }
+
+  &.subtractIntersect {
+    mask-composite: subtract, intersect;
+  }
+
+  &.intersectExclude {
+    mask-composite: intersect, exclude;
+  }
+
+  &.excludeExclude {
+    mask-composite: exclude, exclude;
+  }
+}
+.centerHole {
+  position: relative;
+  overflow: hidden;
+  resize: both;
+  border: 1px solid var(--color-border);
+}
+.centerHoleBg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.centerHoleMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  mask-image: linear-gradient(#000, #000), url("img/mask_circle.svg");
+  mask-repeat: no-repeat, no-repeat;
+  mask-position:
+    0 0,
+    center center;
+  mask-size:
+    800px 900px,
+    240px 160px;
+  mask-composite: exclude;
+}
+.geometricMaskWrapper {
+  position: relative;
+  width: 640px;
+  height: 480px;
+}
+.geometricMaskBg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+.geometricMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  mask-image: radial-gradient(
+      circle at center,
+      #000 0,
+      #000 80px,
+      transparent 80px,
+      transparent 100%
+    ),
+    radial-gradient(circle at center, #000 0, #000 80px, transparent 80px, transparent 100%);
+  mask-position:
+    0 0,
+    80px 80px;
+  mask-size: 160px 160px;
+  mask-composite: exclude;
+}
+.intersectionAnimation {
+  position: relative;
+  height: 480px;
+}
+.intersectionAnimationImage {
+  position: absolute;
+  display: block;
+  width: 640px;
+  height: 480px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  mask-repeat: no-repeat;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+/* 山の画像のマスク */
+.intersectionAnimationImage1 {
+  mask-image: url("img/intersection_mask1.png");
+  animation-name: intersection1;
+}
+/* 海の画像のマスク */
+.intersectionAnimationImage2 {
+  mask-image: url("img/intersection_mask2.png");
+  animation-name: intersection2;
+}
+/* 街の画像のマスク */
+.intersectionAnimationImage3 {
+  mask-image: url("img/intersection_mask1.png"),
+    url("img/intersection_mask2.png");
+  mask-composite: intersect;
+  animation-name: intersection3;
+}
+@keyframes intersection1 {
+  0% {
+    mask-position: -1280px 0;
+  }
+
+  100% {
+    mask-position: 0 0;
+  }
+}
+@keyframes intersection2 {
+  0% {
+    mask-position: right -1280px bottom 0;
+  }
+
+  100% {
+    mask-position: right 0 bottom 0;
+  }
+}
+@keyframes intersection3 {
+  0% {
+    mask-position:
+      -1280px 0,
+      right -1280px bottom 0;
+  }
+
+  100% {
+    mask-position:
+      0 0,
+      right 0 bottom 0;
+  }
+}
+.transitionAnimation {
+  width: 640px;
+}
+.transitionAnimationImage {
+  display: block;
+  width: 640px;
+  height: 480px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.transitionAnimation {
+  position: relative;
+}
+.transitionAnimationMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(#000, #000), url("img/mask_circle.svg");
+  mask-repeat: no-repeat;
+  mask-position:
+    0 0,
+    center center;
+  mask-size:
+    100% 100%,
+    0 0;
+  mask-composite: exclude;
+  animation-timing-function: var(--ease-out-quart);
+  animation-fill-mode: forwards;
+}
+.transitionAnimationMask1 {
+  background-color: var(--color-primary);
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+
+  &.isActive {
+    animation-name: maskAnimation;
+  }
+}
+.transitionAnimationMask2 {
+  background-color: var(--color-secondary);
+  animation-duration: 1.1s;
+
+  &.isActive {
+    animation-name: maskAnimation;
+  }
+}
+@keyframes maskAnimation {
+  0% {
+    mask-size:
+      100% 100%,
+      0 0;
+  }
+
+  100% {
+    mask-size:
+      100% 100%,
+      800px 800px;
+  }
+}
+.scrollMask {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  overflow: hidden auto;
+  overscroll-behavior-y: none;
+  scrollbar-gutter: stable;
+}
+.scrollMaskInner {
+  width: 100%;
+  height: 1600px;
+}
+.wall {
+  position: sticky;
+  top: 0;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+}
+.wallMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  mask-image: linear-gradient(#000, #000),
+    radial-gradient(#000 0, #000 50%, transparent 50%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-position:
+    0 0,
+    323px 237px; /* 「O」の穴に合う位置 */
+
+  mask-size:
+    100% 100%,
+    16px 18px; /* 「O」の穴に合うサイズ */
+
+  mask-composite: exclude;
+  transform-origin: 331px 246px; /* 拡大した時「O」の穴の中心が起点となるような位置 */
+}
+.text {
+  position: absolute;
+  top: 229px;
+  left: 308px;
+  z-index: 1;
+  font-size: 22px;
+  font-weight: bold;
+  transform-origin: 24.5px 18px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.wallImage {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 640px;
+  height: 480px;
+  aspect-ratio: 4/3;
+  margin-top: -480px;
+  object-fit: cover;
+}
+.animationSection {
+  margin-bottom: 64px;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  scroll-margin-top: 50px;
+}
+:root {
+  --color-text: #333;
+  --color-primary: #01a69b;
+  --color-secondary: #dab52c;
+  --color-tertiary: #dc6c4f;
+  --color-bg: #fff;
+  --color-border: #ddd;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mainContents {
+  max-width: 640px;
+  padding-top: 48px;
+  margin: 0 auto;
+}
+.index {
+  li {
+    margin-bottom: 1rem;
+    margin-left: 1em;
+    font-size: 18px;
+  }
+}
+.backToIndex {
+  margin-top: 48px;
+  font-size: 18px;
+}
+h1 {
+  margin-bottom: 0.8rem;
+  font-size: 28px;
+}
+h2 {
+  margin-bottom: 0.8rem;
+  font-size: 22px;
+}
+p {
+  margin-bottom: 1.5rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+button {
+  min-width: 120px;
+  padding: 8px 16px;
+  margin: 32px auto;
+  font-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--color-text);
+  border-radius: 6px;
+  transition: background-color 0.3s var(--ease-out-quart);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-text), #fff 90%);
+  }
+}

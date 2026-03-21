@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+  font-size: 62.5%;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr
+    min(calc(100% - 4rem), 100%)
+    1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main > * {
+  grid-column: 2;
+}
+h1 {
+  font-size: 1.5rem;
+}
+.box {
+
+}
+.example-element {
+  caret-color: red;
+}
+.example-element2 {
+  caret-color: auto;
+}
+.example-element3 {
+  caret-color: transparent;
+}

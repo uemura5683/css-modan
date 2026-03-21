@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-modan</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <style>
+      body {
+        padding: 24px;
+        font-family: sans-serif;
+      }
+      abbr[title] {
+        text-decoration: none;
+      }
+      section:not(:last-child) {
+        margin-bottom: 48px;
+      }
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 960px;
+        width: 100%;
+      }
+      .form-wrapper {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+      }
+      form {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 24px;
+        width: 100%;
+      }
+      label, legend {
+        display: block;
+        margin-bottom: 16px;
+        color: #333;
+      }
+      .message {
+        color: red;
+      }
+      input:is([type="text"], [type="email"], [type="url"],
+      [type="tel"],
+      [type="password"],
+      [type="search"],
+      [type="number"],
+      [type="date"],
+      [type="datetime"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="week"],
+      [type="number"]
+      ),
+      textarea {
+        display: block;
+        appearance: none;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 8px;
+      }
+      fieldset {
+        appearance: none;
+        border: 1px solid #ccc;
+        margin-bottom: 16px;
+      }
+      .flex {
+        display: flex;
+        gap: 8px;
+      }
+      input:is(
+        [type="date"],
+        [type="datetime"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="week"],
+        [type="number"]) {
+        max-width: 200px;
+      }
+      form button {
+        appearance: none;
+        min-width: 200px;
+        background-color: mediumblue;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: normal;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button[type="submit"]:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      button[type="submit"]:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>必須のフィールドには<abbr title="必須項目">*</abbr>が付いています。</p>
+      <label>
+        氏名<abbr title="必須項目">*</abbr>：
+        <input name="name" type="text" required maxlength="30">
+      </label>
+      <label>
+        メールアドレス<abbr title="必須項目">*</abbr>：
+        <input name="email" type="email" required placeholder="example@example.com">
+      </label>
+      <label>
+        電話番号（ハイフンなし）<abbr title="必須項目">*</abbr>：
+        <input name="tel" type="tel" pattern="^0\d{9,10}$" required placeholder="09011112222">
+      </label>
+      <fieldset>
+        <legend>性別<abbr title="必須項目">*</abbr>：</legend>
+        <div class="flex">
+          <label>
+            <input type="radio" name="gender" value="male" required>男性
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required>女性
+          </label>
+          <label>
+            <input type="radio" name="gender" value="noanswer" required>回答なし
+          </label>
+        </div>
+      </fieldset>
+      <label>
+        生年月日<abbr title="必須項目">*</abbr>：
+        <input name="birthday" type="date" required>
+      </label>
+      <label>
+        志望動機（200文字以内）<abbr title="必須項目">*</abbr><br>
+        <textarea name="reason" required maxlength="200" cols="50" rows="4"></textarea>
+      </label>
+      <label>
+        ポートフォリオ：
+        <input name="portfolio" type="url" placeholder="https://example.com">
+      </label>
+      <label>
+        その他<br>
+        <textarea name="other"></textarea>
+      </label>
+      <button type="submit">送信</button>
+    </form>
+  </body>
+</html>

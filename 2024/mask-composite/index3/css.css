@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+
+/** 
+* reset
+**/
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --color-primary: #01a69b;
+  --color-secondary: #b4ff04;
+}
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+}
+.geometricMaskWrapper {
+  position: relative;
+  width: 640px;
+  height: 480px;
+}
+.geometricMaskBg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+.geometricMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  mask-image: radial-gradient(circle at center, #000 0, #000 80px, transparent 80px, transparent 100%), radial-gradient(circle at center, #000 0, #000 80px, transparent 80px, transparent 100%);
+  mask-position: 0 0, 80px 80px;
+  mask-size: 160px 160px;
+  mask-composite: exclude;
+}

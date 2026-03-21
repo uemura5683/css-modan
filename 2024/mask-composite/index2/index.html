@@ -1,0 +1,21 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mask-composite</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>  
+  <body>
+    <div class="wrapper">
+        <h3>mask-composite を使ったマスクの合成</h3>
+        <p>
+          真ん中が丸く黒いマスク画像とmask-composite: excludeを使うことで、<br>
+          従来では難しかった特定の領域以外の部分をマスキングすることが可能になります。
+        </p>
+      <div class="main">
+        <img src="img/bg.webp" alt="山と川の写真" width="640" height="498" class="centerHoleBg">
+        <div class="centerHoleMask"></div>
+      </div>
+    </div>
+  </body>
+</html>

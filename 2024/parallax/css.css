@@ -1,0 +1,64 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+a {
+  color: #fff;
+}
+body {
+  background-color: #212529;
+  height: 600vh;
+  width: 100vw;
+}
+
+.wrapper{
+  overflow: hidden;
+}
+
+.parallax {
+  border-radius: 8px;
+  box-shadow: 0 0px 16px rgb(0, 0, 0, .16);
+  position: absolute;
+  aspect-ratio: 1 / 1;
+}
+
+@keyframes parallax-large-anim {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.large {
+  background-color: #62929E;
+  width: 100px;
+  animation: parallax-large-anim linear;
+  animation-timeline: scroll();
+}
+
+.medium {
+  background-color: #B9314F;
+  width: 75px;
+}
+
+@keyframes parallax-small-anim {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.small {
+  background-color: #DDB967;
+  width: 50px;
+  animation: parallax-small-anim linear;
+  animation-timeline: scroll();
+}

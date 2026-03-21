@@ -1,0 +1,119 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mask-composite</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>  
+  <body>
+    <div class="wrapper">
+        <h3>マスクを使ったアニメーション</h3>
+        <p>
+          マスク単体ではあらかじめそのような画像をつくって配置すれば十分な場合もありますが、<br>
+          CSSマスクのメリットはマスクアニメーションで幅広い表現ができることです。
+        </p>
+      <div class="main">
+        <section class="animationSection">
+          <h2 id="intersection">交差アニメーション</h2>
+          <div class="intersectionAnimation">
+            <img
+              src="img/bg.webp"
+              alt="山と川の写真"
+              width="640"
+              height="498"
+              class="intersectionAnimationImage intersectionAnimationImage1"
+            />
+            <img
+              src="img/bg2.webp"
+              alt="南の島の浜辺の写真"
+              width="640"
+              height="498"
+              class="intersectionAnimationImage intersectionAnimationImage2"
+            />
+            <img
+              src="img/bg3.webp"
+              alt="摩天楼の写真"
+              width="640"
+              height="498"
+              class="intersectionAnimationImage intersectionAnimationImage3"
+            />
+          </div>
+        </section>
+        <section class="animationSection">
+          <h2 id="transition">トランジションアニメーション</h2>
+          <div class="transitionAnimation">
+            <img
+              src="img/bg.webp"
+              alt="山と川の写真"
+              width="640"
+              height="498"
+              class="transitionAnimationImage"
+            />
+            <div class="transitionAnimationMask transitionAnimationMask1"></div>
+            <div class="transitionAnimationMask transitionAnimationMask2"></div>
+          </div>
+          <button>再生</button>
+        </section>
+  
+        <section class="animationSection">
+          <h2 id="scroll">スクロールと連動したマスクアニメーション</h2>
+          <div class="scrollMask">
+            <div class="scrollMaskInner">
+              <div class="wall">
+                <div class="wallMask"></div>
+                <div class="text">GO</div>
+              </div>
+              <img
+                class="wallImage"
+                src="img/bg.webp"
+                alt="山と川の写真"
+                width="640"
+                height="498"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+      <script>
+        const mask1 = document.querySelector(".transitionAnimationMask1");
+        const mask2 = document.querySelector(".transitionAnimationMask2");
+        const playButton = document.querySelector("button");
+        playButton.addEventListener("click", async () => {
+          mask1.classList.remove("isActive");
+          mask2.classList.remove("isActive");
+          await new Promise((resolve) => setTimeout(resolve, 200));
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              mask1.classList.add("isActive");
+              mask2.classList.add("isActive");
+            });
+          });
+        });
+  
+        // 十分穴が大きくなる倍率
+        const ENOUGH_SCALE = 94;
+        const scrollArea = document.querySelector(".scrollMask");
+        const wallMask = document.querySelector(".wallMask");
+        const text = document.querySelector(".text");
+  
+        // スクロールイベントに応じてスケールを変更
+        scrollArea.addEventListener("scroll", (event) => {
+          // スクロール量に応じた拡大率
+          const scaleRatio = 1 + event.target.scrollTop / 11;
+          if (event.target.scrollTop < 0) {
+            return;
+          }
+          text.style.scale = `${scaleRatio}`;
+          wallMask.style.scale = `${scaleRatio}`;
+  
+          // 十分大きくなったら非表示にする
+          if (scaleRatio > ENOUGH_SCALE) {
+            wallMask.style.visibility = "hidden";
+          } else {
+            wallMask.style.visibility = "visible";
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
