@@ -1,2 +1,0 @@
-CSS カスタムプロパティによる流動的フォントサイズ
-https://zenn.dev/ixkaito/articles/fluid-typography
