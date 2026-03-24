@@ -1,0 +1,6 @@
+https://coliss.com/articles/build-websites/operation/css/css-attr-upgrade-2025.html
+
+CSSのattr()はCSSの関数で、HTMLの属性に記述した値をCSSで使用できます。これまでattr()関数は疑似要素のcontentプロパティでのみ機能し、値をCSSの<string>にパースすることしかできませんでした。
+
+Chrome 133（2025/2/4に安定版がリリース予定）で、attr()関数がより強力になります。Chrome 133+ではcontentだけでなく、CSSの任意のプロパティでattr()を使用でき、値を<string>以外のデータ型にパースできます。
+

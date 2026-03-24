@@ -1,0 +1,52 @@
+https://coliss.com/articles/build-websites/operation/work/how-to-avoid-scroll-chaining-with-css.html
+
+スクロールチェーン（連鎖）とは
+CSSのoverscroll-behaviorプロパティは、スクロール領域に到達した際にブラウザがどう動作すべきかを制御します。
+
+たとえば、overscroll-behavior: contain;に設定すると、スクロールチェーンは発生せず、下層要素はスクロールされなくなります。
+
+下記のデモで、Enableのチェックをオン・オフにしてご覧ください。
+
+--------------
+
+overscroll-behaviorの問題点
+overscroll-behaviorの問題点は、スクロール可能なコンテナに対してのみ機能することです。
+
+たとえば、スクロールしないdialogにoverscroll-behavior: contain;を設定しても、
+overscroll-behaviorは何も機能しません。
+overscroll-behaviorが機能する二は、少なくとも1ピクセルのオーバーフローが存在する必要があります。
+
+Chrome 144ではこの点が変更され、仕様の意図通りに、
+スクロール不可のスクロールコンテナでもoverscroll-behaviorが機能するようになります。
+overflow: auto;を設定してもオーバーフローがない場合、
+またはoverflow: hidden;を設定している場合は、スクロール不可のスクロールコンテナが生成されます。
+
+--------------
+
+スクロールチェーン（連鎖）を回避する方法
+この変更は最初は気づかれないかもしれませんが、デベロッパーが長年抱えてきたスクロールチェーンの問題を解決します。
+つまりdialog要素でモーダルが開いている間、ページがスクロールしないようにする、です。
+
+Chrome 144以降では、数行のCSSだけで解決します。
+
+dialog {
+	overscroll-behavior: contain;
+}
+ 
+dialog::backdrop {
+	overflow: hidden;
+	overscroll-behavior: contain;
+}
+
+コードの鍵となるのは、::backdropにはoverflow: hidden;を必ず設定することです。
+これにより::backdropはスクロール不可のスクロールコンテナになります。
+
+
+「Show Dialog」でダイアログを表示している間、ページがスクロールしてしまう場合はChrome 144以降を使用していません。
+Chrome 144以降であれば、ページはスクロールしません。
+
+この仕様の意図通りの挙動を他のブラウザも実装することを願っています。
+これはデベロッパーが長年悩まされていた問題を解決するもので、
+回避策としてhtmlにoverflow: hidden;を設定するだけでは不十分だからです。
+
+--------------

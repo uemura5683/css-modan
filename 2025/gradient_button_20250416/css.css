@@ -1,0 +1,105 @@
+@charset 'UTF-8';
+
+/**
+* common
+**/
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
+.wrapper {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+p {
+  width: 100%;
+}
+/**
+* components
+**/
+@property --font-size-base {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+
+@property --gradient-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+:root {
+  --rem: calc(tan(atan2(1px, var(--font-size-base))) * 1rem);
+}
+
+body {
+  display: block grid;
+  place-content: center;
+  grid-auto-columns: min(400 * var(--rem), 100%);
+  row-gap: 40px;
+  padding: 20px;
+}
+
+.button {
+  --_foreground-default: #fff;
+  --_foreground-hoverable: #fff;
+  --_background-default: linear-gradient(
+    90deg,
+    oklch(from #39d2f8 l c h / var(--gradient-alpha)),
+    oklch(from #306160 l c h / var(--gradient-alpha))
+  );
+  --_background-hoverable: #603061;
+  --_icon-translate-hoverable: 4px;
+  --_duration: 0.3s;
+  width: 100%;
+  display: inline grid;
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: calc(8 * var(--rem));
+  align-items: center;
+  inline-size: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  background: var(--_background-default), var(--_background-hoverable);
+  color: var(--_foreground-default);
+  vertical-align: middle;
+  text-wrap: pretty;
+  transition-duration: var(--_duration);
+  transition-property: color, --gradient-alpha;
+
+  &::before {
+    content: "";
+  }
+
+  &::after {
+    content: "";
+    justify-self: end;
+    mask: var(--icon-chevron-right) no-repeat center / contain;
+    inline-size: 1em;
+    aspect-ratio: 1;
+    background: conic-gradient(currentcolor 0 0), CanvasText;
+    transition: translate var(--_duration);
+  }
+
+  &:focus-visible {
+    --gradient-alpha: 0%;
+    color: var(--_foreground-hoverable);
+
+    &::after {
+      translate: var(--_icon-translate-hoverable);
+    }
+  }
+
+  &:where(:any-link, :enabled, summary):hover {
+    @media (any-hover: hover) {
+      --gradient-alpha: 0%;
+      color: var(--_foreground-hoverable);
+
+      &::after {
+        translate: var(--_icon-translate-hoverable);
+      }
+    }
+  }
+}

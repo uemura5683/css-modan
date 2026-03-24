@@ -1,0 +1,95 @@
+https://codepen.io/coliss/pen/jEqXxwm
+
+https://coliss.com/articles/build-websites/operation/css/css-in-2025-interactions.html
+
+https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/container-type
+
+-------------------------------------------------------------------------------------
+
+container-type　コンテナーコンテキストの種類
+
+いいところに気づいてます。
+「コンテナとして扱う」＝ “その要素を、Container Query の基準となる “参照ボックス（計測対象）” にする という意味です。
+もっとラフに言うと、
+
+いままで @media (min-width: …) は “画面（viewport）の大きさ” を基準にしていた
+それを 「画面」ではなく “特定の要素（箱）” のサイズを基準にできるようにする
+その「箱」に指定するのが container-type
+
+という話です。
+
+例えば：
+
+.card-list {
+  container-type: inline-size;
+}
+
+
+こうすると、
+.card-list が「Container Query の対象になる箱」になる
+.card-list の「横幅」が変わると、その中の要素がそれを参照してスタイルを切り替えられる
+
+
+✔️ いままでの世界（Media Query）
+
+いままでは “画面幅” しか基準がありませんでした。
+
+@media (min-width: 768px) {
+  .card { grid-template-columns: 1fr 1fr; }
+}
+
+
+→ 画面が広いかどうかしか判断できない
+→ レイアウトコンポーネントの「親の幅」が大きいかどうかは判断できない
+
+✔️ Container Query の世界
+
+container-type を付けると
+「その要素のサイズ」を基準に CSS を書ける になります。
+
+.card-list {
+  container-type: inline-size;
+}
+
+@container (min-width: 600px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+👉 画面の大きさではなく
+👉 .card-list の幅が 600px を超えたらレイアウト変更！
+
+これが 「コンテナとして扱う」 の実態です。
+
+-------------------------------------------------------------------------------------
+
+scroll-snap-align
+
+1️⃣ start
+👉 スクロール方向の 先頭（左 or 上）に揃えて止める
+
+.item {
+  scroll-snap-align: start;
+}
+
+・横スクロール → 左端にピタッ
+・縦スクロール → 上端にピタッ
+
+2️⃣ center
+👉 中央位置に揃えて止める
+
+.item {
+  scroll-snap-align: center;
+}
+
+ギャラリーやカルーセルでよく使う
+
+1枚を真ん中で見せたい UI 向け
+3️⃣ end
+👉 終端（右 or 下）に揃えて止める
+
+.item {
+  scroll-snap-align: end;
+}

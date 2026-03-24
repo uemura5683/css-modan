@@ -1,0 +1,5 @@
+https://coliss.com/articles/build-websites/operation/css/carousel-using-only-css.html
+
+https://codepen.io/coliss/pen/NPWogwW
+
+https://chrome.dev/carousel-configurator/

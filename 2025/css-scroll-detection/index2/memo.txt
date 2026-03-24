@@ -1,0 +1,106 @@
+このコードは、@property、@keyframes、animation-timeline といった高度な CSS 機能を使って、スクロール位置に基づくアニメーションとデバッグ表示を行う例です。それぞれの部分について、詳しく解説します。
+
+1. @charset 'UTF-8';
+@charset は CSS ファイルの文字エンコーディングを指定します。'UTF-8' は多くの言語で使用できるエンコーディングです。この宣言により、CSS が UTF-8 文字を正しく解釈できます。
+
+2. カスタムプロパティの宣言
+css
+コードをコピーする
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+ここで @property を使用して、--scroll-position と --scroll-position-delayed のカスタムプロパティを作成しています。
+
+syntax: "<number>": このプロパティは数値のみを受け付けます。
+inherits: true: このプロパティは継承可能で、子要素にも引き継がれます。
+initial-value: 0: 初期値を 0 に設定します。
+
+3. @keyframes アニメーションの設定
+css
+コードをコピーする
+@keyframes adjust-pos {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+この @keyframes は、--scroll-position と --scroll-position-delayed の値を 0 から 1 へとアニメーションさせます。このアニメーションは、スクロールの位置によって変化するよう設定されています。
+
+4. アニメーションと animation-timeline
+css
+コードをコピーする
+:root {
+  animation: adjust-pos linear both;
+  animation-timeline: scroll(root);
+}
+ここでは、:root 要素に adjust-pos アニメーションを適用し、そのアニメーションが scroll(root) によってスクロールの位置に基づいて進行するようにしています。animation-timeline: scroll(root); によって、スクロール位置をアニメーションの進行度として使用できます。
+
+5. デバッグ表示エリア
+css
+コードをコピーする
+#debug {
+  counter-reset: scroll-position calc(var(--scroll-position) * 100) scroll-position-delayed calc(var(--scroll-position-delayed) * 100);
+  
+  [data-id="--scroll-position"]::after {
+    content: "--scroll-position: " counter(scroll-position);
+  }
+  [data-id="--scroll-position-delayed"]::after {
+    content: "--scroll-position-delayed: " counter(scroll-position-delayed);
+  }
+}
+この部分は、カスタムプロパティの値を視覚化するためのデバッグエリアを設定しています。
+
+counter-reset: --scroll-position と --scroll-position-delayed の値に基づきカウンタをリセットします。各値は 0 ～ 1 の範囲ですが、calc(var(--scroll-position) * 100) により、0 から 100 の範囲で表示します。
+::after: --scroll-position と --scroll-position-delayed の現在の値を表示します。[data-id="--scroll-position"] と [data-id="--scroll-position-delayed"] が設定された要素に対してそれぞれ表示される内容を設定しています。
+6. デバッグ表示エリアのスタイリング
+css
+コードをコピーする
+#debug {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  
+  & li {
+    list-style: none;
+  }
+}
+#debug はスクロール位置に応じたデバッグ情報を画面中央に表示するためのスタイルです。position: fixed によってスクロールしても表示される位置が固定され、白い背景やボーダーで読みやすくしています。
+
+その他のスタイル
+css
+コードをコピーする
+main {
+  overflow-y: visible;
+  color: #ccc;
+}
+
+body {
+  padding: 2rem;
+  color: #333;
+  font-style: italic;
+}
+p {
+  margin: 0 0 2rem 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+main 要素に対して、文字色や overflow-y を設定しています。
+body 要素にパディングとフォントスタイルを指定しています。
+p 要素の下にマージンを設定しています。
+全体のマージンとパディングをリセットするため、* セレクタでゼロに設定しています。
+まとめ
+このコード全体は、スクロール位置に応じて --scroll-position と --scroll-position-delayed の値を更新し、その値をリアルタイムでデバッグ表示する仕組みになっています。@property や animation-timeline といった最新の CSS 機能を使うことで、従来よりもリッチなアニメーション表現が可能です。

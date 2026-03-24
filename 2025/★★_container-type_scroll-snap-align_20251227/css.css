@@ -1,0 +1,110 @@
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+@layer demo {
+  main {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+
+    padding: var(--size-3);
+    scroll-padding: var(--size-3);
+
+    > .card {
+      container-type: scroll-state;
+      scroll-snap-align: center;
+
+      @supports (container-type: scroll-state) {
+        @media (prefers-reduced-motion: no-preference) {
+          figcaption {
+            transform: translateY(100%);
+
+            @container scroll-state(snapped: x) {
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+
+      body:has(#snap-stop:checked) & {
+        scroll-snap-stop: always;
+      }
+    }
+  }
+}
+
+@layer demo.support {
+  html {
+    color-scheme: light dark;
+    background: light-dark(var(--gray-1), var(--gray-9));
+    color: light-dark(var(--gray-9), var(--gray-1));
+  }
+  body {
+    display: grid;
+    place-content: center;
+  } 
+  
+  main {
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--size-5);
+    max-inline-size: 100vw;
+    
+    &::before, &::after {
+      content: "";
+      display: block;
+      inline-size: 50vw;
+    }
+  }
+  
+  .card {
+    inline-size: var(--size-content-2);
+    background: var(--surface-2);
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-2);
+    overflow: hidden;
+    
+    > figure {
+      display: grid;
+      place-items: end stretch;
+      
+      > * {
+        grid-area: 1 / 1;
+      }
+      
+      > figcaption {
+        display: grid;
+        gap: var(--size-2);
+        transition: transform .3s var(--ease-3);
+        background: linear-gradient(to top, #000, 75%, #0000);
+        padding-inline: var(--size-5);
+        padding-block: var(--size-9) var(--size-3);
+        
+        & h5 {
+          color: var(--gray-0);
+        }
+    
+        & p {
+          color: var(--gray-4);
+        }
+      }
+    }
+    
+    @media (prefers-color-scheme: light) {
+      background: white;
+    }
+  }
+  
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: var(--size-5);
+    
+    > label {
+      display: flex;
+      place-items: center;
+      gap: 1ch;
+    }
+  }
+}

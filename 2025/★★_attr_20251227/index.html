@@ -1,0 +1,55 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>attr</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>  
+  <body>
+    <main>
+
+      <div class="link">
+        <a href="https://example.com">リンク</a>
+      </div>
+
+      <div class="badge" data-count="5"></div>
+
+      <input placeholder="ユーザー名" data-help="必須です">
+
+      <div class="cards">
+        <div class="card" id="card-1">1</div>
+        <div class="card" id="card-2">2</div>
+        <div class="card" id="card-3">3</div>
+        <div class="card" id="card-4">4</div>
+      </div>
+      
+      <button>Reorder</button>
+      
+      <div class="warning">
+        <p>You browser does not support advanced <code>attr()</code>. As a result, this demo won’t do anything. Try Chrome 133+.</p>
+      </div>  
+
+      
+    </main>
+    <script type="text/javascript">
+      // getComputedStyle($0).getPropertyValue('view-transition-name');
+
+      const shuffle = (array) => {
+        for (let i = array.length - 1; i >= 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      document.querySelector('button').addEventListener('click', (e) => {
+        const $cards = Array.from(document.querySelectorAll('.card'));
+        shuffle($cards);
+        document.startViewTransition(() => {
+          $cards.forEach(($card, i) => {
+            $card.style.setProperty('order', i);
+          });
+        });
+      }); 
+    </script>
+  </body>
+</html>

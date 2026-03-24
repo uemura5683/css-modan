@@ -1,0 +1,5 @@
+https://coliss.com/articles/build-websites/operation/css/css-scroll-state-queries.html
+
+https://codepen.io/coliss/pen/Wbryxmj
+
+https://www.bram.us/2025/10/22/solved-by-css-scroll-state-queries-hide-a-header-when-scrolling-down-show-it-again-when-scrolling-up/

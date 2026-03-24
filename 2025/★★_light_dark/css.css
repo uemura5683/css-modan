@@ -1,0 +1,81 @@
+@function --light-dark(--light, --dark) {
+	result: var(--light);
+	
+	@media (prefers-color-scheme: dark) {
+		result: var(--dark);
+	}
+}
+
+:root {
+	color-scheme: light dark;
+  font-family: "Literata", serif;
+	
+	color: light-dark(#333, #e4e4e4);
+	background-color: light-dark(aliceblue, #333);
+}
+
+#demo {
+	max-width: 60ch;
+	text-align: center;
+	text-wrap: balance;
+	padding: 1em;
+	
+	font-weight: --light-dark(500, 300);
+ 	font-size: --light-dark(16px, 18px);
+	border: 4px --light-dark(dashed, dotted) currentcolor;
+	
+	transition: all 0.25s ease, border-style 0.25s allow-discrete;
+}
+
+@layer layout {
+	* {
+		box-sizing: border-box;
+	}
+
+	body,
+	html {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		display: grid;
+		place-content: center;
+	}
+}
+
+@layer warning {
+	.warning {
+		padding: 1em;
+		margin: 1em 0;
+		border: 1px solid #ccc;
+		background: rgba(255 255 205 / 0.8);
+		color: black;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		left: 1em;
+		right: 1em;
+	}
+
+	.warning > :first-child {
+		margin-top: 0;
+	}
+
+	.warning > :last-child {
+		margin-bottom: 0;
+	}
+
+	.warning a {
+		color: blue;
+	}
+	.warning--info {
+		border: 1px solid #123456;
+		background: rgb(205 230 255 / 0.8);
+	}
+	.warning--alarm {
+		border: 1px solid red;
+		background: #ff000010;
+	}
+}

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/** 
+* reset
+**/
+:root {
+  --red: #e50914;
+  --blue: #1F5EAB;
+  --white: #fff;
+  --black: #333;
+  --gray: #cdcdcd;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  font-size: 62.5%;
+  margin: 0;
+}
+* {
+  color: var(--black);
+}
+div, input {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+input, textarea, button {
+  outline: none;
+  border-radius: 0;
+  height: 6rem;
+  border: 1px solid #ccc;
+  background: white;
+}
+input[type="checkbox"], input[type="reset"] {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  div, p, span, input, textarea, ul, li, ol, a {
+    font-size: 1.2rem;
+  }
+}
+/** 
+* components
+**/
+label[for="c-keyword-sample"] {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+label[for="keyword-checkbox-reset"] {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  z-index: -1;
+  opacity: 0;
+}
+#c-keyword-sample:checked ~ label[for="keyword-checkbox-reset"] {
+  opacity: 1;
+  z-index: 50;
+}
+#c-keyword-sample:checked ~ label[for="keyword-checkbox-reset"]:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 50;
+}
+.c-search-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: white;
+  transform: translate(-50%, -200%);
+  width: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: ease-in-out 1s transform;
+}
+#c-keyword-sample:checked ~ .c-search-form {
+  opacity: 1;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  transition: ease-in-out 1s transform;
+}
+.c-form-block {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.c-search__input {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.c-search__submit {
+  position: absolute;
+  right: 0;
+  width: 6rem;
+}
+.c-box-overlay {
+  background-color: #00000094;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: ease-in-out 1s opacity;
+}
+#c-keyword-sample:checked ~ .c-box-overlay {
+  z-index: 10;
+  opacity: 1;
+  transition: ease-in-out 1s opacity;
+}

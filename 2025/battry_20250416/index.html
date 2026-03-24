@@ -1,0 +1,75 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>battery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" onload='this.onload=null;this.rel="stylesheet"' />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" />
+    </noscript>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/taks-custom-base-css@1.2.6/taks-custom-base.css"></link>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+  </head>  
+  <body>
+    <h1>battery</h1>
+    <div class="wrapper">
+      <div class="battery">
+        <div class="battery-image">
+          <svg role="img" viewBox="0 0 24 24" fill="none" aria-label="充電中">
+            <path d="M6 12L8 3H15.5L14 8.99991H18L9 21L10.5 12H6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <p class="battery-status">100%</p>
+      </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  const isBatteryApiSupported = () => "getBattery" in navigator;
+
+  const updateBatteryStatus = (battery, element, statusElement) => {
+    const batteryLevel = Math.round(battery.level * 100);
+    const isBatteryLow = batteryLevel < 20;
+
+    element.style.setProperty("--battery-level", `${batteryLevel}%`);
+    element.style.setProperty("--battery-low", String(isBatteryLow));
+    element.style.setProperty("--battery-charging", String(battery.charging));
+    statusElement.textContent = `${batteryLevel}%`;
+  };
+
+  const addBatteryEventListeners = (battery, element, statusElement) => {
+    const updateStatus = () => updateBatteryStatus(battery, element, statusElement);
+    ["chargingchange", "levelchange"].forEach((eventName) => {
+      battery.addEventListener(eventName, updateStatus);
+    });
+  };
+
+  const initializeBatteryStatus = async (element, statusElement) => {
+    if (!isBatteryApiSupported()) {
+      console.warn("Battery API is not supported in this browser.");
+      return;
+    }
+
+    try {
+      const battery = await navigator.getBattery();
+      updateBatteryStatus(battery, element, statusElement);
+      addBatteryEventListeners(battery, element, statusElement);
+    } catch (error) {
+      console.error("Failed to initialize battery status:", error);
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const batteryElement = document.querySelector(".battery");
+    const batteryStatusElement = document.querySelector(".battery-status");
+
+    if (!(batteryElement && batteryStatusElement)) {
+      console.error("Required DOM elements are missing.");
+      return;
+    }
+
+    initializeBatteryStatus(batteryElement, batteryStatusElement);
+  });
+
+</script>

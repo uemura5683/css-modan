@@ -1,0 +1,61 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>modal polyfill</title>
+    <link type="text/css" rel="stylesheet" href="css.css"></link>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel&amp;display=swap"></link>
+    <script type="module" async src="https://unpkg.com/invokers-polyfill@0.5.2/invoker.min.js"></script>
+  </head>  
+  <body>
+    <h1>modal polyfill</h1>
+    <div class="wrapper">
+      <button class="button" type="button" commandfor="modal1" command="show-modal">
+        Sample 01
+      </button>
+      <button class="button" type="button" commandfor="modal2" command="show-modal">
+        Sample 02
+      </button>
+      <button class="button" type="button" commandfor="modal3" command="show-modal">
+        Sample 03
+      </button>
+      
+      <dialog id="modal1" class="modal" aria-labelledby="headline1" autofocus>
+        <div class="inner">
+          <h1 id="headline1" class="headline">Sample 01</h1>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description"><a href="#">Focus Test</a></p>
+        </div>
+        <button class="close" type="button" commandfor="modal1" command="close">
+          <span class="visually-hidden">モーダルを閉じる</span>
+        </button>
+      </dialog>
+      
+      <dialog id="modal2" class="modal" aria-labelledby="headline2" autofocus>
+        <div class="inner">
+          <h1 id="headline2" class="headline">Sample 02</h1>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description"><a href="#">Focus Test</a></p>
+        </div>
+        <button class="close" type="button" commandfor="modal2" command="close">
+          <span class="visually-hidden">モーダルを閉じる</span>
+        </button>
+      </dialog>
+      
+      <dialog id="modal3" class="modal" aria-labelledby="headline3" autofocus>
+        <div class="inner">
+          <h1 id="headline3" class="headline">Sample 03</h1>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="description"><a href="#">Focus Test</a></p>
+        </div>
+        <button class="close" type="button" commandfor="modal3" command="close">
+          <span class="visually-hidden">モーダルを閉じる</span>
+        </button>
+      </dialog>
+    </div>
+  </body>
+</html>

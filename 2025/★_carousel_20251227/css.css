@@ -1,0 +1,131 @@
+@layer support.demo {
+  html, body {
+    block-size: 100%;
+  }
+  
+  body {
+    display: grid;
+    place-content: start center;
+    margin: 0;
+    padding: 10vmin;
+  }
+  
+  .scroll-layout {
+    display: grid;
+    grid-template-areas: 
+      "left scroll right"
+      ". markers .";
+    
+    grid-template-areas: 
+      "scroll scroll scroll"
+      "left markers right";
+    
+    grid-template-columns: auto 1fr auto;
+
+    .carousel {
+      grid-area: scroll;
+    }
+  }
+  
+  .carousel {
+    max-inline-size: 80cqi;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+  }
+
+  .content {
+    display: grid;
+    grid: 50vmin / auto-flow 50vmin;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      list-style-type: none;
+      border: 3px solid #888;
+    }
+  }
+}
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  
+  > li {
+    scroll-snap-align: center;
+  }
+}
+
+/* scroll button */
+.carousel {
+  &::scroll-button(*) {
+    inline-size: 48px;
+    aspect-ratio: 1;
+    border-radius: 1e3px;
+    border: 2px solid #999;
+    margin: 5px;
+  }
+  
+  &::scroll-button(*):focus-visible {
+    outline-offset: 5px;
+  }
+  
+  &::scroll-button(*):not(:disabled):is(:hover, :active) {
+    background-color: Canvas;
+  }
+  
+  &::scroll-button(*):not(:disabled):active {
+    scale: 90%;
+  }
+  
+  &::scroll-button(left) {
+    content: "⬅" / "Scroll Left";
+    grid-area: left;
+  }
+  
+  &::scroll-button(right) {
+    content: "⮕" / "Scroll Right";
+    grid-area: right;
+  }
+}
+
+/* scroll markers */
+.carousel {
+  scroll-marker-group: after;
+  &::scroll-marker-group {
+    grid-area: markers;
+    display: grid;
+    place-content: safe center;
+    grid: 30px / auto-flow 30px;
+    gap: 15px;
+    padding: 15px;
+    scroll-padding: 15px;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
+  & > .content > li {
+    &::scroll-marker {
+      content: " ";
+      border: 1px solid #bbb;
+      border-radius: 50%;
+      outline-offset: 4px;
+      -webkit-tap-highlight-color: transparent;
+      scroll-snap-align: center;
+    }
+    
+    &::scroll-marker:is(:hover, :focus-visible) {
+      border-color: LinkText;
+    }
+    
+    &::scroll-marker:target-current {
+      background: LinkText;
+      border-color: LinkText;
+    }
+  }
+}

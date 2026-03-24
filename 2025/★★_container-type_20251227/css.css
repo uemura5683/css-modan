@@ -1,0 +1,72 @@
+@charset 'UTF-8';
+
+html {
+	container-type: scroll-state;
+}
+
+header {
+	position: fixed;
+	z-index: 1;
+	inset: 0 0 auto;
+	transition: translate 0.25s;
+
+	translate: 0 0;
+
+	/* Slide up when having last scrolled towards the bottom */
+	@container scroll-state(scrolled: bottom) {
+		translate: 0 -100%;
+	}
+}
+
+/* end of relevant code */
+
+
+/* general aesthetics */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font: 1.25rem/1.6 "system-ui", arial;
+	color: #36394c;
+
+	counter-reset: scroll calc(var(--scroll)) scroll-delayed
+		calc(var(--scroll-delayed)) scroll-direction calc(var(--scroll-direction));
+}
+
+header {
+	background: #fffc;
+	box-shadow: 0 2px 15px -2px #778;
+
+	div {
+		block-size: 6rem;
+		display: flex;
+		align-items: center;
+		inline-size: 90%;
+		margin: 0 auto;
+	}
+}
+
+main {
+	min-block-size: 500dvb;
+	padding-top: calc(5rem + 10vw);
+	background: linear-gradient(135deg, rgb(198 221 227), rgb(248 222 209)) fixed;
+
+	p {
+		position: fixed;
+		inset: auto 0;
+		padding-inline: 5%;
+	}
+
+	code {
+		font: 86% monospace;
+	}
+
+	:any-link,
+	code {
+		color: #616f80;
+	}
+}

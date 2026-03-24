@@ -1,0 +1,393 @@
+/* ページのレイアウトを整える用のCSSです */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 32px;
+  background-color: #fff;
+  color: #222;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #555;
+    color: #fff;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    margin: 16px;
+    font-size: 12px;
+  }
+}
+
+.wrapper {
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 40px 0 16px;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 28px 0 16px;
+}
+
+code {
+  font-family: courier, monospace;
+  background-color: #9494942d;
+  border-radius: 3px;
+  margin: 0 4px;
+  padding: 1px 3px;
+}
+
+p.textWrapper {
+  color: #444;
+}
+
+ul li,
+ol li {
+  list-style-type: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  p.textWrapper {
+    color: #eee;
+  }
+}
+
+.textWrapperUnit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.textWrapperUnit__small {
+  max-width: 280px;
+}
+
+.textWrapperUnit_item {
+  width: 48%;
+  border: solid #cced9e 3px;
+  border-radius: 10px;
+  padding: 16px 10px 6px;
+}
+
+.hoverHere {
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.hoverHere  + .textWrapper {
+  cursor: pointer;
+}
+
+.hoverHere  + * > .textWrapper {
+  cursor: pointer;
+}
+
+.mobileAlert {
+  display: none;
+}
+@media (max-width: 500px) {
+  .mobileAlert {
+    display: block;
+    font-size: 20px;
+    color: #fe407e;
+    margin-bottom: 32px;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  background-color: #aaaaaa;
+  padding: 1rem;
+}
+
+@media (max-width: 1050px) {
+  .navigation{
+    display: none;
+  }
+}
+.navigation li{
+  margin-bottom: 4px;
+}
+.navigation a {
+  color: #333;
+  text-underline-offset: 4px;
+}
+.navigation li:hover > a {
+  color: blue;
+}
+
+
+/* --------- A: text-decoration ----------------------------------- */
+.textDecoration {
+  text-decoration: #05c662 underline 1px;
+  -webkit-text-decoration: #05c662 underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+
+.textDecoration__smallOffset{
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+.textDecorationMarker {
+  text-decoration-color: #05c662a0;
+  text-decoration-line: underline;
+  text-decoration-thickness: 8px;
+  text-underline-offset: -5px;
+}
+
+/* --------- B: border-bottom ----------------------------------- */
+.borderBottom {
+  border-bottom: #05c662 solid 1px;
+  padding-bottom: 5px;
+}
+
+/* --------- C: background-image ----------------------------------- */
+.simpleBackgroundImage {
+  background-image: linear-gradient(transparent 50%, #05c662a0 0%);
+}
+
+.gradationBackgroundImage {
+  background-image: linear-gradient(to right, #05c662, #fe407e);
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 5px;
+}
+
+/* --------- D: background-sizeのアニメーション ----------------------------------- */
+.backgroundImage {
+  background-image: linear-gradient(#05c662, #05c662);
+  background-size: 0 1px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding-bottom: 5px;
+  transition: background-size 0.3s ease-out;
+}
+
+.textWrapper:hover .backgroundImage {
+  background-size: 100% 1px;
+  background-position: bottom left;
+}
+
+.backgroundImage__slice {
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+  transition: background-size 1.2s ease-out;
+}
+
+.backgroundImage__clone {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 0.6s ease-out;
+}
+
+/* --------- E: 疑似要素関連 ----------------------------------- */
+.pseudoElement {
+  position: relative;
+}
+
+.pseudoElement::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -5px;
+  left: 0;
+  background-color: #05c662;
+}
+
+/* -　回転とスケールが変化するアニメーション　- */
+.pseudoElement__rotate::after {
+  transform: rotate(15deg) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+.textWrapper:hover .pseudoElement__rotate::after {
+  transform: rotate(0deg) scaleX(1);
+}
+
+/* -　移動とスケールが変化するアニメーション　- */
+.pseudoElement__translate::after {
+  transform: translateY(10px) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+.textWrapper:hover .pseudoElement__translate::after {
+  transform: translateY(0) scaleX(1);
+}
+
+/* -　スケールが変化するアニメーション　- */
+.pseudoElement__scale::after {
+  transform: scaleX(0);
+  transform-origin: right top;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+.textWrapper:hover .pseudoElement__scale::after {
+  transform: scaleX(1);
+  transform-origin: left top;
+}
+
+/* --------- F: 下線用のタグを作る方法 ----------------------------------- */
+/* ----　表示されているテキストのスタイル　---- */
+.visibleText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px;
+}
+
+.visibleText__centering {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+/* ----　表示されている下線のスタイル　---- */
+.clipPath {
+  display: inline-block;
+  clip-path: inset(0 0 -5px 0);
+  color: transparent;
+  user-select: none;
+}
+
+/* -　左から右へ線が現れるアニメーション　- */
+.clipPath__fromLeft {
+  animation: hide-line 0.6s ease-out forwards;
+}
+@keyframes hide-line {
+  to {
+    clip-path: inset(0 0 -5px 100%);
+  }
+}
+
+.textWrapper:hover .clipPath__fromLeft {
+  animation: show-line 0.6s ease-out;
+}
+@keyframes show-line {
+  from {
+    clip-path: inset(0 100% -5px 0);
+  }
+}
+
+/* -　中心から左右へ線が現れるアニメーション　- */
+.clipPath__centering {
+  text-align: center;
+  clip-path: inset(0 50% -5px 50%);
+  transition: clip-path 0.6s ease-out;
+}
+
+.textWrapper:hover .clipPath__centering {
+  clip-path: inset(0 0 -5px 0);
+}
+
+/* -　下線が移動するアニメーション　- */
+.transformTranslateY {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(5%);
+  transition: transform 0.4s ease-out, opacity 0.4s;
+
+  /* テキストを透明にし、選択できないようにする */
+  color: transparent;
+  user-select: none;
+}
+
+.textWrapper:hover .transformTranslateY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------- おまけ: 背景画像 ----------------------------------- */
+.starLine{
+  background-image: url(star.svg);
+  background-size: 20px 8px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  padding-bottom: 7px;
+}
+
+/* --------- ラッパー要素 ----------------------------------- */
+.textWrapper {
+  position: relative;
+  background-color: #aaaaaa;
+  padding: 16px;
+  border-radius: 6px;
+  line-height: 1.75;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.textWrapper__small {
+  max-width: 440px;
+}
+
+.textWrapper__centering {
+  display: flex;
+  justify-content: center;
+}
+
+.textOverflow {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: calc(16px * 1.75 + 5px);
+}
+
+.lineClamp1 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  height: calc(16px * 1.75 + 5px);
+}
+
+.lineClamp3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  height: calc(16px * 1.75 * 3 + 5px);
+}

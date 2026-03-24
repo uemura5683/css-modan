@@ -1,0 +1,66 @@
+html {
+  container-type: inline-size;
+}
+main {
+  /* 
+     1em is the margin on small screen
+     600px is the max width
+
+     1cqw = 「コンテナの幅の 1%」
+     　なので、
+
+     100cqw ＝ コンテナの幅ぴったり
+     50cqw ＝ コンテナ幅の半分
+
+     Viewport 基準の vw の コンテナ版 と考えると分かりやすいです。
+
+  */
+  --_m: max(1em,50cqw - 1400px / 2); 
+  /*
+    5. 結果としてどういう動きになるか
+
+    コンテナが 1400px になるまで
+    → 左右マージンは 常に最低 1em
+
+    コンテナが 1400px を超えると
+    → コンテンツ部分は 最大 1400px に固定
+    → 超えた分は 左右マージンとして増えていく
+
+    ＝ 「中央 1400px のレイアウト＋狭いときは 1em だけ余白を死守する」 っていう、かなり賢い書き方です。
+
+    1em = 左右マージンの最低値
+    50cqw = コンテナ幅の 50%（中央〜端までの距離）
+    1400px / 2 = コンテンツ中央〜端までの距離（1400pxを前提にした半分）
+    50cqw - 1400px/2 = 余りのスペース（マージンにできる分）
+  */  
+  margin-inline: var(--_m);
+}
+.full-bleed {
+  margin-inline: calc(-1*var(--_m));
+}
+section.full-bleed {
+  padding-inline: 1em;
+  background: pink;
+}
+section {
+  padding-block: .3em;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #eee;
+  margin: 0;
+}
+h1 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.5rem;
+  text-align:justify;
+}
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}

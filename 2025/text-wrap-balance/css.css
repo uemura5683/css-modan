@@ -1,0 +1,69 @@
+@charset 'UTF-8';
+/**
+* common
+**/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  block-size: 100%;
+}
+body {
+  background-color: #212529;
+  display: grid;
+  height: calc(100vh - 16px);
+  margin: 0;
+  padding: 8px;
+  place-items: center;
+  width: calc(100% - 16px);
+}
+@layer demo {
+  h1 {
+    text-wrap: balance;
+    max-inline-size: 25ch;
+    font-size: clamp(2rem, 5vw, 5rem);
+    margin-inline: auto;
+    color: white;
+    text-shadow: 0 1px 1px #000;
+  }
+  
+  .subhead {
+    text-wrap: balance;
+    max-inline-size: 100ch;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-inline: auto;
+    color: hsl(0 0% 80%);
+  }
+  
+  section {
+    background: 
+      linear-gradient(#000d 0 0),
+      url("https://assets.codepen.io/2585/sean-pollock-PhYq704ffdA-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    gap: 2ch;
+    place-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+    display: grid;
+  }
+}

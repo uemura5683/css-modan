@@ -1,0 +1,18 @@
+https://coliss.com/articles/build-websites/operation/css/css-reading-flow.html
+
+https://azukiazusa.dev/blog/css-reading-flow-property/
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+Flex や Grid コンテナ内の要素の見た目上の順序と DOM 上の順序が異なる場合、アクセシビリティ上の問題が発生する可能性がある
+reading-flow プロパティは Flex または Grid コンテナ内の要素の読み上げ順もしくはキーボードフォーカスの順序を制御するためのプロパティ
+reading-flow: flex-visual; は Flex コンテナ内の要素の見た目上の順序に従って読み上げ順を制御する
+reading-flow: grid-row; は Grid コンテナ内の要素の列の見た目上の順序に従って読み上げ順を制御する
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+reading-flow / reading-order の理解 ＝
+アクセシビリティ対応の基礎 ＋
+結果として SEO と UX を守る知識
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

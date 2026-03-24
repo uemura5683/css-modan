@@ -1,0 +1,106 @@
+https://codepen.io/coliss/pen/myVLoYV
+
+https://coliss.com/articles/build-websites/operation/css/get-the-screen-width-and-height-using-css.html
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+1. @property で「長さ」を持つカスタムプロパティを定義
+@property --_w {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 100vw; 
+}
+@property --_h {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 100vh; 
+}
+
+ここでやってること
+--_w というカスタムプロパティを「長さ（<length>）型で扱うよ」 と宣言
+かつ 初期値(initial-value)を 100vw にする
+つまりブラウザ的には：「--_w は常に“今の 100vw”だと思ってね」
+という状態になります。
+
+2. 三角関数で「長さ → 単位なしの数値」に変換してる
+:root {
+  --w: tan(atan2(var(--_w),1px)); /* screen width */
+  --h: tan(atan2(var(--_h),1px)); /* screen height*/
+  /* The result is an integer without unit  */
+}
+
+--_w（100vw = 例えば 390px）を、
+そこから「pxをはがして数字だけ」にする
+
+数式イメージ：
+
+θ = atan2( var(--_w), 1px ) → 実質的に var(--_w) / 1px の比から角度を出す
+
+tan(θ) を取ると → var(--_w) / 1px という 単位なしの数値 だけが残る
+
+なので、
+画面幅が 390px なら → --w ≒ 390
+画面幅が 768px なら → --w ≒ 768
+
+みたいな感じで、「今の viewport 幅(px)に相当する素の数字」 が --w に入ります。
+
+
+3. counter に流し込んで文字として表示
+body:before {
+  content: counter(w) "x" counter(h);
+  counter-reset: h var(--h) w var(--w);
+  font-size: 50px;
+  font-family: system-ui,sans-serif;
+  font-weight: 900;
+  position: fixed;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+
+counter-reset: h var(--h) w var(--w);
+→ カウンタ h, w の値として --h, --w をセット
+
+content: counter(w) "x" counter(h);
+→ 1234x567 みたいな感じで 「横幅 x 高さ」 をテキストとして描画
+
+position: fixed; inset: 0; margin: auto;
+→ 画面中央に固定表示
+
+なので、画面の真ん中に「現在の viewport の width × height(px)」が出る仕組みです。
+
+4. 「スクロールするだけで変わる」理由
+
+ここで使っているのは 100vh / 100vw なので、
+ビューポートの高さ・幅が変わったタイミングで値が再計算されます。
+
+特にこういう時に変わりやすいです：
+
+モバイルブラウザでスクロールすると
+→ アドレスバーが縮んだり消えたりして、高さが変わる
+
+PCでもウィンドウリサイズ、DevTools 開閉 など
+
+その結果、
+
+--_h（100vh）が変わる
+→ --h の数値が変わる
+→ counter(h) の値も変わる
+→ 表示される高さの数値が更新される
+
+という流れで、スクロールや UI の変化に応じて数値が動いて見えるわけですね。
+
+まとめると
+
+このコードは：
+@property で 100vw / 100vh を CSS カスタムプロパティに持たせる
+三角関数 (atan2 → tan) で 「長さ → 単位なしの数値」 に変換
+その数値を counter-reset でカウンタに突っ込む
+::before の content で viewport の幅×高さを表示
+
+という、
+「JS なしで現在の画面サイズを数値表示するための、変態的な（ほめ言葉）CSSハック」です
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
